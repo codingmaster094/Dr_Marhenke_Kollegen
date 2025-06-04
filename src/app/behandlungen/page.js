@@ -17,7 +17,7 @@ const page = () => {
         ]}
         buttonText="Jetzt Termin vereinbaren"
         buttonLink="/kontakt"
-        imageSrc="/images/services-hero.png"
+        imageSrc="/images/praxis11.jpg"
       />
 
       <ServiceSection
@@ -33,7 +33,7 @@ const page = () => {
         bgColor="bg-[#FFF2CE]"
         buttonText="Mehr erfahren"
         buttonLink="/"
-        imageSrc="/images/service-img-3.png"
+        imageSrc="/images/praxis3.jpg"
         reverse={false}
       />
 
@@ -48,7 +48,7 @@ const page = () => {
         bgColor=""
         buttonText="Mehr erfahren"
         buttonLink="/"
-        imageSrc="/images/service-img-4.png"
+        imageSrc="/images/praxis7.jpg"
         reverse={true}
       />
 
@@ -67,7 +67,7 @@ const page = () => {
         bgColor=""
         buttonText="Mehr erfahren"
         buttonLink="/"
-        imageSrc="/images/service-img-5.png"
+        imageSrc="/images/praxis2.jpg"
         reverse={false}
       />
 
@@ -84,7 +84,7 @@ const page = () => {
         bgColor="bg-[#FFF2CE]"
         buttonText="Mehr erfahren"
         buttonLink="/"
-        imageSrc="/images/service-img-6.png"
+        imageSrc="/images/praxis5.jpg"
         reverse={true}
       />
 
@@ -103,7 +103,7 @@ const page = () => {
         bgColor="bg-[#FFF2CE]"
         buttonText="Mehr erfahren"
         buttonLink="/"
-        imageSrc="/images/service-img-7.png"
+        imageSrc="/images/praxis8.jpg"
         reverse={false}
       />
 
