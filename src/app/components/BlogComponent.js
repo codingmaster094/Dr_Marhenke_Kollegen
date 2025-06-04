@@ -3,15 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 const BlogComponent = () => {
     const blogPosts = [
-        {
-          id: 1,
-          title: "Psychologische/r Psychotherapeut/in",
-          image: "/images/job-ads-img-1.png",
-          link: "/stellenausschreibung/psychologische-psychotherapeutin",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-        }
-      ];
+      {
+        id: 1,
+        title: "Psychologische/r Psychotherapeut/in",
+        image: "/images/praxis1.jpg",
+        link: "/stellenausschreibung/psychologische-psychotherapeutin",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      },
+    ];
   return (
     <section className="py-14 lg:py-20">
     <div className="container mx-auto">

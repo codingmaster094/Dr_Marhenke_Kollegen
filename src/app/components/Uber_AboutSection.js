@@ -8,7 +8,7 @@ const Uber_AboutSection = ({ params }) => {
         <div className="flex flex-col lg:flex-row gap-4 xl:gap-16 items-start">
           <div className="lg:w-6/12 self-stretch rounded md:rounded-3xl overflow-hidden">
             <Image
-              src="/images/about-img-2.png"
+              src="/images/praxis11.jpg"
               alt="Service Image"
               width={600}
               height={400}
@@ -32,7 +32,7 @@ const Uber_AboutSection = ({ params }) => {
             </div>
           </div>
         </div>
-       <DoctorList title=""/>
+        <DoctorList title="" />
       </div>
     </section>
   );
