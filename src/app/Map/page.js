@@ -72,7 +72,7 @@ export default function Page() {
             center={center}
             zoom={6}
             scrollWheelZoom={false}
-            style={{ height: "500px", width: "100%" }}
+            style={{ height: "600px", width: "100%" }}
           >
             <TileLayer
               attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
