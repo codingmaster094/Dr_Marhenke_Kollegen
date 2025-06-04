@@ -1,0 +1,22 @@
+
+.leaflet-container a.leaflet-popup-close-button {
+    top: 2px;
+    right: 5px;
+}
+.leaflet-container a.loc-popup-btn {
+    background-color: #dba637;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px 30px;
+}
+.leaflet-popup-content p {
+    margin: 18px 0 4px 0;
+}
+.h3-56{
+    min-height: 56px;
+}
+.captcha-image.cf7ic-style1{
+    padding: 0px;
+}

@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-poppins text-p;
+  }
+  .link.active {
+    @apply font-medium text-yellow;
+  }
+  .teamSwiper .card {
+    @apply before:content-[''] before:absolute before:left-0 before:bottom-0 before:right-0 before:top-[100%] before:transition-all before:duration-300 before:ease-custom-ease before:bg-gradient-to-b hover:before:top-0;
+  }
+  footer .links a {
+    @apply relative after:content-[''] after:absolute after:left-0 after:right-[100%] after:h-[2px] after:bg-yellow_100 after:bottom-0 after:transition-all after:duration-300 hover:after:right-0;
+  }
+  nav ul li a {
+    @apply text-a;
+  }
+  h1 {
+    @apply text-h1;
+  }
+  h2 {
+    @apply text-h2;
+  }
+  h3 {
+    @apply text-h3;
+  }
+  p,
+  li {
+    @apply text-p;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    @apply text-[19px];
+  }
+  .swiper-pagination .swiper-pagination-bullet-active {
+    @apply bg-yellow;
+  }
+  nav ul li a {
+    @apply hover:text-yellow transition-colors;
+  }
+  .content-listing ul,
+  .list-style-arrow {
+    @apply list-image-[url(../images/list-img.svg)];
+  }
+  .wpcf7-form .f-fild {
+    @apply mb-5;
+  }
+  .wpcf7-form .f-fild input,
+  .wpcf7-form .f-fild select,
+  .wpcf7-form .f-fild textarea {
+    @apply bg-white bg-opacity-30 border border-white border-opacity-25 placeholder:text-white py-3 px-8 rounded-lg w-full appearance-none outline-white;
+  }
+  .wpcf7-form .f-fild select option {
+    @apply text-black;
+  }
+  .wpcf7-submit {
+    @apply text-yellow bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-white hover:shadow hover:shadow-white transition-colors font-medium mt-4;
+  }
+  .wpcf7-form [type="checkbox"] {
+    @apply appearance-none;
+  }
+  .wpcf7-form .f-fild:has(select) {
+    @apply relative after:block after:absolute after:size-6 after:bg-[url(../images/down.svg)] after:bg-cover after:bg-center after:invert after:right-7 after:top-1/2 after:-translate-y-1/2;
+  }
+  .menu-item-has-children::after {
+    @apply transition-all block size-6 bg-[url(../images/down.svg)] opacity-65 content-[""];
+  }
+  .menu-item-has-children:hover::after {
+    @apply invert-[65%] sepia-[100%] opacity-100;
+  }
+  .menu-item-has-children .sub-menu {
+    @apply absolute bg-white w-full lg:min-w-[300px] flex gap-3 flex-col shadow opacity-0 invisible transition-all px-4 py-3 rounded top-full text-black text-opacity-65 break-words;
+  }
+  .menu-item-has-children.open .sub-menu {
+    @apply opacity-100 visible;
+  }
+  .menu-item-has-children:hover .sub-menu {
+    @apply lg:opacity-100 lg:visible;
+  }
+  .menu-item-has-children {
+    @apply flex gap-1.5 items-center justify-between relative hover:text-yellow;
+  }
+  .sec-page-title {
+    @apply pt-20 pb-12;
+  }
+  .sec-page-content {
+    @apply pb-20;
+  }
+  .sec-page-content p {
+    @apply mb-4;
+  }
+  .sec-page-content .wp-block-heading {
+    @apply mt-10 mb-5;
+  }
+  .sec-page-content .wp-block-list {
+    @apply flex flex-col gap-2.5 ml-[22px];
+  }
+  .sec-page-content ul.wp-block-list {
+    @apply list-image-[url(../images/list-img.svg)];
+  }
+  .sec-page-content h4 {
+    @apply text-2xl font-semibold mt-10 mb-5;
+  }
+  .sec-page-content h5 {
+    @apply text-lg font-semibold mt-8 mb-4;
+  }
+  .sec-page-title h1 {
+    @apply text-h3 sm:text-h1;
+  }
+  .sec-page-content a {
+    @apply text-yellow break-words;
+  }
+  .menu-item-has-children.open::after {
+    @apply rotate-180;
+  }
+  .menu-item-has-children:hover::after {
+    @apply lg:rotate-180;
+  }
+  .treatment-content img {
+    @apply w-full h-full rounded-3xl;
+  }
+  .treatment-content ul li {
+    @apply mb-4;
+  }
+  .treatment-content .is-layout-grid {
+    @apply gap-16;
+  }
+  .treatment-content .wp-container-core-group-is-layout-2.is-layout-grid {
+    @apply flex-col-reverse;
+  }
+
+  @media (max-width: 1200px) {
+    .treatment-content .is-layout-grid {
+      @apply flex flex-col gap-[30px];
+    }
+  }
+}
