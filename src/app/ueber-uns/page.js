@@ -20,7 +20,7 @@ const page = () => {
         ]}
         buttonText="Jetzt Termin vereinbaren"
         buttonLink="/kontakt"
-        imageSrc="/images/about-us-hero.png"
+        imageSrc="/images/praxis_billd-1.jpg"
       />
       <About_Service_section
          title="Das sind Dr. Marhenke & Kollegen"
@@ -30,7 +30,7 @@ const page = () => {
         ]}
         listItems={[]}
         bgColor="bg-[#FFF2CE]"
-        imageSrc="/images/about-img-1.png"
+        imageSrc="/images/praxis13.jpg"
         reverse={false}
       />
 
@@ -43,7 +43,7 @@ const page = () => {
           ]}
           listItems={[]}
           bgColor=""
-          imageSrc="/images/about-img-3.png" 
+          imageSrc="/images/praxis5.jpg" 
           reverse={true}
       />
       <Map/>

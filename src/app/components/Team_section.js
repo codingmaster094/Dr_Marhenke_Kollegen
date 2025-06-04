@@ -27,7 +27,7 @@ const Team_section = () => {
             </h2>
             <span className="w-28 h-1 bg-yellow block mx-auto"></span>
           </div>
-          <div className="w-full relative text-white bg-cover bg-[url('/images/team.png')]">
+          <div className="w-full relative text-white bg-cover bg-[url('/images/banner1.jpg')]">
             <div className="swiper teamSwiper">
               <Swiper
                 ref={swiperRef}

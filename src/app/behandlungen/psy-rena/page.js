@@ -17,7 +17,7 @@ const page = () => {
         ]}
         buttonText="Jetzt Termin vereinbaren"
         buttonLink="/kontakt"
-        imageSrc="/images/treatments-hero.png"
+        imageSrc="/images/praxis4.jpg"
       />
       <Kooperationspartner />
       <About_Service_section
@@ -31,7 +31,7 @@ const page = () => {
         ]}
         bgColor="bg-[#FFF2CE]"
    
-        imageSrc="/images/treatment-img-1.png"
+        imageSrc="/images/praxis14.jpg"
         reverse={false}
       />
       <About_Service_section
@@ -47,7 +47,7 @@ const page = () => {
         ]}
         bgColor="bg-[#FFF2CE]"
    
-        imageSrc="/images/treatment-img-2.png"
+        imageSrc="/images/praxis12.jpg"
         reverse={true}
       />
     

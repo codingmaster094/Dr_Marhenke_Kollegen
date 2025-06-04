@@ -54,7 +54,7 @@ const Hero_Section = ({
           ) : (
             <Image
               role="img"
-              className="!static object-contain"
+              className="!static object-cover"
               fill
               src={imageSrc}
               alt="Hero-image"

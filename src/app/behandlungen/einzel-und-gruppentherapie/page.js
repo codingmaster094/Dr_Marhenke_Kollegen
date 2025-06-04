@@ -18,14 +18,14 @@ const page = () => {
         ]}
         buttonText="Jetzt Termin vereinbaren"
         buttonLink="/kontakt"
-        imageSrc="/images/treatments-hero.png"
+        imageSrc="/images/praxis4.jpg"
       />
 
       <Kooperationspartner />
 
       <About_Service_section
         title="Einzeltherapie – Ihr geschützter Raum zur persönlichen Entwicklung"
-        imageSrc="/images/treatment-img-1.png"
+        // imageSrc="/images/praxis3.jpg"
         description={[
           "Die Einzeltherapie bietet einen vertraulichen Rahmen, um persönliche Herausforderungen zu besprechen. In den Sitzungen arbeiten Sie gemeinsam mit Ihrem Therapeuten daran, belastende Gedanken und Verhaltensmuster zu reflektieren und gezielt zu verändern.",
         ]}
@@ -35,7 +35,8 @@ const page = () => {
           "Sitzungsdauer: 50 Minuten, flexibel an persönliche Bedürfnisse anpassbar",
         ]}
         bgColor="bg-[#FFF2CE]"
-        imageSrc="/images/treatment-img-1.png"
+        imageSrc="/images/praxis14.jpg"
+
         reverse={false}
       />
       <About_Service_section
@@ -49,7 +50,7 @@ const page = () => {
           "Sitzungsdauer: 100 Minuten, feste Gruppenstruktur für Vertrauen und Kontinuität",
         ]}
         bgColor="bg-[#FFF2CE]"
-        imageSrc="/images/treatment-img-2.png"
+        imageSrc="/images/praxis12.jpg"
         reverse={true}
       />
       <About_Service_section
@@ -63,7 +64,7 @@ const page = () => {
           "Gesetzliche und private Krankenkassen übernehmen in der Regel die Kosten bei entsprechender Diagnose",
         ]}
         bgColor="bg-[#FFF2CE]"
-        imageSrc="/images/treatment-img-3.png"
+        imageSrc="/images/praxis11.jpg"
         reverse={false}
       />
 

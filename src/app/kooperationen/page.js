@@ -11,7 +11,7 @@ const page = () => {
         points={[]}
         buttonText=""
         buttonLink="/"
-        imageSrc="/images/partners-hero.png"
+        imageSrc="/images/praxis13.jpg"
       />
 
       <Kooperationen_Service

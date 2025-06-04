@@ -25,10 +25,10 @@ const Psychotherapeuten = () => {
           <div className="lg:w-6/12 self-stretch 3xl:aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden relative">
             <Image
               role="img"
-              src="/images/service-img-1.png"
+              src="/images/praxis1.jpg"
               alt="service-img"
               fill
-              className="size-full object-cover"
+              className="size-full object-cover object-bottom"
             />
           </div>
           <div className="lg:w-6/12 flex flex-col justify-center gap-[34px]">

@@ -38,7 +38,7 @@ const Header = () => {
           {/* Navigation */}
           <div className="flex gap-12 items-center">
             <nav className="hidden lg:block">
-              <ul className="flex gap-[34px] uppercase text-black text-opacity-65">
+              <ul className="flex gap-[34px] text-black text-opacity-65">
                 <li>
                   <Link
                     href="/"
@@ -46,7 +46,7 @@ const Header = () => {
                       pathname === "/" ? "text-yellow hover:shadow" : ""
                     }
                   >
-                    START
+                    Start
                   </Link>
                 </li>
                 <li className="relative group menu-item-has-children">

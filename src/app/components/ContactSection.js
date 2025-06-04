@@ -3,85 +3,310 @@ import Image from 'next/image';
 import Link from 'next/link';
 const ContactSection = () => {
   return (
-    <section className="bg-[#FFFBF2] py-14 lg:py-20 2xl:py-100 text-center">
+    <section className="py-14 lg:py-20 2xl:py-100 bg-opacity-25 bg-[#FFF2CE]">
       <div className="container">
-        <div className="flex flex-col gap-[34px] items-center mb-10 lg:mb-16">
-          <div>
-            <h2 className=" mb-4">
-              Kontakt zur Praxis für Psychotherapie Dr. Marhenke
-            </h2>
-            <span className="w-28 h-1 bg-yellow block mx-auto"></span>
-          </div>
-          <div className="text">
-            <p>
-              Sie möchten einen Termin vereinbaren, eine Sitzung absagen oder
-              haben Fragen zu einer Therapie? Wir sind für Sie da! So erreichen
-              Sie uns:
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-col xl:flex-row">
-          <div className="xl:w-4/12 3xl:w-[760px] 3xl:shrink-0">
+        <div className="flex flex-col lg:flex-row gap-8 xl:gap-16 text-center xl:flex-nowrap flex-wrap justify-center">
+    <div className="lg:w-[calc(50%-32px)] 2xl:w-[calc(33.33%-42.67px)] p-4 sm:p-6 sm:rounded-3xl bg-white shadow-custom_shdow2 hover:shadow-2xl transition-all">
+        <div className="scale-75 lg:scale-100 size-[100px] rounded-[10px] grid place-items-center bg-yellow mx-auto shadow-[0_4px_18px_0_rgba(0,0,0,.14)]">
             <Image
-              src="/images/contact-img-1.png"
-              alt="Contact Image"
-              className="rounded-xl 3xl:rounded-3xl w-full object-cover"
-              width={760}
-              height={438}
-              priority
+                role="img"
+                alt="men-icon"
+                loading="lazy"
+                width={52}
+                height={52}
+                decoding="async"
+                data-nimg="1"
+                style={{color:"transparent"}}
+                src="images/Simplification-2.svg"
             />
-          </div>
-          <div className="xl:w-8/12 grid md:grid-cols-3 gap-2 bg-[#EBD7A0] bg-opacity-45 p-6 sm:py-14 rounded-3xl xl:rounded-s-none my-14 break-words">
-            <div className="p-6 bg-white rounded-3xl flex flex-col justify-between">
-              <h3 className="mb-4 text-[21px] xl:text-[23px] 4xl:text-h3">
-                Telefon
-              </h3>
-              <div>
-                <h4 className="mb-2 font-medium">0221/42 31 39 56</h4>
-                <Link
-                  role="link"
-                  href="tel:0221/42 31 39 56"
-                  className="inline-block text-white bg-yellow rounded sm:rounded-[10px] py-2 px-6 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg font-medium"
-                >
-                  Jetzt anrufen
-                </Link>
-              </div>
-            </div>
-            <div className="p-6 bg-white rounded-3xl flex flex-col justify-between">
-              <h3 className="mb-4 text-[21px] xl:text-[23px] 4xl:text-h3">
-                E-Mail
-              </h3>
-              <div>
-                <h4 className="mb-2 font-medium">
-                  kontakt[@]psycho-therapie-koeln.de
-                </h4>
-                <Link
-                  role="link"
-                  href="mailto:kontakt[@]psycho-therapie-koeln.de"
-                  className="inline-block text-white bg-yellow rounded sm:rounded-[10px] py-2 px-6 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg font-medium"
-                >
-                  E-Mail schicken
-                </Link>
-              </div>
-            </div>
-            <div className="p-6 bg-white rounded-3xl flex flex-col justify-between">
-              <h3 className="mb-4 text-[21px] xl:text-[23px] 4xl:text-h3">
-                Online-Formular
-              </h3>
-              <div>
-                <Link
-                  role="link"
-                  href="/kontakt#contact-form"
-                  className="inline-block text-white bg-yellow rounded sm:rounded-[10px] py-2 px-6 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg font-medium"
-                >
-                  Jetzt kontaktieren
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
+        <h3 className="mb-2 lg:mt-6 text-h3 font-bold">Rodenkirchen</h3>
+        <div className="mb-4 lg:mb-8 text-p space-y-4">
+            <p>Gustav-Radbruch-Straße 1
+                <br/>50996 Köln
+            </p>
+        </div>
+        <div className="text-p space-x-4 flex justify-center items-center">
+            <div>
+                
+                <Link
+                    role="link"
+                    className="hover:text-yellow transition-colors"
+                    aria-label="0221/42 31 39 56"
+                    target="_self"
+                    href="tel:022142313956"
+                >
+                  <span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="call-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/call-prax.svg"
+                    />
+                  </span>
+                </Link>
+                
+            </div>
+            <div>
+                
+                <Link
+                    role="link"
+                    className="hover:text-yellow transition-colors"
+                    aria-label="0221/42 31 39 56"
+                    target="_self"
+                    href="/koeln-rodenkirchen#contact-form"
+                >
+                  <span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="form-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/fax-prax.svg"
+                    />
+                  </span>
+                </Link>
+                
+            </div>
+            <div>
+                
+                <Link
+                    role="link"
+                    className="hover:text-yellow transition-colors"
+                    aria-label="kontakt@psycho-therapie-koeln.de"
+                    target="_self"
+                    href="mailto:kontakt@psycho-therapie-koeln.de"
+                ><span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="call-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/mail-prax.svg"
+                    />
+                  </span></Link>
+            </div>
+        </div>
+       
+    </div>
+    <div className="lg:w-[calc(50%-32px)] 2xl:w-[calc(33.33%-42.67px)] p-4 sm:p-6 sm:rounded-3xl bg-white shadow-custom_shdow2 hover:shadow-2xl transition-all">
+        <div className="scale-75 lg:scale-100 size-[100px] rounded-[10px] grid place-items-center bg-yellow mx-auto shadow-[0_4px_18px_0_rgba(0,0,0,.14)]">
+            <Image
+                role="img"
+                alt="save-health"
+                loading="lazy"
+                width={52}
+                height={52}
+                decoding="async"
+                data-nimg="1"
+                 style={{color:"transparent"}}
+                src="images/Simplification-2.svg"
+            />
+        </div>
+        <h3 className="mb-2 lg:mt-6 text-h3 font-bold">Südstadt</h3>
+        <div className="mb-4 lg:mb-8 text-p space-y-4">
+            <p>Rolandstraße 55
+                 <br/>50677 Köln
+            </p>
+        </div>
+        {/* new */}
+         <div className="text-p space-x-4 flex justify-center items-center">
+            <div>
+                
+                <Link
+                    role="link"
+                    className="hover:text-yellow transition-colors"
+                    aria-label="0221/17 00 40 36"
+                    target="_self"
+                    href="tel:022117004036"
+                >
+                  <span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="call-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/call-prax.svg"
+                    />
+                  </span>
+                </Link>
+                
+            </div>
+            <div>
+                
+                <Link
+                    role="link"
+                    className="hover:text-yellow transition-colors"
+                    aria-label="0221/42 31 39 56"
+                    target="_self"
+                    href="/koeln-suedstadt#contact-form"
+                >
+                  <span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="form-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/fax-prax.svg"
+                    />
+                  </span>
+                </Link>
+                
+            </div>
+            <div>
+                
+                <Link
+                   role="link"
+                    className="hover:text-yellow transition-colors"
+                    aria-label="kontakt@psycho-therapie-koeln.de"
+                    target="_self"
+                    href="mailto:kontakt@psycho-therapie-koeln.de"
+                >
+                  <span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="call-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/mail-prax.svg"
+                    />
+                  </span></Link>
+            </div>
+        </div>
+        {/*  */}
+        
+      
+    </div>
+    <div className="lg:w-[calc(50%-32px)] 2xl:w-[calc(33.33%-42.67px)] p-4 sm:p-6 sm:rounded-3xl bg-white shadow-custom_shdow2 hover:shadow-2xl transition-all">
+        <div className="scale-75 lg:scale-100 size-[100px] rounded-[10px] grid place-items-center bg-yellow mx-auto shadow-[0_4px_18px_0_rgba(0,0,0,.14)]">
+            <Image
+                role="img"
+                alt="body-icon"
+                loading="lazy"
+                width={52}
+                height={52}
+                decoding="async"
+                data-nimg="1"
+                 style={{color:"transparent"}}
+                src="images/Simplification-2.svg"
+            />
+        </div>
+        <h3 className="mb-2 lg:mt-6 text-h3 font-bold">Hürth</h3>
+        <div className="mb-4 lg:mb-8 text-p space-y-4">
+            <p>Krankenhausstraße 107
+               <br/>50354 Hürth 
+            </p>
+        </div>
+        {/*  */}
+        <div className="text-p space-x-4 flex justify-center items-center">
+            <div>
+                
+                <Link
+                    role="link"
+                    className="hover:text-yellow transition-colors"
+                    aria-label="0221/42 31 39 56"
+                    target="_self"
+                    href="tel:022142313956"
+                >
+                  <span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="call-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/call-prax.svg"
+                    />
+                  </span>
+                </Link>
+                
+            </div>
+            <div>
+                
+                <Link
+                   role="link"
+                    className="hover:text-yellow transition-colors"
+                    aria-label="022333740978"
+                    target="_self"
+                    href="/huerth#contact-form"
+                >
+                  <span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="form-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/fax-prax.svg"
+                    />
+                  </span>
+                </Link>
+                
+            </div>
+            <div>
+                
+                <Link
+                      role="link"
+                    className="hover:text-yellow transition-colors"
+                    href="mailto:kontakt@psycho-therapie-huerth.de"
+                    aria-label="kontakt@psycho-therapie-huerth.de"
+                    target="_self"
+                >
+                  <span className='w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]'>
+                    <Image 
+                    role="img"
+                    alt="call-icon"
+                    loading="lazy"
+                    width={42}
+                    height={42}
+                    decoding="async"
+                    data-nimg="1"
+                     style={{color:"transparent"}}
+                    src="images/mail-prax.svg"
+                    />
+                  </span></Link>
+            </div>
+        </div>
+        {/*  */}
+        
+      
+    </div>
+</div>
+
       </div>
     </section>
+    
   );
 };
 

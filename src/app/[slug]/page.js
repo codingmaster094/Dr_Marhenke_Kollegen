@@ -6,9 +6,11 @@ import Review_section from "../components/Review_section";
 import SliderSection from "../components/SliderSection";
 import TeamsProfile from "../components/TeamsProfile";
 import No_slug_page from "../components/No_slug_page";
+import DoctorList from "../components/DoctorList";
+import Contact_form from "../components/Contact_form";
 
 const Page = async({ params }) => {
-  const { slug } = params;
+  const { slug } = await params;
   let Hero_data = null;
   let Service_data = null;
   let Slider_section_data = null;
@@ -26,7 +28,7 @@ const Page = async({ params }) => {
         ],
         buttonText: "Termin vereinbaren",
         buttonLink: "/kontakt",
-        imageSrc: "/images/location-hero.webp",
+        imageSrc: "/images/praxis8.jpg",
       },
     ];
 
@@ -45,7 +47,7 @@ const Page = async({ params }) => {
         bgColor: "bg-[#FFF2CE]",
         buttonText: "",
         buttonLink: "",
-        imageSrc: "/images/location-img-1.webp",
+        imageSrc: "/images/praxis4.jpg",
         reverse: false,
       },
     ];
@@ -54,11 +56,11 @@ const Page = async({ params }) => {
       {
         title: "Unsere Praxis für Psychotherapie in Köln Rodenkirchen",
         Images: [
-          "/images/location-img-4 (1).webp",
-          "/images/location-img-3.webp",
-          "/images/location-img-2.webp",
-          "/images/location-img-5.webp",
-          "/images/location-img-2.webp",
+            "/images/praxis1.jpg",
+          "/images/praxis2.jpg",
+          "/images/praxis3.jpg",
+          "/images/praxis4.jpg",
+          "/images/praxis5.jpg",
         ],
       },
     ];
@@ -81,7 +83,7 @@ const Page = async({ params }) => {
         ],
         buttonText: "Termin vereinbaren",
         buttonLink: "/kontakt",
-        imageSrc: "/images/location-hero.webp",
+        imageSrc: "/images/praxis8.jpg",
       },
     ];
 
@@ -99,7 +101,7 @@ const Page = async({ params }) => {
         bgColor: "",
         buttonText: "",
         buttonLink: "",
-        imageSrc: "/images/location-img-1.webp",
+        imageSrc: "/images/praxis4.jpg",
         reverse: false,
       },
     ];
@@ -108,11 +110,11 @@ const Page = async({ params }) => {
       {
         title: "Unsere Praxis für Psychotherapie in Köln Südstadt",
         Images: [
-          "/images/location-img-4 (1).webp",
-          "/images/location-img-3.webp",
-          "/images/location-img-2.webp",
-          "/images/location-img-5.webp",
-          "/images/location-img-2.webp",
+          "/images/praxis1.jpg",
+          "/images/praxis2.jpg",
+          "/images/praxis3.jpg",
+          "/images/praxis4.jpg",
+          "/images/praxis5.jpg",
         ],
       },
     ];
@@ -135,7 +137,7 @@ const Page = async({ params }) => {
         ],
         buttonText: "Termin vereinbaren",
         buttonLink: "/kontakt",
-        imageSrc: "/images/location-hero.webp",
+        imageSrc: "/images/praxis8.jpg",
       },
     ];
 
@@ -153,7 +155,7 @@ const Page = async({ params }) => {
         bgColor: "",
         buttonText: "",
         buttonLink: "",
-        imageSrc: "/images/location-img-1.webp",
+        imageSrc: "/images/praxis4.jpg",
         reverse: false,
       },
     ];
@@ -162,11 +164,11 @@ const Page = async({ params }) => {
       {
         title: "Unsere Praxis für Psychotherapie in Köln Südstadt",
         Images: [
-          "/images/location-img-4 (1).webp",
-          "/images/location-img-3.webp",
-          "/images/location-img-2.webp",
-          "/images/location-img-5.webp",
-          "/images/location-img-2.webp",
+          "/images/praxis1.jpg",
+          "/images/praxis2.jpg",
+          "/images/praxis3.jpg",
+          "/images/praxis4.jpg",
+          "/images/praxis5.jpg",
         ],
       },
     ];
@@ -219,7 +221,8 @@ const Page = async({ params }) => {
         main_title={Slider_section_data[0].title}
         gallery_images={Slider_section_data[0].Images}
       />
-      <TeamsProfile title={Team_data[0].title} />
+      <DoctorList title="Psychotherapie-Praxis in Köln Rodenkirchen: unser Team" />
+      <Contact_form/>
     </>
   );
 };

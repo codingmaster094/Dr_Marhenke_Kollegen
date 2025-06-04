@@ -33,7 +33,7 @@ const page = () => {
           ]}
           listItems={[]}
           bgColor="bg-[#FFF2CE]"
-          imageSrc="/images/service-img-2.png"
+          imageSrc="/images/praxis8.jpg"
           reverse={true}
        />
       <Kooperationspartner />

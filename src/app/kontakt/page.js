@@ -16,7 +16,7 @@ const page = () => {
         ]}
         buttonText=""
         buttonLink="/"
-        imageSrc="/images/contact-hero.png"
+        imageSrc="/images/praxis-kontakt.jpg"
       />
         <ContactSection/>
         <Contact_form/>
