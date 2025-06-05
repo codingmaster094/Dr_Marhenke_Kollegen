@@ -75,7 +75,7 @@ const Kooperationspartner = () => {
                 },
               }}
             >
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/client-logo-1.png"
@@ -84,7 +84,7 @@ const Kooperationspartner = () => {
                   alt="Partner's logo"
                 />
               </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/client-logo-2.png"
@@ -93,7 +93,7 @@ const Kooperationspartner = () => {
                   alt="Partner's logo"
                 />
               </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/client-logo-3.png"
@@ -102,7 +102,7 @@ const Kooperationspartner = () => {
                   alt="Partner's logo"
                 />
               </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/client-logo-4.png"
@@ -111,7 +111,7 @@ const Kooperationspartner = () => {
                   alt="Partner's logo"
                 />
               </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/client-logo-5.png"
@@ -120,7 +120,7 @@ const Kooperationspartner = () => {
                   alt="Partner's logo"
                 />
               </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/partner-logo-4.png"
@@ -129,7 +129,7 @@ const Kooperationspartner = () => {
                   alt="Partner's logo"
                 />
               </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/kbap.png"
@@ -138,7 +138,7 @@ const Kooperationspartner = () => {
                   alt="Partner's logo"
                 />
               </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/DM_Logo_4c.png"
@@ -147,7 +147,7 @@ const Kooperationspartner = () => {
                   alt="Partner's logo"
                 />
               </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
+              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
                 <Image
                   role="img"
                   src="/images/apk.jpeg"

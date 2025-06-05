@@ -187,7 +187,7 @@ const DoctorList = ({ title }) => {
     <section className={title && "py-14 lg:py-20 2xl:py-[100px] bg-opacity-25"}>
       <div className={title && "container space-y-16"}>
         {title && (
-          <div className="flex flex-col gap-[34px] items-center">
+          <div className="flex flex-col gap-[34px] items-center text-center">
             <h2 className="sm:text-h3 lg:text-h2">{title}</h2>
             <span className="w-28 h-1 bg-yellow block mx-auto"></span>
           </div>

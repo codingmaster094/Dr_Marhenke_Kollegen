@@ -23,7 +23,7 @@ const SliderSection = ({ main_title, gallery_images }) => {
     <section className=" bg-[#FFFBF2] pt-[30px] md:pt-[40px] lg:pt-[50px]">
       <div className="flex flex-col gap-6 md:gap-11 lg:gap-16">
         <div className="container">
-          <div className="flex flex-col gap-[34px] items-center">
+          <div className="flex flex-col gap-[34px] items-center text-center">
             <h2
               className="sm:text-h3 lg:text-h2"
               dangerouslySetInnerHTML={{ __html: main_title }}
