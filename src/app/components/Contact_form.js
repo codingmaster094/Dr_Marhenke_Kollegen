@@ -21,7 +21,7 @@ const iconData = [
   { value: "Schlüssel", label: " den  Schlüssel", image: Key },
   { value: "Haus", label: " den  Haus", image: home },
   { value: "Flugzeug", label: " den  Flugzeug", image: airoplain },
-  { value: "Baum", label: " den  Baum", image: Tree },
+  // { value: "Baum", label: " den  Baum", image: Tree },
   { value: "Fahne", label: " den  Fahne", image: Fahne },
   { value: "Hundepfote", label: " den  Hundepfote", image: Dog },
 ];
