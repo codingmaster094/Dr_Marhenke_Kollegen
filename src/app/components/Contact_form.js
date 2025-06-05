@@ -40,7 +40,6 @@ const LoadingDots = () => {
 };
 
 const Contact_form = () => {
-  const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
   const [errorMessage, setErrorMessage] = useState(null);
   const [Success, setSuccess] = useState(null);
