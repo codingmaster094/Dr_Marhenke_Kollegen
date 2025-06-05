@@ -22,15 +22,17 @@ const SliderSection = ({ main_title, gallery_images }) => {
   return (
     <section className=" bg-[#FFFBF2] pt-[30px] md:pt-[40px] lg:pt-[50px]">
       <div className="flex flex-col gap-6 md:gap-11 lg:gap-16">
-        <div className="flex flex-col gap-[34px] items-center">
-          <h2
-            className="sm:text-h3 lg:text-h2"
-            dangerouslySetInnerHTML={{ __html: main_title }}
-          ></h2>
-          <span className="w-28 h-1 bg-yellow block mx-auto"></span>
+        <div className="container">
+          <div className="flex flex-col gap-[34px] items-center">
+            <h2
+              className="sm:text-h3 lg:text-h2"
+              dangerouslySetInnerHTML={{ __html: main_title }}
+            ></h2>
+            <span className="w-28 h-1 bg-yellow block mx-auto"></span>
+          </div>
         </div>
 
-        <div className="slider-wrapper relative z-10">
+        <div className="slider-wrapper relative z-0">
           <Swiper
             modules={[Navigation, Autoplay]}
             slidesPerView={1}
