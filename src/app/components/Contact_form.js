@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Fahne from "../../../public/images/Fahne.svg"; 
 import Key from "../../../public/images/KEYs.svg"; 
-// import Tree from "../../../public/images/Tree.svg"; 
+import Tree from "../../../public/images/trees.svg"; 
 import airoplain from "../../../public/images/airoplain.svg";
 import heart from "../../../public/images/heart.svg";
 import home from "../../../public/images/home.svg";
@@ -21,7 +21,7 @@ const iconData = [
   { value: "Schlüssel", label: " den  Schlüssel", image: Key },
   { value: "Haus", label: " den  Haus", image: home },
   { value: "Flugzeug", label: " den  Flugzeug", image: airoplain },
-  // { value: "Baum", label: " den  Baum", image: Tree },
+  { value: "Baum", label: " den  Baum", image: Tree },
   { value: "Fahne", label: " den  Fahne", image: Fahne },
   { value: "Hundepfote", label: " den  Hundepfote", image: Dog },
 ];
