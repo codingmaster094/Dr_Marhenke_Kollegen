@@ -85,11 +85,11 @@ const Footer = () => {
               <li>
                 <Link
                   role="link"
-                  className="flex gap-3 items-center"
+                  className="flex gap-3"
                   href="mailto:Lorem ipsum@gmail.com"
                 >
                   <svg
-                    className="shrink-0"
+                    className="shrink-0 sm:mt-1 mt-[2px]"
                     width="20"
                     height="21"
                     viewBox="0 0 20 21"

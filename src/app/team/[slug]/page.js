@@ -1,5 +1,5 @@
 import Hero_Section from "@/app/components/Hero_Section";
-import About_Service_section from "@/app/components/About_Service_section";
+import Team_About from "@/app/components/Team_About";
 
 const page = async ({ params }) => {
   const { slug } = params;
@@ -260,7 +260,7 @@ const page = async ({ params }) => {
         buttonLink="/"
         imageSrc={"/images/team-hero.png"}
       />
-      <About_Service_section
+      <Team_About
         title={post.content_title}
         description={post.content}
         listItems={[]}

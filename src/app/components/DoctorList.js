@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import React from "react";
 
 const DoctorList = ({ title }) => {
-  const [visibleCount, setVisibleCount] = useState(1);
-  const loaderRef = useRef(null);
+  const [visibleCount, setVisibleCount] = useState(3); // Show first 6 initially
 
   const blogPosts = [
     {
@@ -180,27 +179,9 @@ const DoctorList = ({ title }) => {
     },
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const target = entries[0];
-        if (target.isIntersecting) {
-          setVisibleCount((prev) => Math.min(prev + 3, blogPosts.length));
-        }
-      },
-      {
-        root: null,
-        rootMargin: "200px", // preload before it's fully in view
-        threshold: 0,
-      }
-    );
-
-    if (loaderRef.current) observer.observe(loaderRef.current);
-
-    return () => {
-      if (loaderRef.current) observer.unobserve(loaderRef.current);
-    };
-  }, [visibleCount]);
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + 3, blogPosts.length));
+  };
 
   return (
     <section className={title && "py-14 lg:py-20 2xl:py-[100px] bg-opacity-25"}>
@@ -211,6 +192,7 @@ const DoctorList = ({ title }) => {
             <span className="w-28 h-1 bg-yellow block mx-auto"></span>
           </div>
         )}
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 text-center gap-y-10 gap-x-4 lg:gap-12">
           {blogPosts.slice(0, visibleCount).map((item) => (
             <div key={item.id} className="w-full">
@@ -252,13 +234,15 @@ const DoctorList = ({ title }) => {
           ))}
         </div>
 
-        {/* Loader trigger div for infinite scroll */}
+        {/* Load More Button */}
         {visibleCount < blogPosts.length && (
-          <div
-            ref={loaderRef}
-            className="h-10 mt-10 flex justify-center items-center"
-          >
-            <span className="text-sm text-gray-500">Lade weitere...</span>
+          <div className="mt-10 flex justify-center">
+            <button
+              onClick={handleLoadMore}
+              className="px-6 py-3 bg-yellow text-white font-medium rounded-lg hover:bg-opacity-90 transition"
+            >
+              Mehr anzeigen
+            </button>
           </div>
         )}
       </div>
