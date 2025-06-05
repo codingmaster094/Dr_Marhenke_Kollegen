@@ -2,15 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import Fahne from "../../../public/images/Fahne.webp";
-import Key from "../../../public/images/Key.webp";
-import Tree from "../../../public/images/Tree.webp";
+import Fahne from "../../../public/images/Fahne.svg";
+import Key from "../../../public/images/KEYs.svg";
+import Tree from "../../../public/images/Tree.svg";
 import airoplain from "../../../public/images/airoplain.svg";
 import heart from "../../../public/images/heart.svg";
 import home from "../../../public/images/home.svg";
 import star from "../../../public/images/star.svg";
 import tea from "../../../public/images/tea.svg";
 import truck from "../../../public/images/truck.svg";
+import Dog from "../../../public/images/dog.svg";
 
 const iconData = [
   { value: "Herz", label: " den  Herz", image: heart },
@@ -22,6 +23,7 @@ const iconData = [
   { value: "Flugzeug", label: " den  Flugzeug", image: airoplain },
   { value: "Baum", label: " den  Baum", image: Tree },
   { value: "Fahne", label: " den  Fahne", image: Fahne },
+  { value: "Hundepfote", label: " den  Hundepfote", image: Dog },
 ];
 const getRandomItems = (array, count) => {
   let shuffled = [...array].sort(() => 0.5 - Math.random());
@@ -141,10 +143,8 @@ const Contact_form = () => {
         setErrorMessage(`Nachricht konnte nicht gesendet werden: ${result.message}`);
       }
     }
-  };
+  };  
 
-
-  
   return (
     <section className="pb-14 lg:pb-20 2xl:pb-100 pt-14 lg:pt-24 2xl:pt-[130px]" id="contact-form">
       <div className="container">
@@ -260,8 +260,8 @@ const Contact_form = () => {
                         <Image
                           src={icon.image}
                           alt={icon.label}
-                          width={25}
-                          height={25}
+                          width={22}
+                          height={22}
                         />
                       </div>
                     </label>
