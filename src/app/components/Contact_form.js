@@ -18,10 +18,10 @@ const iconData = [
   { value: "Tasse", label: " den  Tasse", image: tea },
   { value: "Stern", label: " den  Stern", image: star },
   { value: "LKW", label: " den  LKW", image: truck },
+  { value: "Baum", label: " den  Baum", image: Tree },
   { value: "Schlüssel", label: " den  Schlüssel", image: Key },
   { value: "Haus", label: " den  Haus", image: home },
   { value: "Flugzeug", label: " den  Flugzeug", image: airoplain },
-  { value: "Baum", label: " den  Baum", image: Tree },
   { value: "Fahne", label: " den  Fahne", image: Fahne },
   { value: "Hundepfote", label: " den  Hundepfote", image: Dog },
 ];
@@ -43,8 +43,6 @@ const Contact_form = () => {
   const [loading, setLoading] = useState(true); // Loading state
   const [errorMessage, setErrorMessage] = useState(null);
   const [Success, setSuccess] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [isVerified, setIsVerified] = useState(false);
   const [errors, setErrors] = useState({});
   const [correctAnswer, setcorrectAnswer] = useState(null);
   const [randomIcons, setRandomIcons] = useState([]);
@@ -136,8 +134,6 @@ const Contact_form = () => {
           selectedIcon:""
         });
         setErrors({});
-        setSelectedImage(null);
-        setIsVerified(false); // Clear validation errors
       } else {
         setErrorMessage(`Nachricht konnte nicht gesendet werden: ${result.message}`);
       }
