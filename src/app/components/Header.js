@@ -1,12 +1,31 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Offcanvas from "../components/Offcanvas";
 import { usePathname } from "next/navigation";
+import Lenis from "@studio-freight/lenis";
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
-  const pathname = usePathname(); // Get current route
+  const pathname = usePathname(); 
+  const lenisRef = useRef(null);
+  useEffect(() => {
+    const scroller = new Lenis();
+    let rafState;
+
+    function raf(time) {
+      scroller.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    rafState = requestAnimationFrame(raf);
+    lenisRef.current = scroller;
+
+    return () => {
+      cancelAnimationFrame(rafState);
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 120);
