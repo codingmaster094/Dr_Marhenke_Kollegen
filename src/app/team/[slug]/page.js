@@ -258,7 +258,7 @@ const page = async ({ params }) => {
         points={post.description}
         buttonText=""
         buttonLink="/"
-        imageSrc={"/images/team-hero.png"}
+        imageSrc={"/images/praxis2.jpg"}
       />
       <Team_About
         title={post.content_title}
