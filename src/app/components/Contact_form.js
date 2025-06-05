@@ -2,9 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import Fahne from "../../../public/images/Fahne.svg";
-import Key from "../../../public/images/KEYs.svg";
-import Tree from "../../../public/images/Tree.svg";
+import Fahne from "../../../public/images/Fahne.svg"; 
+import Key from "../../../public/images/KEYs.svg"; 
+import Tree from "../../../public/images/Tree.svg"; 
 import airoplain from "../../../public/images/airoplain.svg";
 import heart from "../../../public/images/heart.svg";
 import home from "../../../public/images/home.svg";
