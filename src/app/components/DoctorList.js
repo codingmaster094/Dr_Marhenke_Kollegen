@@ -184,7 +184,7 @@ const DoctorList = ({ title }) => {
   };
 
   return (
-    <section className={title && "py-14 lg:py-20 2xl:py-[100px] bg-opacity-25"}>
+    <section className={title && "pt-14 lg:pt-20 2xl:pt-[100px] bg-opacity-25"}>
       <div className={title && "container space-y-16"}>
         {title && (
           <div className="flex flex-col gap-[34px] items-center text-center">
