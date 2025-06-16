@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import React from "react";
 
 const DoctorList = ({ title }) => {
-  const [visibleCount, setVisibleCount] = useState(3); // Show first 6 initially
-
   const blogPosts = [
     {
       id: 1,
@@ -179,9 +176,6 @@ const DoctorList = ({ title }) => {
     },
   ];
 
-  const handleLoadMore = () => {
-    setVisibleCount((prev) => Math.min(prev + 3, blogPosts.length));
-  };
 
   return (
     <section className={title && "pt-14 lg:pt-20 2xl:pt-[100px] bg-opacity-25"}>
@@ -194,7 +188,7 @@ const DoctorList = ({ title }) => {
         )}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 text-center gap-y-10 gap-x-4 lg:gap-12">
-          {blogPosts.slice(0, visibleCount).map((item) => (
+          {blogPosts?.map((item) => (
             <div key={item.id} className="w-full">
               <div className="relative group">
                 <div className="relative aspect-square">
@@ -234,17 +228,13 @@ const DoctorList = ({ title }) => {
           ))}
         </div>
 
-        {/* Load More Button */}
-        {visibleCount < blogPosts.length && (
-          <div className="mt-10 flex justify-center">
+          {/* <div className="mt-10 flex justify-center">
             <button
-              onClick={handleLoadMore}
               className="px-6 py-3 bg-yellow text-white font-medium rounded-lg hover:bg-opacity-90 transition"
             >
               Mehr anzeigen
             </button>
-          </div>
-        )}
+          </div> */}
       </div>
     </section>
   );

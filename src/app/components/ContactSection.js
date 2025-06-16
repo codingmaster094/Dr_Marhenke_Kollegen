@@ -24,7 +24,7 @@ const ContactSection = () => {
             <div className="mb-4 lg:mb-8 text-p space-y-4">
               <p>
                 Gustav-Radbruch-Straße 1
-                <br />
+                <br />  
                 50996 Köln
               </p>
             </div>
@@ -58,7 +58,7 @@ const ContactSection = () => {
                   className="hover:text-yellow transition-colors"
                   aria-label="0221/42 31 39 56"
                   target="_self"
-                  href="/koeln-rodenkirchen#contact-form"
+                  href="/koeln-rodenkirchen#kontaktformular"
                 >
                   <span className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]">
                     <Image
@@ -153,7 +153,7 @@ const ContactSection = () => {
                   className="hover:text-yellow transition-colors"
                   aria-label="0221/42 31 39 56"
                   target="_self"
-                  href="/koeln-suedstadt#contact-form"
+                  href="/koeln-suedstadt#kontaktformular"
                 >
                   <span className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]">
                     <Image
@@ -249,7 +249,7 @@ const ContactSection = () => {
                   className="hover:text-yellow transition-colors"
                   aria-label="022333740978"
                   target="_self"
-                  href="/huerth#contact-form"
+                  href="/huerth#kontaktformular"
                 >
                   <span className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]">
                     <Image

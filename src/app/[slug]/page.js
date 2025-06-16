@@ -27,7 +27,7 @@ const Page = async({ params }) => {
           "Kurzfristige Termine, individuelle Beratung & Therapie-Konzepte",
         ],
         buttonText: "Termin vereinbaren",
-        buttonLink: "#contact-form",
+        buttonLink: "#kontaktformular",
         imageSrc: "/images/praxis8.jpg",
       },
     ];
@@ -82,7 +82,7 @@ const Page = async({ params }) => {
           "Kurzfristige Termine, individuelle Beratung & Therapie-Konzepte",
         ],
         buttonText: "Termin vereinbaren",
-        buttonLink: "#contact-form",
+        buttonLink: "#kontaktformular",
         imageSrc: "/images/praxis8.jpg",
       },
     ];
@@ -136,7 +136,7 @@ const Page = async({ params }) => {
           "Kurzfristige Termine, individuelle Beratung & Therapie-Konzepte",
         ],
         buttonText: "Termin vereinbaren",
-        buttonLink: "#contact-form",
+        buttonLink: "#kontaktformular",
         imageSrc: "/images/praxis8.jpg",
       },
     ];
@@ -188,9 +188,8 @@ const Page = async({ params }) => {
     return <No_slug_page />;
   }
   
-
   return (
-    <>
+    <>  
       {Hero_data && (
         <Hero_Section
           title={Hero_data[0].title}
