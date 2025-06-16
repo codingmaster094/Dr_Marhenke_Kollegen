@@ -40,7 +40,7 @@ const LoadingDots = () => {
 };
 
 const Contact_form = () => {
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const [Success, setSuccess] = useState(null);
   const [errors, setErrors] = useState({});
@@ -89,7 +89,6 @@ const Contact_form = () => {
     } else if (!emailRegex.test(formData.email)) {
       formErrors.email = "Bitte gib eine gültige E-Mail-Adresse ein.";
     }
-
     if (formData.selectedIcon !== correctAnswer) {
       formErrors.selectedIcon = `Bitte wählen Sie das ${randomLabel} Symbol aus.`;
     }

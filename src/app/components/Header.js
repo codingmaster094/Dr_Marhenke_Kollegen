@@ -76,7 +76,6 @@ const Header = () => {
                         "/behandlungen",
                         "/behandlungen/einzel-und-gruppentherapie",
                         "/behandlungen/paar-und-sexualtherapie",
-                        "/behandlungen/kinder-und-jugendlichenpsychotherapie",
                         "/behandlungen/online-psychotherapie",
                         "/behandlungen/psy-rena",
                       ].includes(pathname)
@@ -110,19 +109,6 @@ const Header = () => {
                         }
                       >
                         Paar und Sexualtherapie
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/behandlungen/kinder-und-jugendlichenpsychotherapie"
-                        className={
-                          pathname ===
-                          "/behandlungen/kinder-und-jugendlichenpsychotherapie"
-                            ? "text-yellow hover:shadow"
-                            : ""
-                        }
-                      >
-                        Kinder und Jugendlichenpsychotherapie
                       </Link>
                     </li>
                     <li>
