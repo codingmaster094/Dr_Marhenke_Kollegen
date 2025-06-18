@@ -204,7 +204,7 @@ const page = async ({ params }) => {
     {
       id: 21,
       title: "<span>M.Sc. Alina Ostermann-Myrau</span>",
-      image: "/images/location-img-5.webp",
+      image: "/images/no-profile.jpg",
       link: "/alina-ostermann-myrau",
       description: ["Psychologische Psychotherapeutin"],
       content_title: "Über M.Sc. Alina Ostermann-Myrau",
@@ -235,7 +235,7 @@ const page = async ({ params }) => {
       id: 24,
       title: "<span>M.Sc. Joke Werner</span>",
       image: "/images/23.jpg",
-      link: "/alina-ostermann-myrau-2",
+      link: "/Joke-Werner",
       description: ["Psychologische Psychotherapeutin"],
       content_title: "Über M.Sc. Joke Werner",
       content: `Frau M.Sc. Joke Werner ist Psychologin und approbierte psychologische Psychotherapeutin für Erwachsene mit der Fachkunde Verhaltenstherapie. Sie verfügt sowohl über Erfahrungen im therapeutischen ambulanten als auch im stationären Setting.</p>

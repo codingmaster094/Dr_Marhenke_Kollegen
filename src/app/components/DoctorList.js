@@ -149,7 +149,7 @@ const DoctorList = ({ title }) => {
     {
       id: 21,
       title: "M.Sc. Alina Ostermann-Myrau",
-      image: "/images/location-img-5.webp",
+      image: "/images/no-profile.jpg",
       link: "/alina-ostermann-myrau",
       description: "Psychologische Psychotherapeutin",
     },
@@ -171,7 +171,7 @@ const DoctorList = ({ title }) => {
       id: 24,
       title: "M.Sc. Joke Werner",
       image: "/images/23.jpg",
-      link: "/alina-ostermann-myrau-2",
+      link: "/Joke-Werner",
       description: "Psychologische Psychotherapeutin",
     },
   ];
