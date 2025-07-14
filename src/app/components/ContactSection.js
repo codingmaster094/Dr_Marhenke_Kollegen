@@ -72,7 +72,7 @@ const ContactSection = () => {
                   role="link"
                   className="hover:text-yellow transition-colors"
                   aria-label="kontakt@psycho-therapie-koeln.de"
-                  target="_self"
+                  target="_blanck"
                   href="https://maps.app.goo.gl/yCkTfYK6AHxmGAJf8"
                 >
                   <span className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]">
@@ -166,7 +166,7 @@ const ContactSection = () => {
                   role="link"
                   className="hover:text-yellow transition-colors"
                   aria-label="kontakt@psycho-therapie-koeln.de"
-                  target="_self"
+                  target="_blanck"
                   href="https://maps.app.goo.gl/zYnJ7gycftWPKA7y9"
                 >
                   <span className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]">
@@ -263,7 +263,7 @@ const ContactSection = () => {
                   className="hover:text-yellow transition-colors"
                   href="https://maps.app.goo.gl/6gMT3CbFETUYhiKWA"
                   aria-label="kontakt@psycho-therapie-huerth.de"
-                  target="_self"
+                  target="_blanck"
                 >
                   <span className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]">
                     <Image
