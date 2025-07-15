@@ -150,16 +150,16 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="relative group menu-item-has-children">
-                  <Link
-                    href="  "
+                  <div
                     className={
-                      pathname === "/standorte"
-                        ? "text-yellow hover:shadow"
-                        : ""
+                      pathname ===
+                      "/koeln-rodenkirchen" || "/koeln-suedstadt" || "/huerth"
+                        ? "text-yellow hover:shadow cursor-pointer"
+                        : "cursor-pointer"
                     }
                   >
                     Standorte
-                  </Link>
+                  </div>
                   <ul className="z-50 sub-menu absolute left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white shadow-md mt-2 py-2 px-4 ">
                     <li>
                       <Link
