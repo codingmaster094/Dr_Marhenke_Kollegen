@@ -152,8 +152,9 @@ const Header = () => {
                 <li className="relative group menu-item-has-children">
                   <div
                     className={
-                      pathname ===
-                      "/koeln-rodenkirchen" || "/koeln-suedstadt" || "/huerth"
+                      pathname === "/koeln-rodenkirchen" ||
+                      pathname === "/koeln-suedstadt" ||
+                      pathname === "/huerth"
                         ? "text-yellow hover:shadow cursor-pointer"
                         : "cursor-pointer"
                     }
