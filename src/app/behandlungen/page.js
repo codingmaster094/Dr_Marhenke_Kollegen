@@ -88,7 +88,7 @@ const page = () => {
         reverse={true}
       />
 
-      <Pattern_section btn={true} />
+      {/* <Pattern_section btn={true} /> */}
 
       <ServiceSection
         title="Psy-RENA – begleitete Reha-Nachsorge für langfristige Stabilität"

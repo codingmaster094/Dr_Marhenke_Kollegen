@@ -137,7 +137,7 @@ const Header = () => {
                     </li>
                   </ul>
                 </li>
-                <li className="relative group menu-item-has-children">
+                <li>
                   <Link
                     href="/ueber-uns"
                     className={
@@ -147,6 +147,18 @@ const Header = () => {
                     }
                   >
                     Über uns
+                  </Link>
+                </li>
+                <li className="relative group menu-item-has-children">
+                  <Link
+                    href="  "
+                    className={
+                      pathname === "/standorte"
+                        ? "text-yellow hover:shadow"
+                        : ""
+                    }
+                  >
+                    Standorte
                   </Link>
                   <ul className="z-50 sub-menu absolute left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white shadow-md mt-2 py-2 px-4 ">
                     <li>
@@ -158,7 +170,7 @@ const Header = () => {
                             : ""
                         }
                       >
-                        Koeln-Rodenkirchen
+                        Köln Rodenkirchen
                       </Link>
                     </li>
                     <li>
@@ -170,7 +182,7 @@ const Header = () => {
                             : ""
                         }
                       >
-                        Koeln-Suedstadt
+                        Köln Suedstadt
                       </Link>
                     </li>
                     <li>
@@ -182,7 +194,7 @@ const Header = () => {
                             : ""
                         }
                       >
-                        Koeln-Hürth
+                        Hürth
                       </Link>
                     </li>
                   </ul>
