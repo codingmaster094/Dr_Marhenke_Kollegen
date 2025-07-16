@@ -7,13 +7,11 @@ const Hero_Section = ({
   title,
   subtitle,
   points,
-  buttonText,
-  buttonLink,
   imageSrc,
   videoSrc,
+  BTN,
 }) => {
   const lenisRef = useRef(null);
-
   // Initialize Lenis once on mount
   useEffect(() => {
     const lenis = new Lenis({
@@ -64,37 +62,43 @@ const Hero_Section = ({
           <div className="content-listing">
             <ul className="space-y-4 ml-6">
               {points?.map((point, index) => (
-                <li key={index}>{point}</li>
+                <li key={index}>
+                  {point.home_hero_content_listing ||
+                    point.leistungen_hero_content_listing_points ||
+                    point.ueber_uns_hero_content_listing_points ||
+                    point.team_hero_content_point || 
+                    point.stellenausschreibung__description_point
+                    }
+                </li>
               ))}
             </ul>
           </div>
-              {
-                buttonText && 
-          <button
-            onClick={() => scrollToSection(buttonLink)}
-            className="inline-block w-fit text-white text-center bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors font-medium"
-          >
-            {buttonText}
-          </button>
-              }
+          {BTN && (
+            <button
+              onClick={() => scrollToSection(BTN.url)}
+              className="inline-block w-fit text-white text-center bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors font-medium"
+            >
+              {BTN.title}
+            </button>
+          )}
         </div>
 
         <div className="lg:w-6/12 flex items-end relative aspect-video">
-          {videoSrc ? (
+          {imageSrc != undefined ? (
+            <Image
+              className="!static object-cover"
+              fill
+              src={imageSrc}
+              alt="Hero-image"
+            />
+          ) : (
             <video
               className="w-full h-full object-cover rounded"
               autoPlay
               muted
               loop
               playsInline
-              src={videoSrc}
-            />
-          ) : (
-            <Image
-              className="!static object-cover"
-              fill
-              src={imageSrc}
-              alt="Hero-image"
+              src={videoSrc.url}
             />
           )}
         </div>

@@ -1,8 +1,19 @@
 import React from "react";
 import Hero_Section from "../components/Hero_Section";
 import Kooperationen_Service from "../components/Kooperationen_Service";
+import Alldata from "../utils/AllDataFetxh";
+const page = async() => {
+  let kooperationenData;
+  try {
+    kooperationenData = await Alldata("/home");
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return <div>Error loading data.</div>;
+  }
 
-const page = () => {
+  if (!kooperationenData) {
+    return <div>No data available.</div>;
+  }
   return (
     <>
       <Hero_Section

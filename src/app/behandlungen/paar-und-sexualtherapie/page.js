@@ -4,8 +4,19 @@ import About_Service_section from "@/app/components/About_Service_section";
 import FAQ_section from "@/app/components/FAQ_section";
 
 import React from "react";
+import Alldata from "../utils/AllDataFetxh";
+const page = async() => {
+  let paarundsexualtherapieData;
+  try {
+    paarundsexualtherapieData = await Alldata("/home");
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return <div>Error loading data.</div>;
+  }
 
-const page = () => {
+  if (!paarundsexualtherapieData) {
+    return <div>No data available.</div>;
+  }
   return (
     <>
       <Hero_Section

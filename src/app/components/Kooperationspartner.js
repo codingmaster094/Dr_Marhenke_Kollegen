@@ -2,35 +2,44 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useRef } from "react";
-// import Swiper and modules styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import Link from "next/link";
 import Image from "next/image";
-const Kooperationspartner = () => {
-  const swiperRef = useRef(null); // Ref to the Swiper instance
+
+const Kooperationspartner = ({ title, logosData, BTN }) => {
+  console.log('logosData', logosData)
+  const swiperRef = useRef(null);
 
   const nextSlide = () => {
-    swiperRef.current.swiper.slideNext(); // Go to the next slide
+    swiperRef.current?.swiper?.slideNext();
   };
 
   const prevSlide = () => {
-    swiperRef.current.swiper.slidePrev(); // Go to the previous slide
+    swiperRef.current?.swiper?.slidePrev();
   };
+
   return (
     <section className="py-12 lg:py-20 text-center">
       <div className="container">
         <div className="space-y-10">
+          {/* Title */}
           <div>
-            <h2 className="text-h2 mb-4">Unsere Kooperationspartner</h2>
+            <h2
+              className="text-h2 mb-4"
+              dangerouslySetInnerHTML={{ __html: title }}
+            ></h2>
             <span className="w-28 h-1 bg-yellow block mx-auto"></span>
           </div>
+
+          {/* Swiper with arrows */}
           <div className="flex gap-16 items-center">
+            {/* Prev Button */}
             <div
               onClick={prevSlide}
-              className="hidden md:grid serviceSwiper-prev text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none"
+              className="hidden md:grid serviceSwiper-prev text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,15 +51,17 @@ const Kooperationspartner = () => {
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
+                className="icon icon-tabler icon-tabler-chevron-left"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M15 6l-6 6l6 6" />
               </svg>
             </div>
+
+            {/* Swiper */}
             <Swiper
-              className="partnersSwiper"
               ref={swiperRef}
+              className="partnersSwiper"
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={10}
               slidesPerView={1}
@@ -75,91 +86,50 @@ const Kooperationspartner = () => {
                 },
               }}
             >
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/client-logo-1.png"
-                  width={229}
-                  height={102}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/client-logo-2.png"
-                  width={229}
-                  height={102}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/client-logo-3.png"
-                  width={229}
-                  height={102}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/client-logo-4.png"
-                  width={229}
-                  height={102}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/client-logo-5.png"
-                  width={229}
-                  height={102}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/partner-logo-4.png"
-                  width={229}
-                  height={102}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/kbap.png"
-                  width={229}
-                  height={102}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/DM_Logo_4c.png"
-                  width={229}
-                  height={102}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide !flex sm:justify-start !justify-center">
-                <Image
-                  role="img"
-                  src="/images/apk.jpeg"
-                  width={153}
-                  height={142}
-                  alt="Partner's logo"
-                />
-              </SwiperSlide>
+              {Array.isArray(logosData) &&
+                logosData.map((logo, i) => {
+                  const imageUrl =
+                    logo?.kooperationen_company_logo_image?.url ||
+                    logo?.leistungen_all_partners_logo?.url ||
+                    logo?.ueber_uns_all_partners_logo?.url;
+
+                  const imageAlt =
+                    logo?.kooperationen_company_logo_image?.alt ||
+                    logo?.leistungen_all_partners_logo?.alt ||
+                    logo?.ueber_uns_all_partners_logo?.alt 
+                    "Partner Logo";
+
+                  const linkUrl =
+                    logo?.kooperationen_company_logo_link?.url ||
+                    logo?.leistungen_all_partners_site_url?.url ||
+                    logo?.ueber_uns_all_partners_site_url?.url 
+                    "#";
+
+                  return (
+                    <SwiperSlide
+                      className="swiper-slide !flex sm:justify-start justify-center"
+                      key={i}
+                    >
+                      <Link href={linkUrl} role="link">
+                        {imageUrl && (
+                          <Image
+                            src={imageUrl}
+                            alt={imageAlt}
+                            width={229}
+                            height={102}
+                            role="img"
+                          />
+                        )}
+                      </Link>
+                    </SwiperSlide>
+                  );
+                })}
             </Swiper>
+
+            {/* Next Button */}
             <div
               onClick={nextSlide}
-              className="hidden md:grid serviceSwiper-next text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none"
+              className="hidden md:grid serviceSwiper-next text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -171,23 +141,29 @@ const Kooperationspartner = () => {
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
+                className="icon icon-tabler icon-tabler-chevron-right"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M9 6l6 6l-6 6" />
               </svg>
             </div>
           </div>
-          <Link
-            role="link"
-            href="/kooperationen"
-            className="inline-block text-white bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors font-medium"
-          >
-            Mehr erfahren
-          </Link>
+
+          {/* Optional CTA Button */}
+          {BTN?.url && (
+            <Link
+              role="link"
+              href={BTN.url}
+              className="inline-block text-white bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 
+                hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors font-medium"
+            >
+              {BTN.title}
+            </Link>
+          )}
         </div>
       </div>
     </section>
   );
 };
+
 export default Kooperationspartner;

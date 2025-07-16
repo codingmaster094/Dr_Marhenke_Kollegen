@@ -1,8 +1,23 @@
 import Hero_Section from "@/app/components/Hero_Section";
 import Team_About from "@/app/components/Team_About";
+import Custom_Post from "@/app/utils/CustomPost";
 
 const page = async ({ params }) => {
-  const { slug } = params;
+  const {slug} = await params
+  let TeamData;
+  try {
+    TeamData = await Custom_Post  (`/team/${slug}`);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return <div>Error loading data.</div>;
+  }
+
+  if (!TeamData) {
+    return <div>No data available.</div>;
+  }
+
+  console.log('TeamData', TeamData)
+
   const blogPosts = [
     {
       id: 1,
@@ -250,22 +265,24 @@ const page = async ({ params }) => {
 
   const post = getPostBySlug(slug);
 
+
   return (
     <>
       <Hero_Section
-        title={post.title}
-        subtitle=""
-        points={post.description}
+        title={TeamData.title}
+        subtitle={""}
+        points={TeamData.acf.team_hero_content}
         buttonText=""
         buttonLink="/"
-        imageSrc={"/images/praxis2.jpg"}
+        imageSrc={TeamData.acf.team_hero_image.url}
+        videoSrc=""
       />
       <Team_About
-        title={post.content_title}
-        description={post.content}
+        title={TeamData.acf.team__employee_title}
+        description={TeamData.acf.team__employee_description}
         listItems={[]}
         bgColor="bg-[#FFF2CE]"
-        imageSrc={post.image}
+        imageSrc={TeamData.acf.team_employee_photo.url}
         reverse={false}
       />
     </>

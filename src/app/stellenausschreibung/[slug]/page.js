@@ -1,46 +1,40 @@
 import Hero_Section from "@/app/components/Hero_Section"
 import About_Service_section from "@/app/components/About_Service_section";
+import POST_GET from "@/app/utils/PostsGet";
+const page = async({params}) => {
+  const {slug} = await params
+  let stellenausschreibungData;
+  try {
+    stellenausschreibungData = await POST_GET(`/stellenausschreibung/${slug}`);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return <div>Error loading data.</div>;
+  }
 
-const page = () => {
+  if (!stellenausschreibungData) {
+    return <div>No data available.</div>;
+  }
+
+  console.log('stellenausschreibungData', stellenausschreibungData)
 return (
   <>
     <Hero_Section
-      title="Dr. Marhenke &"
-      subtitle="Kollegen Psychologische/r Psychotherapeut/in"
-      points={[
-        "Approbierte Psychotherapeut/in ab April 2025",
-        "Teilzeit – Stundenzahl nach Vereinbarung",
-        "Unbefristete Anstellung",
-      ]}
-      buttonText="Jetzt bewerben"
+      title={stellenausschreibungData.acf.stellenausschreibung__hero_titile}
+      subtitle={""}
+      points={
+        stellenausschreibungData.acf.stellenausschreibung__hero_description
+      }
+      buttonText={stellenausschreibungData.acf.stellenausschreibung_hero_button}
       buttonLink="/"
-      imageSrc="/images/praxis12.jpg"
+      imageSrc={
+        stellenausschreibungData.acf.stellenausschreibung__hero_image.url
+      }
     />
+
     <About_Service_section
-      title="Das zeichnet die Arbeit bei uns aus:"
-      description={[]}
-      listItems={[
-        "Gute Infrastruktur in modern eingerichteter Praxis mit großzügigen Räumlichkeiten",
-        "Sehr gute Erreichbarkeit mit öffentlichen Verkehrsmitteln",
-        "Überdurchschnittliche, leistungsbezogene Bezahlung",
-        "Unterstützung bei organisatorischen und inhaltlichen Fragen",
-      ]}
-      bgColor="bg-[#FFF2CE]"
-      imageSrc="/images/praxis8.jpg"
-      reverse={false}
-    />
-    <About_Service_section
-      title="Vorausgesetzt werden:"
-      description={[]}
-      listItems={[
-        "Approbation als Psychologische/r Psychotherapeut/in",
-        "Arztregistereintrag",
-        "Fachkunde im Richtlinienverfahren VT oder TP",
-        "Zulassung zur Durchführung von Gruppentherapien",
-      ]}
-      bgColor=""
-      imageSrc="/images/praxis7.jpg"
-      reverse={true}
+      Data={
+        stellenausschreibungData.acf.stellenausschreibung__ausschreibungstext
+      }
     />
   </>
 );

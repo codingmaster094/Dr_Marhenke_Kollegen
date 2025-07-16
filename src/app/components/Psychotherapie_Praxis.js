@@ -1,10 +1,11 @@
-'use client'
+"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
 const Psychotherapie_Praxis = ({
   title,
   description,
@@ -12,55 +13,30 @@ const Psychotherapie_Praxis = ({
   listItems,
   imageSrc,
   reverse = false,
+  sliderData = [],
 }) => {
-  const swiperRef = useRef(null); // Ref to the Swiper instance
-  
-    const nextSlide = () => {
-      swiperRef.current.swiper.slideNext(); // Go to the next slide
-    };
-  
-    const prevSlide = () => {
-      swiperRef.current.swiper.slidePrev(); // Go to the previous slide
-    };
+  const swiperRef = useRef(null);
 
-    const slideData = [
-  {
-    title: "Rodenkirchen",
-    address: ["Gustav-Radbruch-Straße 1", "50996 Köln"],
-    phone: "022142313956",
-    email: "kontakt@psycho-therapie-koeln.de",
-    link: "/koeln-rodenkirchen/",
-    icon: "images/Simplification-2.svg",
-  },
-  {
-    title: "Südstadt",
-    address: ["Rolandstraße 55", "50677 Köln"],
-    phone: "022117004036",
-    email: "kontakt@psycho-therapie-koeln.de",
-    link: "/koeln-suedstadt/",
-    icon: "images/Simplification-2.svg",
-  },
-  {
-    title: "Hürth",
-    address: ["Krankenhausstraße 107", "50354 Hürth"],
-    phone: "022333740978",
-    email: "kontakt@psycho-therapie-huerth.de",
-    link: "/huerth",
-    icon: "images/Simplification-2.svg",
-  },
-];
+  const nextSlide = () => {
+    swiperRef.current?.swiper?.slideNext();
+  };
 
-const slideDataForLoop = [...slideData];
-while (slideDataForLoop.length < 4) {
-  slideDataForLoop.push(...slideData);
-}
+  const prevSlide = () => {
+    swiperRef.current?.swiper?.slidePrev();
+  };
+
+  // Ensure minimum of 4 slides for smooth looping
+  let processedSlides = [...sliderData];
+  while (processedSlides.length < 4 && sliderData.length > 0) {
+    processedSlides = [...processedSlides, ...sliderData];
+  }
+
   return (
     <section
-      className={`py-14 lg:py-20 2xl:py-100 bg-opacity-25 ${
-        bgColor ? bgColor : ""
-      }`}
+      className={`py-14 lg:py-20 2xl:py-100 bg-opacity-25 ${bgColor || ""}`}
     >
       <div className="container space-y-16">
+        {/* Content Block */}
         <div
           className={`flex flex-col ${
             reverse ? "lg:flex-row-reverse" : "lg:flex-row"
@@ -81,28 +57,24 @@ while (slideDataForLoop.length < 4) {
               <span className="w-28 h-1 bg-yellow block"></span>
             </div>
             <div className="text-p space-y-4">
-              {description.map((item, index) => (
-                <p className="mb-4" key={index}>
-                  {item}
-                </p>
+              <p>{description}</p>
+            </div>
+            <ul className="space-y-4 ml-6 list-disc">
+              {listItems?.map((item, index) => (
+                <li key={index}>{item}</li>
               ))}
-            </div>
-            <div className="content-listing">
-              <ul className="space-y-4 ml-6">
-                {listItems.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
+            </ul>
           </div>
         </div>
+
+        {/* Swiper */}
         <div className="flex items-center">
+          {/* Prev Button */}
           <div
             onClick={prevSlide}
-            className="hidden md:grid serviceSwiper-prev text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none"
+            className="hidden md:grid text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none cursor-pointer"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="36"
               viewBox="0 0 24 24"
@@ -111,14 +83,13 @@ while (slideDataForLoop.length < 4) {
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
             >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 6l-6 6l6 6" />
             </svg>
           </div>
 
-          <div className="swiper  text-center pb-10 sm:pb-2 md:p-0">
+          {/* Swiper Slides */}
+          <div className="swiper text-center pb-10 sm:pb-2 md:p-0">
             <Swiper
               ref={swiperRef}
               modules={[Navigation, Pagination, Autoplay]}
@@ -127,82 +98,83 @@ while (slideDataForLoop.length < 4) {
               navigation={false}
               loop={true}
               breakpoints={{
-                992: {
-                  slidesPerView: 2,
-                },
-                1400: {
-                  slidesPerView: 3,
-                },
+                992: { slidesPerView: 2 },
+                1400: { slidesPerView: 3 },
               }}
             >
-              {slideDataForLoop.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div className="p-5">
-                    <div className="p-4 sm:p-6 sm:rounded-3xl bg-white shadow-custom_shdow2 hover:shadow-sm transition-all">
-                      <div className="scale-75 lg:scale-100 size-[100px] rounded-[10px] grid place-items-center bg-yellow mx-auto shadow-[0_4px_18px_0_rgba(0,0,0,.14)]">
-                        <Image
-                          role="img"
-                          src={item.icon}
-                          alt={`${item.title}-icon`}
-                          width={52}
-                          height={52}
-                        />
-                      </div>
-                      <h3 className="mb-2 lg:mt-6 text-h3 font-bold">
-                        {item.title}
-                      </h3>
-                      <div className="mb-4 lg:mb-8 text-p space-y-4">
-                        {item.address.map((line, i) => (
-                          <p key={i}>{line}</p>
-                        ))}
-                      </div>
-                      <div className="mb-4 lg:mb-8 text-p space-y-4">
-                        <div>
-                          <span>Telefon:</span>
-                          <Link
-                            role="link"
-                            className="hover:text-yellow transition-colors"
-                            href={`tel:${item.phone}`}
-                            aria-label={item.phone}
-                          >
-                            {item.phone}
-                          </Link>
-                        </div>
-                        <div>
-                          <span>E-Mail:</span>
-                          <Link
-                            role="link"
-                            className="hover:text-yellow transition-colors"
-                            href={`mailto:${item.email}`}
-                            aria-label={item.email}
-                          >
-                            {item.email}
-                          </Link>
-                        </div>
-                      </div>
-                      <Link
-                        role="link"
-                        href={item.link}
-                        aria-label="Mehr erfahren"
-                        className="block w-fit mx-auto text-yellow lg:text-lg rounded sm:rounded-[10px] border border-yellow py-2 2xl:py-[15px] px-4 2xl:px-8 hover:bg-yellow hover:shadow hover:text-white transition-colors"
-                      >
-                        Mehr erfahren
-                      </Link>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+              {processedSlides.map((item, index) => {
+                const title =
+                  item.praxis_standort_data_title ||
+                  item.ueber_uns_section_standort_data_title;
+                const description =
+                  item.praxis_standort_data_description ||
+                  item.ueber_uns_section_standort_data_description;
+                const links =
+                  item.praxis_standort_data_links ||
+                  item.ueber_uns_section_standort_data_links ||
+                  [];
+                const button =
+                  item.praxis_standort_data_button ||
+                  item.ueber_uns_section_standort_data_button;
 
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="p-5">
+                      <div className="p-4 sm:p-6 sm:rounded-3xl bg-white shadow-custom_shdow2 hover:shadow-sm transition-all">
+                        <div className="scale-75 lg:scale-100 size-[100px] rounded-[10px] grid place-items-center bg-yellow mx-auto shadow-[0_4px_18px_0_rgba(0,0,0,.14)]">
+                          <Image
+                            src="/images/Simplification-2.svg"
+                            alt={`${title}-icon`}
+                            width={52}
+                            height={52}
+                          />
+                        </div>
+                        <h3 className="mb-2 lg:mt-6 text-h3 font-bold">
+                          {title}
+                        </h3>
+                        <div
+                          className="mb-4 lg:mb-8 text-p space-y-4"
+                          dangerouslySetInnerHTML={{ __html: description }}
+                        />
+                        <div className="mb-4 lg:mb-8 text-p space-y-4">
+                          {links.map((linkItem, i) => (
+                            <div key={i}>
+                              <span>{linkItem.link_title}</span>
+                              <Link
+                                className="hover:text-yellow transition-colors block"
+                                href={linkItem.link.url}
+                                target={linkItem.link.target || "_self"}
+                                aria-label={linkItem.link.title}
+                              >
+                                {linkItem.link.title}
+                              </Link>
+                            </div>
+                          ))}
+                        </div>
+                        {button?.url && (
+                          <Link
+                            href={button.url}
+                            className="block w-fit mx-auto text-yellow lg:text-lg rounded sm:rounded-[10px] border border-yellow py-2 2xl:py-[15px] px-4 2xl:px-8 hover:bg-yellow hover:shadow hover:text-white transition-colors"
+                            target={button.target || "_self"}
+                          >
+                            {button.title}
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
             <div className="swiper-pagination md:hidden"></div>
           </div>
 
+          {/* Next Button */}
           <div
             onClick={nextSlide}
-            className="hidden md:grid serviceSwiper-next text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none"
+            className="hidden md:grid text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none cursor-pointer"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="36"
               viewBox="0 0 24 24"
@@ -211,9 +183,7 @@ while (slideDataForLoop.length < 4) {
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
             >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 6l6 6l-6 6" />
             </svg>
           </div>
@@ -222,4 +192,5 @@ while (slideDataForLoop.length < 4) {
     </section>
   );
 };
+
 export default Psychotherapie_Praxis;

@@ -1,7 +1,18 @@
 import Link from 'next/link'
 import React from 'react'
+import Alldata from "../utils/AllDataFetxh";
+const page = async() => {
+    let datenschutzerklarungData;
+  try {
+    datenschutzerklarungData = await Alldata("/home");
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return <div>Error loading data.</div>;
+  }
 
-const page = () => {
+  if (!datenschutzerklarungData) {
+    return <div>No data available.</div>;
+  }
   return (
     <section className="sec-page-content">
             <div className="container">

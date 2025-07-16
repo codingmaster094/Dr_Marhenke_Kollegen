@@ -6,50 +6,67 @@ import About_Service_section from "../components/About_Service_section";
 import Map from "../Map/page";
 import Uber_AboutSection from "../components/Uber_AboutSection";
 import BlogComponent from "../components/BlogComponent";
+import Alldata from "../utils/AllDataFetxh";
+import Custom_Post from "../utils/CustomPost";
+import POST_GET from "../utils/PostsGet";
+const page = async() => {
+  let ueberunsData;
+  let Doctor_listData;
+  let PostData;
+  try {
+    ueberunsData = await Alldata("/ueber-uns");
+    Doctor_listData = await Custom_Post("/team");
+    PostData = await POST_GET("/stellenausschreibung");
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return <div>Error loading data.</div>;
+  }
 
-const page = () => {
+  if (!ueberunsData || !Doctor_listData || !PostData) {
+    return <div>No data available.</div>;
+  }
   return (
     <>
       <Hero_Section
-        title="Psychotherapie in Köln:"
-        subtitle="individuelle Unterstützung in einer wertschätzenden Umgebung"
-        points={[
-          "Moderne Physiotherapie-Praxis an 3 Standorten in Köln – Rodenkirchen, Südstadt & Hürth",
-          "Erfahrenes Team aus approbierten Psychotherapeuten",
-          "Individuelle Therapieangebote für Mitglieder der GKV, PKV & DRV",
-        ]}
-        buttonText="Jetzt Termin vereinbaren"
-        buttonLink="/kontakt"
-        imageSrc="/images/praxis_billd-1.jpg"
-      />
-      <About_Service_section
-         title="Das sind Dr. Marhenke & Kollegen"
-         description={[
-          "Unsere Praxis für Psychotherapie in Köln steht für eine moderne, wissenschaftlich fundierte und zugleich einfühlsame Behandlung. Unser Ziel ist es, Menschen in schwierigen Lebenssituationen individuell zu begleiten und gemeinsam nachhaltige Lösungswege zu finden.",
-         "Was im 20XX als kleine Praxis begann, hat sich über die Jahre zu einem etablierten Zentrum für psychotherapeutische Behandlung entwickelt. Wir bieten ein breites Spektrum an Leistungen – von Einzel- und Gruppentherapie über Paar- und Sexualtherapie bis hin zu Online-Therapie und Psy-RENA-Nachsorge."
-        ]}
-        listItems={[]}
-        bgColor="bg-[#FFF2CE]"
-        imageSrc="/images/praxis13.jpg"
-        reverse={false}
+        title={ueberunsData.acf.hero_title_1}
+        subtitle={ueberunsData.acf.ueber_uns_hero_main_title}
+        points={ueberunsData.acf.ueber_uns_hero_content_listing}
+        BTN={ueberunsData.acf.ueber_uns_hero_button}
+        // buttonLink="/kontakt"
+        imageSrc={ueberunsData.acf.ueber_uns_hero_image.url}
+        videoSrc={""}
       />
 
-      <Psychotherapie_Praxis 
-          title={`Das ist unsere Praxis für
-                  Psychotherapie in Köln`}
-          description={[
-            "Unsere Psychotherapie-Praxis finden Sie in Köln an 3 Standorten: in Rodenkirchen, in der Südstadt und in Hürth. Durch ihre zentrale Lage, eine Anbindung an öffentliche Verkehrsmittel und Parkmöglichkeiten vor Ort erreichen Sie uns einfach und bequem.",
-            "In unserer Praxis bieten Ihnen eine sichere und vertrauensvolle Umgebung für Ihre Therapie. Helle und freundliche Räume in einem klaren und modern Ambiente sorgen für eine angenehme Atmosphäre, in der Sie sich wohl und gut aufgehoben fühlen."
-          ]}
-          listItems={[]}
-          bgColor=""
-          imageSrc="/images/praxis5.jpg" 
-          reverse={true}
+      <About_Service_section
+        title={ueberunsData.acf.ueber_uns_praxis_title}
+        description={ueberunsData.acf.ueber_uns_praxis_content}
+        listItems={[]}
+        bgColor="bg-[#FFF2CE]"
+        imageSrc={ueberunsData.acf.ueber_uns_praxis_image.url}
+        reverse={false}
       />
-      <Map/>
-      <Kooperationspartner />
-     <Uber_AboutSection/>
-     <BlogComponent/>
+      <Psychotherapie_Praxis
+        title={ueberunsData.acf.ueber_uns_standorte_main_title}
+        description={ueberunsData.acf.ueber_uns_standorte_content}
+        listItems={[]}
+        sliderData={ueberunsData.acf.ueber_uns_section_standort_data}
+        bgColor="bg-[#FFF2CE]"
+        imageSrc={ueberunsData?.acf.ueber_uns_standorte_image.url}
+        reverse={true}
+      />
+      <Map />
+      <Kooperationspartner
+        title={ueberunsData?.acf.ueber_uns_partners_main_title}
+        logosData={ueberunsData.acf.ueber_uns_all_partners}
+        BTN={ueberunsData.acf.ueber_uns_partners_button}
+      />
+      <Uber_AboutSection
+        title={ueberunsData.acf.ueber_uns_team_main_title}
+        content={ueberunsData.acf.ueber_uns_team_content}
+        BTN={ueberunsData.acf.ueber_uns_team_mehr_anzeigen_button_label}
+        Doctore_list={Doctor_listData}
+      />
+      <BlogComponent PostData={PostData} />
     </>
   );
 };

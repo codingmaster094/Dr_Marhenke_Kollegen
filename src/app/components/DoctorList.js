@@ -4,179 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const DoctorList = ({ title }) => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Dr. Tristan Marhenke",
-      image: "/images/team-member-1.png",
-      link: "/tristan-marhenke",
-      description: "Psychologischer Psychotherapeut",
-    },
-    {
-      id: 2,
-      title: "M.Sc. Aida Marhenke",
-      image: "/images/team-member-2.png",
-      link: "/aida-marhenke",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 3,
-      title: "M.Sc. Roja Jansen",
-      image: "/images/team-member-3.png",
-      link: "/roja-jansen",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 4,
-      title: "M.Sc. Helen Limberg",
-      image: "/images/4.jpg",
-      link: "/helen-limberg",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 5,
-      title: "M.Sc. Mara Schraft",
-      image: "/images/5.jpg",
-      link: "/mara-schraft",
-      description: "Psychologische Psychotherapeutin (i. A.)",
-    },
-    {
-      id: 6,
-      title: "M.Sc. Nikolai Mennicken",
-      image: "/images/6.jpg",
-      link: "/nikolai-mennicken",
-      description: "Psychologischer Psychotherapeut",
-    },
-    {
-      id: 7,
-      title: "M.Sc. Susanne Kohns",
-      image: "/images/7.jpg",
-      link: "/susanne-kohns",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 8,
-      title: "M.Sc. Sophie Volz",
-      image: "/images/8.jpg",
-      link: "/sophie-volz",
-      description: "Psychologische Psychotherapeutin (i. A.)",
-    },
-    {
-      id: 9,
-      title: "M.Sc. Ambra Mueller",
-      image: "/images/9.jpg",
-      link: "/ambra-mueller",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 10,
-      title: "Dr. rer. nat. Annegret Meermeier",
-      image: "/images/10.jpg",
-      link: "/annegret-meermeier",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 11,
-      title: "M.Sc. Charlotte Friederike Korsch",
-      image: "/images/11.jpg",
-      link: "/friederike-korsch",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 12,
-      title: "Dipl.-Psych. Kerstin Höhmann",
-      image: "/images/_12.jpg",
-      link: "/kerstin-hoehmann",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 13,
-      title: "M.Sc. Florian Kuhlmann",
-      image: "/images/13.jpg",
-      link: "/florian-kuhlmann",
-      description: "Psychologischer Psychotherapeut (i. A.)",
-    },
-    {
-      id: 14,
-      title: "M.Sc. Jana Jamuna Halscheid",
-      image: "/images/14.jpg",
-      link: "/jana-jamuna-halscheid",
-      description: "Psychologische Psychotherapeutin (i. A.)",
-    },
-    {
-      id: 15,
-      title: "M.Sc. Pauline Bitsch",
-      image: "/images/15.jpg",
-      link: "/pauline-bitsch",
-      description: "Psychologische Psychotherapeutin (i. A.)",
-    },
-    {
-      id: 16,
-      title: "B.A. Jill Jannasch",
-      image: "/images/16.jpg",
-      link: "/jill-jannasch",
-      description: "Soziotherapeutin",
-    },
-    {
-      id: 17,
-      title: "M.Sc. Franka Rossel",
-      image: "/images/17.jpg",
-      link: "/franka-rossel",
-      description: "Psychologische Psychotherapeutin (i. A.)",
-    },
-    {
-      id: 18,
-      title: "Dipl.-Psych. Georg Haarhaus",
-      image: "/images/18.jpg",
-      link: "/georg-haarhaus",
-      description: "Psychologischer Psychotherapeut",
-    },
-    {
-      id: 19,
-      title: "MFA Cansel Gökyar",
-      image: "/images/19.jpg",
-      link: "/cansel-goekyar",
-      description: "Praxismanagerin",
-    },
-    {
-      id: 20,
-      title: "M.Sc. Sarah Krain",
-      image: "/images/20.jpg",
-      link: "/sarah-krain",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 21,
-      title: "M.Sc. Alina Ostermann-Myrau",
-      image: "/images/no-profile.jpg",
-      link: "/alina-ostermann-myrau",
-      description: "Psychologische Psychotherapeutin",
-    },
-    {
-      id: 22,
-      title: "ZFA Yeliz Erdogmus",
-      image: "/images/21.jpg",
-      link: "/yeliz-erdogmus",
-      description: "Praxismanagerin",
-    },
-    {
-      id: 23,
-      title: "B.Sc. (cand.) Jessica Peters",
-      image: "/images/22.jpg",
-      link: "/jessica-peters",
-      description: "Praxismanagerin",
-    },
-    {
-      id: 24,
-      title: "M.Sc. Joke Werner",
-      image: "/images/23.jpg",
-      link: "/Joke-Werner",
-      description: "Psychologische Psychotherapeutin",
-    },
-  ];
-
-
+const DoctorList = ({ title , Data}) => {
   return (
     <section className={title && "pt-14 lg:pt-20 2xl:pt-[100px] bg-opacity-25"}>
       <div className={title && "container space-y-16"}>
@@ -188,20 +16,20 @@ const DoctorList = ({ title }) => {
         )}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 text-center gap-y-10 gap-x-4 lg:gap-12">
-          {blogPosts?.map((item) => (
-            <div key={item.id} className="w-full">
+          {Data?.map((item , i) => (
+            <div key={i} className="w-full">
               <div className="relative group">
                 <div className="relative aspect-square">
                   <Image
-                    src={item.image}
-                    alt={item.title}
+                    src={item.acf.team_employee_photo.url}
+                    alt={item.acf.team_employee_photo.alt}
                     fill
                     className="rounded-xl lg:rounded-2xl 3xl:rounded-3xl size-full object-cover object-top"
                   />
                 </div>
                 <Link
                   role="button"
-                  href={`/team${item.link}`}
+                  href={`/team/${item.slug}`}
                   className="absolute bg-yellow bg-opacity-65 inset-6 grid place-items-center rounded-xl lg:rounded-2xl 3xl:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
                 >
                   <svg
@@ -223,12 +51,12 @@ const DoctorList = ({ title }) => {
                 </Link>
               </div>
               <h3 className="text-h3 mt-3 mb-2">{item.title}</h3>
-              <div className="text">{item.description}</div>
+              <div className="text">{item.acf.team_hero_content[0].team_hero_content_point}</div>
             </div>
           ))}
         </div>
 
-          {/* <div className="mt-10 flex justify-center">
+        {/* <div className="mt-10 flex justify-center">
             <button
               className="px-6 py-3 bg-yellow text-white font-medium rounded-lg hover:bg-opacity-90 transition"
             >
