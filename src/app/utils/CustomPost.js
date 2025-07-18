@@ -3,7 +3,7 @@ export default async function Custom_Post(params) {
     const response = await fetch(
       `${process.env.NEXT_CUSTOM_POST_BASE_URL}${params}`,
       {
-        cache: "no-store",
+        next: { revalidate: 3600 },
       }
     );
     if (!response) {

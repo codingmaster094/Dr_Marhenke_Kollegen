@@ -3,11 +3,11 @@ import Hero_Section from "../components/Hero_Section";
 import Psychotherapie_Praxis from "../components/Psychotherapie_Praxis";
 import Kooperationspartner from "../components/Kooperationspartner";
 import About_Service_section from "../components/About_Service_section";
-import Map from "../Map/page";
 import Uber_AboutSection from "../components/Uber_AboutSection";
 import BlogComponent from "../components/BlogComponent";
 import Alldata from "../utils/AllDataFetxh";
 import Custom_Post from "../utils/CustomPost";
+import MapPageClient from "../Map/page";
 import POST_GET from "../utils/PostsGet";
 const page = async() => {
   let ueberunsData;
@@ -44,7 +44,7 @@ const page = async() => {
         imageSrc={ueberunsData?.acf.ueber_uns_standorte_image.url}
         reverse={false}
       />
-      <Map
+      <MapPageClient
         title={ueberunsData?.acf.hero_title_1}
         locations={ueberunsData?.acf.locations}
       />
