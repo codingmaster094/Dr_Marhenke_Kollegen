@@ -8,220 +8,60 @@ import TeamsProfile from "../components/TeamsProfile";
 import No_slug_page from "../components/No_slug_page";
 import DoctorList from "../components/DoctorList";
 import Contact_form from "../components/Contact_form";
+import Alldata from "../utils/AllDataFetxh";
+import Custom_Post from "../utils/CustomPost";
 
 const Page = async({ params }) => {
   const { slug } = await params;
-  let Hero_data = null;
-  let Service_data = null;
-  let Slider_section_data = null;
-  let Team_data = null;
 
-  if (slug === "koeln-rodenkirchen") {
-    Hero_data = [
-      {
-        title: "Psychotherapie in Köln Rodenkirchen:",
-        subtitle: "gemeinsam neue Wege gehen",
-        points: [
-          "Einzel-, Gruppen- & Paartherapien",
-          "Online-Therapie & Reha-Nachsorge für flexible Unterstützung",
-          "Kurzfristige Termine, individuelle Beratung & Therapie-Konzepte",
-        ],
-        buttonText: "Termin vereinbaren",
-        buttonLink: "#kontaktformular",
-        imageSrc: "/images/praxis8.jpg",
-      },
-    ];
-
-    Service_data = [
-      {
-        title:
-          "Das ist unsere Praxis für Psychotherapie in Köln Rodenkirchen",
-        description: [
-          "Unsere Psychotherapie-Praxis in Köln Rodenkirchen liegt in zentraler Lage und hat eine gute eine Anbindung an öffentliche Verkehrsmittel – auch Parkmöglichkeiten vor Ort sind vorhanden. In unserer Praxis bieten Ihnen eine sichere und vertrauensvolle Umgebung für Ihre Therapie. Helle und freundliche Räume in einem klaren und modern Ambiente sorgen für eine angenehme Atmosphäre, in der Sie sich wohl und gut aufgehoben fühlen.",
-        ],
-        listItems: [
-          "Gustav-Radbruch-Straße 1, 50996 Köln",
-          "Telefon: 0221/42 31 39 56",
-          "E-Mail: kontakt[@]psycho-therapie-koeln.de",
-        ],
-        bgColor: "bg-[#FFF2CE]",
-        buttonText: "",
-        buttonLink: "",
-        imageSrc: "/images/praxis4.jpg",
-        reverse: false,
-      },
-    ];
-
-    Slider_section_data = [
-      {
-        title: "Unsere Praxis für Psychotherapie in Köln Rodenkirchen",
-        Images: [
-            "/images/praxis1.jpg",
-          "/images/praxis2.jpg",
-          "/images/praxis3.jpg",
-          "/images/praxis4.jpg",
-          "/images/praxis5.jpg",
-        ],
-      },
-    ];
-
-    Team_data = [
-      {
-        title: "Psychotherapie-Praxis in Köln Rodenkirchen: unser Team",
-      },
-    ];
-  }
-  if (slug === "koeln-suedstadt") {
-    Hero_data = [
-      {
-        title: "Psychotherapie in Köln Südstadt:",
-        subtitle: "gemeinsam neue Wege gehen",
-        points: [
-          "Einzel-, Gruppen- & Paartherapien",
-          "Online-Therapie & Reha-Nachsorge für flexible Unterstützung",
-          "Kurzfristige Termine, individuelle Beratung & Therapie-Konzepte",
-        ],
-        buttonText: "Termin vereinbaren",
-        buttonLink: "#kontaktformular",
-        imageSrc: "/images/praxis8.jpg",
-      },
-    ];
-
-    Service_data = [
-      {
-        title: "Das ist unsere Praxis für Psychotherapie in Köln Südstadt",
-        description: [
-          "Unsere Psychotherapie-Praxis in Köln Südstadt liegt in zentraler Lage und hat eine gute eine Anbindung an öffentliche Verkehrsmittel – auch Parkmöglichkeiten vor Ort sind vorhanden. In unserer Praxis bieten Ihnen eine sichere und vertrauensvolle Umgebung für Ihre Therapie. Helle und freundliche Räume in einem klaren und modern Ambiente sorgen für eine angenehme Atmosphäre, in der Sie sich wohl und gut aufgehoben fühlen.",
-        ],
-        listItems: [
-          "Rolandstraße 55, 50677 Köln",
-          "Telefon: 0221/17 00 40 36",
-          "E-Mail: kontakt[@]psycho-therapie-koeln.de",
-        ],
-        bgColor: "",
-        buttonText: "",
-        buttonLink: "",
-        imageSrc: "/images/praxis4.jpg",
-        reverse: false,
-      },
-    ];
-
-    Slider_section_data = [
-      {
-        title: "Unsere Praxis für Psychotherapie in Köln Südstadt",
-        Images: [
-          "/images/praxis1.jpg",
-          "/images/praxis2.jpg",
-          "/images/praxis3.jpg",
-          "/images/praxis4.jpg",
-          "/images/praxis5.jpg",
-        ],
-      },
-    ];
-
-    Team_data = [
-      {
-        title: "Psychotherapie-Praxis in Köln Südstadt: unser Team",
-      },
-    ];
-  }
-  if (slug === "huerth") {
-    Hero_data = [
-      {
-        title: "Psychotherapie in Köln Hürth:",
-        subtitle: "gemeinsam neue Wege gehen",
-        points: [
-          "Einzel-, Gruppen- & Paartherapien",
-          "Online-Therapie & Reha-Nachsorge für flexible Unterstützung",
-          "Kurzfristige Termine, individuelle Beratung & Therapie-Konzepte",
-        ],
-        buttonText: "Termin vereinbaren",
-        buttonLink: "#kontaktformular",
-        imageSrc: "/images/praxis8.jpg",
-      },
-    ];
-
-    Service_data = [
-      {
-        title: "Das ist unsere Praxis für Psychotherapie in Köln Hürth",
-        description: [
-          "Unsere Psychotherapie-Praxis in Köln Hürth liegt in zentraler Lage und hat eine gute eine Anbindung an öffentliche Verkehrsmittel – auch Parkmöglichkeiten vor Ort sind vorhanden. In unserer Praxis bieten Ihnen eine sichere und vertrauensvolle Umgebung für Ihre Therapie. Helle und freundliche Räume in einem klaren und modern Ambiente sorgen für eine angenehme Atmosphäre, in der Sie sich wohl und gut aufgehoben fühlen.",
-        ],
-        listItems: [
-          "Rolandstraße 55, 50677 Köln",
-          "Telefon: 0221/17 00 40 36",
-          "E-Mail: kontakt[@]psycho-therapie-koeln.de",
-        ],
-        bgColor: "",
-        buttonText: "",
-        buttonLink: "",
-        imageSrc: "/images/praxis4.jpg",
-        reverse: false,
-      },
-    ];
-
-    Slider_section_data = [
-      {
-        title: "Unsere Praxis für Psychotherapie in Köln Südstadt",
-        Images: [
-          "/images/praxis1.jpg",
-          "/images/praxis2.jpg",
-          "/images/praxis3.jpg",
-          "/images/praxis4.jpg",
-          "/images/praxis5.jpg",
-        ],
-      },
-    ];
-
-    Team_data = [
-      {
-        title: "Psychotherapie-Praxis in Köln Südstadt: unser Team",
-      },
-    ];
-  }
-
-  if (
-    slug !== "koeln-rodenkirchen" &&
-    slug !== "koeln-suedstadt" &&
-    slug !== "huerth"
-  ) {
-    return <No_slug_page />;
-  }
+  let Custom_Page;
+  let Doctor_listData;
+    try {
+      Custom_Page = await Alldata(`/${slug}`);
+      Doctor_listData = await Custom_Post("/team");
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return <div>Error loading data.</div>;
+    }
   
+    if (!Custom_Page || !Doctor_listData) {
+      return <div>No data available.</div>;
+    }
+
   return (
-    <>  
-      {Hero_data && (
-        <Hero_Section
-          title={Hero_data[0].title}
-          subtitle={Hero_data[0].subtitle}
-          points={Hero_data[0].points}
-          buttonText={Hero_data[0].buttonText}
-          buttonLink={Hero_data[0].buttonLink}
-          imageSrc={Hero_data[0].imageSrc}
-        />
-      )}
-
-      {Service_data && (
-        <ServiceSection
-          title={Service_data[0].title}
-          description={Service_data[0].description}
-          listItems={Service_data[0].listItems}
-          bgColor={Service_data[0].bgColor}
-          buttonText={Service_data[0].buttonText}
-          buttonLink={Service_data[0].buttonLink}
-          imageSrc={Service_data[0].imageSrc}
-          reverse={Service_data[0].reverse}
-        />
-      )}
-
-      <Pattern_section btn={true} BTN="Termin vereinbaren" />
-      <Review_section bg="" />
-      <SliderSection 
-        main_title={Slider_section_data[0].title}
-        gallery_images={Slider_section_data[0].Images}
+    <>
+      <Hero_Section
+        title={Custom_Page.acf.standort_single_hero_title}
+        subtitle={Custom_Page.acf.subtitle}
+        points={Custom_Page.acf.standort_single_hero_content}
+        BTN={Custom_Page.acf.standort_single_hero_button}
+        imageSrc={Custom_Page.acf.standort_single_hero_image.url}
       />
-      <DoctorList title="Psychotherapie-Praxis in Köln Rodenkirchen: unser Team" />
-      <Contact_form/>
+      <ServiceSection
+        CustomPageServiceSection1={
+          Custom_Page.acf.praxis
+        }
+      />
+
+      <Pattern_section
+        title={Custom_Page.acf.standort_single_anfrage_title}
+        content={Custom_Page.acf.standort_single_anfrage_description}
+        btn={Custom_Page.acf.standort_single_anfrage_button}
+      />
+      <Review_section
+        title={Custom_Page.acf.standort_single_bewertungen_title}
+        des={Custom_Page.acf.standort_single_bewertungen_description}
+      />
+
+      <SliderSection
+        main_title={Custom_Page.acf.standort_single_galerie_title}
+        gallery_images={Custom_Page.acf.standort_single_galerie_partner}
+      />
+      <DoctorList
+        title={Custom_Page.acf.standort_single_team_section_title}
+        Data={Doctor_listData}
+      />
+      <Contact_form />
     </>
   );
 };

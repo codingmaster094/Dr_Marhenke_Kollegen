@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 const BlogComponent = ({PostData}) => {
-  console.log('PostData', PostData)
     const blogPosts = [
       {
         id: 1,

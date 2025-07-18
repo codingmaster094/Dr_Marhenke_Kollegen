@@ -17,8 +17,6 @@ const SliderSection = ({ main_title, gallery_images }) => {
     if (swiperInstance) swiperInstance.slidePrev();
   };
 
-  const duplicatedSlides = [...(gallery_images || []), ...(gallery_images || [])];
-
   return (
     <section className=" bg-[#FFFBF2] pt-[30px] md:pt-[40px] lg:pt-[50px]">
       <div className="flex flex-col gap-6 md:gap-11 lg:gap-16">
@@ -48,12 +46,12 @@ const SliderSection = ({ main_title, gallery_images }) => {
             onSwiper={setSwiperInstance}
             className="swiper referanceSwiper"
           >
-            {duplicatedSlides.map((item, i) => (
+            {gallery_images.map((item, i) => (
               <SwiperSlide key={i}>
                 <div className="relative min-h-[500px] xl:min-h-[600px]">
                   <div className="absolute inset-0">
                     <Image
-                      src={item}
+                      src={item.standort_single_galerie_partner_image.url}
                       alt={`Gallery image ${i + 1}`}
                       width={470}
                       height={600}

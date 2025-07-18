@@ -42,7 +42,10 @@ const FAQ_section = ({title ,faqs}) => {
                 onClick={() => handleClick(index)}
               >
                 <div className="flex items-center justify-between">
-                  <span>{faq.faq_content_title}</span>
+                  <span>
+                    {faq.faq_content_title ||
+                      faq.single_behandlungen_faqs_questions}
+                  </span>
                   <div
                     className={`scale-50 shrink-0 lg:scale-75 3xl:scale-100 size-12 rounded-full grid place-items-center transition-colors ${
                       selected === index ? "bg-white" : "bg-yellow"
@@ -87,7 +90,9 @@ const FAQ_section = ({title ,faqs}) => {
                 <div
                   className="pt-4 text-p space-y-4"
                   dangerouslySetInnerHTML={{
-                    __html: faq.faq_content_description,
+                    __html:
+                      faq.faq_content_description ||
+                      faq.single_behandlungen_faqs_answers,
                   }}
                 ></div>
               </div>

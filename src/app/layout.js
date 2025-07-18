@@ -1,7 +1,7 @@
-import Header from "./components/Header";
+import Header from "./Header/page";
 import "./globals.css";
 import '../../public/fonts/font.css';
-import Footer from "./components/Footer";
+import Footer from "./Footer/page";
 import TopButton from "./components/Top-Button";
 import CanonicalTag from "./components/CanonicalTag";
 export const metadata = {

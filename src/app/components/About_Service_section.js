@@ -6,7 +6,7 @@ const About_Service_section = ({ Data }) => {
     <>
       {Data?.map((item, index) => {
         const isEven = index % 2 === 0;
-        const bgClass = isEven ? "bg-[#FFF2CE]" : "";
+        const bgClass = isEven ? "bg-[#fffbf2]" : "";
 
         return (
           <section

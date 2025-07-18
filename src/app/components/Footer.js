@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-const Footer = () => {
+const Footer = ({Footerdata , OptionDatas}) => {
   return (
     <footer
       className="bg-cover"
-      style={{ backgroundImage: "url('/images/footer-bg.png')" }}
+      style={{ backgroundImage: `url(${OptionDatas.footer_background.url})` }}
     >
       <div className="container py-14 lg:py-20 2xl:py-100">
         <div className="grid gap-10 3xl:gap-20 sm:grid-cols-2 2xl:flex">
           <div className="shrink-0 sm:col-span-2 lg:col-span-3 xl:col-span-5 2xl:col-span-1">
             <Link role="link" href="/">
               <Image
-                src="/images/logo.svg"
+                src={Footerdata.site_logo}
                 alt="Logo"
                 width={286}
                 height={66}
@@ -20,49 +20,48 @@ const Footer = () => {
           </div>
           <div className="space-y-6">
             <div className="text-p *:font-bold">
-              <p>Kontakt</p>
+              <p>{OptionDatas.footer_standorte_title}</p>
             </div>
             <ul className="space-y-5">
               <li className="flex gap-3 items-start">
-
-                  <svg
-                    className="shrink-0 mt-1"
-                    width="18"
-                    height="19"
-                    viewBox="0 0 18 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_1_1515)">
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.04169 0.382888C6.60285 0.600365 5.35828 1.21504 4.31126 2.22532C3.3028 3.19841 2.66342 4.36085 2.37042 5.75388C2.24692 6.34096 2.21567 7.32699 2.30117 7.9374C2.63856 10.3462 4.36698 13.3816 7.25693 16.6403C7.4884 16.9014 7.9467 17.3878 8.2753 17.7214C8.83278 18.2872 8.8814 18.3278 9.00142 18.3278C9.12183 18.3278 9.17052 18.2866 9.75981 17.6862C11.8555 15.5511 13.6986 13.0485 14.7115 10.9626C15.4214 9.50066 15.748 8.27603 15.7495 7.07024C15.7517 5.29066 15.0996 3.68121 13.8527 2.38894C12.8799 1.38083 11.7208 0.743064 10.3241 0.44754C9.9595 0.370408 9.78551 0.355185 9.14078 0.34404C8.59431 0.334619 8.28982 0.345376 8.04169 0.382888ZM8.62708 4.02156C8.26908 4.06449 7.76185 4.23745 7.4357 4.42783C7.05872 4.64787 6.57019 5.1364 6.35015 5.51338C5.79535 6.46386 5.79099 7.65408 6.33879 8.622C6.52452 8.95018 6.9515 9.40549 7.28056 9.62627C8.11742 10.1878 9.19777 10.3065 10.1333 9.93987C10.7153 9.71181 11.3357 9.18109 11.6502 8.64229C12.2042 7.69317 12.2085 6.50018 11.6615 5.53366C11.4709 5.1969 11.0307 4.73182 10.6923 4.50963C10.1005 4.12112 9.32503 3.93789 8.62708 4.02156Z"
-                        fill="#D6AB37"
+                <svg
+                  className="shrink-0 mt-1"
+                  width="18"
+                  height="19"
+                  viewBox="0 0 18 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_1_1515)">
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M8.04169 0.382888C6.60285 0.600365 5.35828 1.21504 4.31126 2.22532C3.3028 3.19841 2.66342 4.36085 2.37042 5.75388C2.24692 6.34096 2.21567 7.32699 2.30117 7.9374C2.63856 10.3462 4.36698 13.3816 7.25693 16.6403C7.4884 16.9014 7.9467 17.3878 8.2753 17.7214C8.83278 18.2872 8.8814 18.3278 9.00142 18.3278C9.12183 18.3278 9.17052 18.2866 9.75981 17.6862C11.8555 15.5511 13.6986 13.0485 14.7115 10.9626C15.4214 9.50066 15.748 8.27603 15.7495 7.07024C15.7517 5.29066 15.0996 3.68121 13.8527 2.38894C12.8799 1.38083 11.7208 0.743064 10.3241 0.44754C9.9595 0.370408 9.78551 0.355185 9.14078 0.34404C8.59431 0.334619 8.28982 0.345376 8.04169 0.382888ZM8.62708 4.02156C8.26908 4.06449 7.76185 4.23745 7.4357 4.42783C7.05872 4.64787 6.57019 5.1364 6.35015 5.51338C5.79535 6.46386 5.79099 7.65408 6.33879 8.622C6.52452 8.95018 6.9515 9.40549 7.28056 9.62627C8.11742 10.1878 9.19777 10.3065 10.1333 9.93987C10.7153 9.71181 11.3357 9.18109 11.6502 8.64229C12.2042 7.69317 12.2085 6.50018 11.6615 5.53366C11.4709 5.1969 11.0307 4.73182 10.6923 4.50963C10.1005 4.12112 9.32503 3.93789 8.62708 4.02156Z"
+                      fill="#D6AB37"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_1515">
+                      <rect
+                        width="18"
+                        height="18"
+                        fill="white"
+                        transform="translate(0 0.0947266)"
                       />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_1515">
-                        <rect
-                          width="18"
-                          height="18"
-                          fill="white"
-                          transform="translate(0 0.0947266)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span>
-                  Gustav-Radbruch-Straße 1
-                  50996 Köln
-                  </span>
-       
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: OptionDatas.footer_location,
+                  }}
+                ></span>
               </li>
               <li>
                 <Link
                   role="link"
                   className="flex gap-3 items-center"
-                  href="tel:(+12)7 66 59 45 68"
+                  href={OptionDatas.footer_telephone.url}
                 >
                   <svg
                     className="shrink-0"
@@ -79,14 +78,14 @@ const Footer = () => {
                       fill="#D6AB37"
                     />
                   </svg>
-                  <span>0221/42 31 39 56</span>
+                  <span>{OptionDatas.footer_telephone.title}</span>
                 </Link>
               </li>
               <li>
                 <Link
                   role="link"
                   className="flex gap-3"
-                  href="mailto:Lorem ipsum@gmail.com"
+                  href={OptionDatas.footer_mail.url}
                 >
                   <svg
                     className="shrink-0 sm:mt-1 mt-[2px]"
@@ -103,185 +102,86 @@ const Footer = () => {
                       fill="#D6AB37"
                     />
                   </svg>
-                  <span>kontakt[@]psycho-therapie-koeln.de</span>
+                  <span>{OptionDatas.footer_mail.title}</span>
                 </Link>
               </li>
             </ul>
-            {/* <ul>
-              <li className="flex gap-4">
-                <Link
-                  role="link"
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  aria-label="facebook-account"
-                >
-                  <svg
-                    className="shrink-0"
-                    width="38"
-                    height="39"
-                    viewBox="0 0 38 39"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.594727"
-                      width="37"
-                      height="37"
-                      rx="18.5"
-                      stroke="#D6AB37"
-                    />
-                    <path
-                      d="M19 10.3276C14.05 10.3276 10 14.3849 10 19.3819C10 23.8999 13.294 27.6499 17.596 28.3276V22.0023H15.31V19.3819H17.596V17.3849C17.596 15.1168 18.937 13.8698 20.998 13.8698C21.979 13.8698 23.005 14.0415 23.005 14.0415V16.2734H21.871C20.755 16.2734 20.404 16.9692 20.404 17.6831V19.3819H22.906L22.501 22.0023H20.404V28.3276C22.5248 27.9914 24.456 26.9049 25.8489 25.2644C27.2419 23.624 28.0048 21.5376 28 19.3819C28 14.3849 23.95 10.3276 19 10.3276Z"
-                      fill="#D6AB37"
-                    />
-                  </svg>
-                </Link>
-                <Link
-                  role="link"
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  aria-label="instagram-account"
-                >
-                  <svg
-                    className="shrink-0"
-                    width="38"
-                    height="39"
-                    viewBox="0 0 38 39"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.594727"
-                      width="37"
-                      height="37"
-                      rx="18.5"
-                      stroke="#D6AB37"
-                    />
-                    <path
-                      d="M19 16.1504C18.1561 16.1504 17.3467 16.485 16.75 17.0808C16.1532 17.6766 15.818 18.4846 15.818 19.3271C15.818 20.1696 16.1532 20.9777 16.75 21.5734C17.3467 22.1692 18.1561 22.5039 19 22.5039C19.844 22.5039 20.6533 22.1692 21.2501 21.5734C21.8468 20.9777 22.1821 20.1696 22.1821 19.3271C22.1821 18.4846 21.8468 17.6766 21.2501 17.0808C20.6533 16.485 19.844 16.1504 19 16.1504Z"
-                      fill="#D6AB37"
-                    />
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M13.8794 10.6101C17.2827 10.2335 20.7173 10.2335 24.1207 10.6101C25.98 10.8173 27.479 12.2786 27.6973 14.1417C28.1009 17.5869 28.1009 21.0673 27.6973 24.5125C27.479 26.3756 25.98 27.8369 24.1217 28.0451C20.718 28.4218 17.283 28.4218 13.8794 28.0451C12.0201 27.8369 10.5211 26.3756 10.3027 24.5135C9.89909 21.068 9.89909 17.5872 10.3027 14.1417C10.5211 12.2786 12.0201 10.8173 13.8794 10.6101ZM23.8955 13.4623C23.6358 13.4623 23.3868 13.5653 23.2032 13.7486C23.0195 13.9319 22.9164 14.1806 22.9164 14.4398C22.9164 14.699 23.0195 14.9477 23.2032 15.131C23.3868 15.3143 23.6358 15.4173 23.8955 15.4173C24.1552 15.4173 24.4042 15.3143 24.5878 15.131C24.7714 14.9477 24.8746 14.699 24.8746 14.4398C24.8746 14.1806 24.7714 13.9319 24.5878 13.7486C24.4042 13.5653 24.1552 13.4623 23.8955 13.4623ZM14.3493 19.3271C14.3493 18.0957 14.8393 16.9148 15.7115 16.044C16.5837 15.1733 17.7666 14.6842 19 14.6842C20.2335 14.6842 21.4164 15.1733 22.2886 16.044C23.1607 16.9148 23.6507 18.0957 23.6507 19.3271C23.6507 20.5585 23.1607 21.7394 22.2886 22.6102C21.4164 23.4809 20.2335 23.9701 19 23.9701C17.7666 23.9701 16.5837 23.4809 15.7115 22.6102C14.8393 21.7394 14.3493 20.5585 14.3493 19.3271Z"
-                      fill="#D6AB37"
-                    />
-                  </svg>
-                </Link>
-              </li>
-            </ul> */}
           </div>
           <div className="space-y-6 shrink-0">
             <div className="text-p *:font-bold">
-              <p>Sprechzeiten</p>
+              <p>{OptionDatas.sprechzeiten_title}</p>
             </div>
             <div className="flex gap-2">
               <ul className="space-y-5">
-                <li>Montag:</li>
-                <li>Dienstag:</li>
-                <li>Mittwoch:</li>
-                <li>Donnerstag:</li>
-                <li>Freitag:</li>
+                {OptionDatas.footer_offie_hours.map((day, i) => {
+                  return <li key={i}>{day.footer_day_name}</li>;
+                })}
               </ul>
               <ul className="space-y-5">
-                <li>8:00-17:00</li>
-                <li>8:00-17:00</li>
-                <li>8:00-17:00</li>
-                <li>8:00-17:00</li>
-                <li>8:00-17:00</li>
+                {OptionDatas.footer_offie_hours.map((day, i) => {
+                  return <li key={i}>{day.footer_day_hours}</li>;
+                })}
               </ul>
             </div>
           </div>
           <div className="space-y-6 links">
             <div className="text-p *:font-bold">
-              <p>Navigation</p>
+              <p>{OptionDatas.footer_navigation_title}</p>
             </div>
             <ul className="space-y-5">
-              <li>
-                <Link role="link" className="link" href="behandlungen">
-                  Behandlungen
-                </Link>
-              </li>
-              <li>
-                <Link role="link" className="link" href="ueber-uns">
-                  Über uns
-                </Link>
-              </li>
-              <li>
-                <Link role="link" className="link" href="koeln-rodenkirchen">
-                  Rodenkirchen
-                </Link>
-              </li>
-              <li>
-                <Link role="link" className="link" href="koeln-suedstadt">
-                Südstadt
-                </Link>
-              </li>
-              <li>
-                <Link role="link" className="link" href="huerth">
-                Hürth
-                </Link>
-              </li>
-              <li>
-                <Link role="link" className="link" href="kooperationen">
-                  Kooperationen
-                </Link>
-              </li>
-              <li>
-                <Link role="link" className="link" href="kontakt">
-                  Kontakt
-                </Link>
-              </li>
+              {Footerdata?.menus
+                ?.find((menu) => menu.menu_slug === "footer-menu-1")
+                ?.items?.map((item) => {
+                  return (
+                    <li key={item.id}>
+                      <Link role="link" className="link" href={item.url}>
+                        {item.title}
+                      </Link>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
           <div className="space-y-6 links">
             <div className="text-p *:font-bold">
-              <p>Rechtliches</p>
+              <p>{OptionDatas.footer_rechtliches_title}</p>
             </div>
             <ul className="space-y-5">
-              <li>
-                <Link role="link" className="link" href="/Impressum">
-                  Impressum
-                </Link>
-              </li>
-              <li>
-                <Link role="link" className="link" href="/datenschutzerklarung">
-                  Datenschutzerklärung
-                </Link>
-              </li>
+              {Footerdata?.menus
+                ?.find((menu) => menu.menu_slug === "footer-menu-2")
+                ?.items?.map((item) => {
+                  return (
+                    <li key={item.id}>
+                      <Link role="link" className="link" href={item.url}>
+                        {item.title}
+                      </Link>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
           <div className="space-y-4 shrink-0">
-            <Link role="link" href="/" className="block">
+          {
+            OptionDatas.footer_certificates_links.map((image , i) => (
+            <Link role="link" href={image.footer_certificates_link} className="block" key={i}>
               <Image
                 role="img"
                 width={150}
                 height={151}
-                src="/images/footer-logo-1.png"
+                src={image.footer_certificates_image.url}
                 className="rounded-[10px]"
                 alt="Footer logo"
               />
             </Link>
-            <Link role="link" href="/" className="block">
-              <Image
-                role="img"
-                width={150}
-                height={151}
-                src="/images/footer-logo-2.png"
-                className="rounded-[10px]"
-                alt="Footer logo"
-              />
-            </Link>
+            ))
+          }
           </div>
         </div>
       </div>
       <div className="container-fluid font-semibold text-white bg-yellow text-center py-4">
         <p>
-          &copy; <span id="currentYear">2025</span> Copyright PSYCHOTHERAPIE
-          KÖLN RODENKIRCHEN.
+          &copy; <span id="currentYear">2025</span>{" "}
+          {OptionDatas.copyright_text}
         </p>
       </div>
     </footer>

@@ -29,7 +29,7 @@ const page = async() => {
       />
 
       <ServiceSection
-        leistungen_all_sub_services_1={
+        behandlungenServiceSection1={
           behandlungenData.acf.leistungen_all_sub_services_1
         }
       />
@@ -39,7 +39,7 @@ const page = async() => {
         btn={behandlungenData.acf.leistungen_anfrage_1_button}
       />
       <ServiceSection
-        leistungen_all_sub_services_2={
+        behandlungenServiceSection2={
           behandlungenData.acf.leistungen_all_sub_services_2
         }
       />
@@ -52,7 +52,7 @@ const page = async() => {
       <Review_section
         title={behandlungenData.acf.leistungen_bewertungen_main_title}
         des={behandlungenData.acf.leistungen_bewertungen_content}
-        bg="bg-[#FFF2CE]"
+        bg="bg-[#fffbf2]"
       />
       <Pattern_section
         title={behandlungenData.acf.leistungen_anfrage_3_main_title}

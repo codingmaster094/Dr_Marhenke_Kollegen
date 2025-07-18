@@ -37,24 +37,17 @@ const page = async() => {
         videoSrc={""}
       />
 
-      <About_Service_section
-        title={ueberunsData.acf.ueber_uns_praxis_title}
-        description={ueberunsData.acf.ueber_uns_praxis_content}
-        listItems={[]}
-        bgColor="bg-[#FFF2CE]"
-        imageSrc={ueberunsData.acf.ueber_uns_praxis_image.url}
-        reverse={false}
-      />
       <Psychotherapie_Praxis
         title={ueberunsData.acf.ueber_uns_standorte_main_title}
         description={ueberunsData.acf.ueber_uns_standorte_content}
-        listItems={[]}
         sliderData={ueberunsData.acf.ueber_uns_section_standort_data}
-        bgColor="bg-[#FFF2CE]"
         imageSrc={ueberunsData?.acf.ueber_uns_standorte_image.url}
-        reverse={true}
+        reverse={false}
       />
-      <Map />
+      <Map
+        title={ueberunsData?.acf.hero_title_1}
+        locations={ueberunsData?.acf.locations}
+      />
       <Kooperationspartner
         title={ueberunsData?.acf.ueber_uns_partners_main_title}
         logosData={ueberunsData.acf.ueber_uns_all_partners}

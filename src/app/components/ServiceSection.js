@@ -2,56 +2,65 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ServiceSection = ({
-  leistungen_all_sub_services_1,
-  leistungen_all_sub_services_2,
-  leistungen_all_sub_services_3,
+  behandlungenServiceSection1,
+  behandlungenServiceSection2,
+  CustomPageServiceSection1,
+  behandlungenCustompageServiceSection1,
 }) => {
   const mergedServices =
-    leistungen_all_sub_services_1 ||
-    leistungen_all_sub_services_2 ||
-    leistungen_all_sub_services_3;
+    behandlungenServiceSection1 ||
+    behandlungenServiceSection2 ||
+    CustomPageServiceSection1 ||
+    behandlungenCustompageServiceSection1 
 
   if (!Array.isArray(mergedServices)) return null;
 
-  return mergedServices.map((val, i) => {
+  return mergedServices?.map((val, i) => {
     const isEven = i % 2 === 0;
 
     const image =
       val?.leistungen_all_sub_services_1_image?.url ||
-      val?.leistungen_all_sub_services_2_image;
-      val?.leistungen_all_sub_services_3_image;
+      val?.leistungen_all_sub_services_2_image?.url ||
+      val?.leistungen_all_sub_services_3_image?.url ||
+      val?.praxis_image?.url ||
+      val?.content_image?.url;
 
     const imageAlt =
       val?.leistungen_all_sub_services_1_image?.alt ||
       val?.leistungen_all_sub_services_2_image?.alt ||
       val?.leistungen_all_sub_services_3_image?.alt ||
+      val?.praxis_image?.alt ||
+      val?.content_image?.alt ||
       "Service Image";
+
 
     const title =
       val?.leistungen_all_sub_services_1_title ||
       val?.leistungen_all_sub_services_2_title ||
-      val?.leistungen_all_sub_services_3_title;
+      val?.praxis_title ||
+      val?.section_title;
 
     const content =
       val?.leistungen_all_sub_services_1_content ||
       val?.leistungen_all_sub_services_2_content ||
-      val?.leistungen_all_sub_services_3_content 
+      val?.praxis_description ||
+      val?.listing_text;
 
     const points =
       val?.leistungen_all_sub_services_1_all_contents ||
       val?.leistungen_all_sub_services_2_all_contents ||
-      val?.leistungen_all_sub_services_3_all_contents;
+      val?.praxis_content ||
+      val?.listing_content;
 
     const postLink =
       val?.leistungen_all_sub_services_1_post_link ||
-      val?.leistungen_all_sub_services_2_post_link ||
-      val?.leistungen_all_sub_services_3_post_link;
+      val?.leistungen_all_sub_services_2_post_link 
 
     return (
       <section
         key={i}
         className={`py-14 lg:py-20 2xl:py-100 bg-opacity-25 ${
-          isEven ? "bg-[#FFF2CE]" : ""
+          isEven ? "bg-[#fffbf2]" : ""
         }`}
       >
         <div className="container space-y-16">
@@ -62,7 +71,6 @@ const ServiceSection = ({
           >
             {/* Image Section */}
             <div className="lg:w-6/12 self-stretch 3xl:aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden">
-
               {image && (
                 <Image
                   src={image}
@@ -97,15 +105,14 @@ const ServiceSection = ({
               <div className="content-listing">
                 {Array.isArray(
                   val.leistungen_all_sub_services_1_all_contents ||
-                    val.leistungen_all_sub_services_2_all_contents ||
-                    val.leistungen_all_sub_services_3_all_contents
+                    val.leistungen_all_sub_services_2_all_contents 
                 ) && (
                   <ul className="space-y-4 ml-6 list-disc">
                     {points.map((item, index) => (
                       <li key={index}>
                         {item?.leistungen_all_sub_services_1_all_contents_points ||
                           item?.leistungen_all_sub_services_2_all_contents_points ||
-                          item?.leistungen_all_sub_services_3_all_contents_points}
+                          item?.listing_point}
                       </li>
                     ))}
                   </ul>

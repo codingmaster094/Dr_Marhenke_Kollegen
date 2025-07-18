@@ -1,9 +1,9 @@
 import Image from "next/image";
 import DoctorList from "./DoctorList";
 const Uber_AboutSection = ({ title , content , BTN , Doctore_list }) => {
-console.log("Doctore_list", Doctore_list);
+
   return (
-    <section className="bg-[#FFF2CE] py-14 lg:py-20 2xl:py-[100px] bg-opacity-25">
+    <section className="bg-[#fffbf2] py-14 lg:py-20 2xl:py-[100px] bg-opacity-25">
       <div className="container space-y-16">
         <div className="flex flex-col lg:flex-row gap-4 xl:gap-16 items-start">
           <div className="lg:w-6/12 self-stretch rounded md:rounded-3xl overflow-hidden">

@@ -15,7 +15,6 @@ const page = async({params}) => {
     return <div>No data available.</div>;
   }
 
-  console.log('stellenausschreibungData', stellenausschreibungData)
 return (
   <>
     <Hero_Section

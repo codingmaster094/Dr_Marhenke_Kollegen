@@ -16,7 +16,7 @@ const page = async ({ params }) => {
     return <div>No data available.</div>;
   }
 
-  console.log('TeamData', TeamData)
+
 
   const blogPosts = [
     {
@@ -281,7 +281,7 @@ const page = async ({ params }) => {
         title={TeamData.acf.team__employee_title}
         description={TeamData.acf.team__employee_description}
         listItems={[]}
-        bgColor="bg-[#FFF2CE]"
+        bgColor="bg-[#fffbf2]"
         imageSrc={TeamData.acf.team_employee_photo.url}
         reverse={false}
       />

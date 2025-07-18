@@ -53,11 +53,16 @@ const Psychotherapie_Praxis = ({
           </div>
           <div className="lg:w-6/12 flex flex-col justify-center gap-[34px]">
             <div>
-              <h2 className="text-h2 mb-4 max-w-[600px]">{title}</h2>
+              <h2
+                className="text-h2 mb-4 max-w-[600px]"
+                dangerouslySetInnerHTML={{ __html: title }}
+              ></h2>
               <span className="w-28 h-1 bg-yellow block"></span>
             </div>
-            <div className="text-p space-y-4">
-              <p>{description}</p>
+            <div
+              className="text-p space-y-4"
+              dangerouslySetInnerHTML={{ __html: description }}
+            >
             </div>
             <ul className="space-y-4 ml-6 list-disc">
               {listItems?.map((item, index) => (

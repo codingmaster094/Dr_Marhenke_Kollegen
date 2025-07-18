@@ -4,95 +4,88 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-// Dynamic imports for React-Leaflet components
+// Dynamic imports for Leaflet components
 const MapContainer = dynamic(
-  () => import("react-leaflet").then((m) => m.MapContainer),
+  () => import("react-leaflet").then((mod) => mod.MapContainer),
   { ssr: false }
 );
 const TileLayer = dynamic(
-  () => import("react-leaflet").then((m) => m.TileLayer),
+  () => import("react-leaflet").then((mod) => mod.TileLayer),
   { ssr: false }
 );
-const Marker = dynamic(() => import("react-leaflet").then((m) => m.Marker), {
+const Marker = dynamic(
+  () => import("react-leaflet").then((mod) => mod.Marker),
+  { ssr: false }
+);
+const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), {
   ssr: false,
 });
-const Popup = dynamic(() => import("react-leaflet").then((m) => m.Popup), {
-  ssr: false,
+
+import "leaflet/dist/leaflet.css";
+
+// Fix Leaflet icon issue
+import L from "leaflet";
+const customIcon = new L.Icon({
+  iconUrl: "/images/marker-icon.png",
+  iconSize: [30, 40],
+  iconAnchor: [15, 40],
+  popupAnchor: [0, -40],
+  shadowUrl: null,
+  shadowSize: null,
+  shadowAnchor: null,
 });
 
-const markers = [
-  {
-    position: [48.1351, 11.582],
-    name: "Munchen, Germany",
-    buttonText: "Mehr erfahren",
-    link: "/huerth",
-  },
-  {
-    position: [50.1109, 8.6821],
-    name: "Darmstadt, Germany",
-    buttonText: "Mehr erfahren",
-    link: "/koeln-suedstadt",
-  },
-  {
-    position: [52.52, 13.405],
-    name: "Berlin, Germany",
-    buttonText: "Mehr erfahren",
-    link: "/koeln-rodenkirchen",
-  },
-];
-
-export default function Page() {
-  const [icon, setIcon] = useState(null);
-
-  useEffect(() => {
-    // Load Leaflet only on client
-    import("leaflet").then((L) => {
-      const customIcon = new L.Icon({
-        iconUrl: "/images/marker-icon.png",
-        iconSize: [30, 40],
-        iconAnchor: [19, 38],
-        popupAnchor: [0, -38],
-      });
-      setIcon(customIcon);
-    });
-  }, []);
-
-  const center = [50.1109, 8.6821];
+export default function Page({ title,locations }) {
+  // Use default center if no locations are available
+  const defaultCenter = [50.1109, 8.6821];
+  const center =
+    locations && locations.length > 0
+      ? [parseFloat(locations[0].latitude), parseFloat(locations[0].longitude)]
+      : defaultCenter;
 
   return (
-    <section className="py-14 lg:py-20 2xl:py-100 text-center bg-[#FFF2CE] bg-opacity-25">
-      <div className="">
-        <h2 className="mb-4">
-          Praxis für Psychotherapie Dr. Marhenke: unsere Standorte in Köln
+    <section className="py-14 lg:py-20 2xl:py-100 text-center bg-[#fffbf2] bg-opacity-25">
+      <div className="d">
+        <h2 className="mb-4" dangerouslySetInnerHTML={{ __html: title }}>
         </h2>
         <span className="w-28 h-1 bg-yellow block mx-auto"></span>
 
         <div className="mt-10">
-          <MapContainer
-            center={center}
-            zoom={6}
-            scrollWheelZoom={false}
-            style={{ height: "600px", width: "100%" }}
-          >
-            <TileLayer
-              attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {icon &&
-              markers.map((marker, i) => (
-                <Marker key={i} position={marker.position} icon={icon}>
+          {typeof window !== "undefined" && (
+            <MapContainer
+              center={center}
+              zoom={6}
+              scrollWheelZoom={false}
+              style={{ height: "600px", width: "100%" }}
+            >
+              <TileLayer
+                attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+
+              {locations?.map((location, i) => (
+                <Marker
+                  key={i}
+                  position={[
+                    parseFloat(location.latitude),
+                    parseFloat(location.longitude),
+                  ]}
+                  icon={customIcon}
+                >
                   <Popup>
-                    <p>{marker.name}</p>
+                    <p className="font-semibold">{location.address}</p>
                     <Link
-                      className="loc-popup-btn"
-                      href={marker.link}
+                      className="loc-popup-btn text-blue-600 underline inline-block mt-2"
+                      href={location.button.url}
+                      target={location.button.target || "_self"}
                     >
-                      {marker.buttonText}
+                      {location.button.title}
                     </Link>
                   </Popup>
                 </Marker>
               ))}
-          </MapContainer>
+            </MapContainer>
+          )}
         </div>
       </div>
     </section>

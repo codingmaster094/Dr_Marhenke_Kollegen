@@ -20,7 +20,7 @@ const Psychotherapeuten = ({ image , title, content, postsData }) => {
   };
 
   return (
-    <section className="bg-[#FFF2CE] py-14 lg:py-20 2xl:py-100 bg-opacity-25">
+    <section className="bg-[#fffbf2] py-14 lg:py-20 2xl:py-100 bg-opacity-25">
       <div className="container space-y-16">
         <div className="flex flex-col lg:flex-row gap-4 xl:gap-16">
           <div className="lg:w-6/12 self-stretch 3xl:aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden relative">

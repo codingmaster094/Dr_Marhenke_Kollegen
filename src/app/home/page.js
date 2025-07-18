@@ -8,6 +8,7 @@ import Team_section from "../components/Team_section";
 import Review_section from "../components/Review_section";
 import FAQ_section from "../components/FAQ_section";
 import Alldata from "../utils/AllDataFetxh";
+import Contact_form from "../components/Contact_form";
 
 const page = async() => {
   let HomePageData;
@@ -47,9 +48,7 @@ const page = async() => {
       <Psychotherapie_Praxis
         title={HomePageData.acf.praxis_title}
         description={HomePageData.acf.praxis_content}
-        listItems={[]}
         sliderData={HomePageData.acf.praxis_standort_data}
-        bgColor="bg-[#FFF2CE]"
         imageSrc={HomePageData?.acf.praxis_image.url}
         reverse={true}
       />
@@ -77,6 +76,8 @@ const page = async() => {
         title={HomePageData.acf.faq_ttile}
         faqs={HomePageData.acf.faq_content}
       />
+
+      <Contact_form />
     </>
   );
 };

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Offcanvas from "../components/Offcanvas";
 import { usePathname } from "next/navigation";
 import Lenis from "@studio-freight/lenis";
-const Header = () => {
+const Header = ({Headerdata , menuData , OptionData}) => {
   const [isSticky, setIsSticky] = useState(false);
   const pathname = usePathname(); 
   const lenisRef = useRef(null);
@@ -33,6 +33,8 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+
   return (
     <header
       id="header"
@@ -46,7 +48,7 @@ const Header = () => {
           <div className="logo">
             <Link href="/">
               <Image
-                src="/images/logo.svg"
+                src={Headerdata.site_logo}
                 alt="Logo"
                 width={286}
                 height={66}
@@ -58,171 +60,71 @@ const Header = () => {
           <div className="flex gap-12 items-center">
             <nav className="hidden lg:block">
               <ul className="flex gap-[34px] text-black text-opacity-65">
-                <li>
-                  <Link
-                    href="/"
-                    className={
-                      pathname === "/" ? "text-yellow hover:shadow" : ""
-                    }
-                  >
-                    Start
-                  </Link>
-                </li>
-                <li className="relative group menu-item-has-children">
-                  <Link
-                    href="/behandlungen"
-                    className={
-                      [
-                        "/behandlungen",
-                        "/behandlungen/einzel-und-gruppentherapie",
-                        "/behandlungen/paar-und-sexualtherapie",
-                        "/behandlungen/online-psychotherapie",
-                        "/behandlungen/psy-rena",
-                      ].includes(pathname)
-                        ? "text-yellow hover:shadow"
-                        : ""
-                    }
-                  >
-                    Behandlungen
-                  </Link>
-                  <ul className="z-50 sub-menu absolute left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white shadow-md mt-2 py-2 px-4 ">
-                    <li>
+                {menuData?.items?.map((item) => {
+                  const itemPath =
+                    item.url === "home" ? "/" : item.url.replace(/\/+$/, "");
+                  const currentPath = pathname.replace(/\/+$/, "");
+
+                  const isChildActive = item.children?.some(
+                    (child) => child.url.replace(/\/+$/, "") === currentPath
+                  );
+                  const isActive = itemPath === currentPath || isChildActive;
+
+                  return (
+                    <li
+                      key={item.id}
+                      className={`${
+                        item.children.length > 0
+                          ? "relative group menu-item-has-children"
+                          : ""
+                      }`}
+                    >
                       <Link
-                        href="/behandlungen/einzel-und-gruppentherapie"
-                        className={
-                          pathname ===
-                          "/behandlungen/einzel-und-gruppentherapie"
-                            ? "text-yellow hover:shadow"
-                            : ""
-                        }
+                        href={item.url}
+                        className={`${isActive ? "text-yellow" : ""}`}
                       >
-                        Einzel und Gruppentherapie
+                        {item.title.replace(/&amp;/g, "&")}
                       </Link>
+
+                      {item.children.length > 0 && (
+                        <ul className="z-50 sub-menu absolute left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white shadow-md mt-2 py-2 px-4">
+                          {item.children.map((child) => {
+                            const childPath = child.url.replace(/\/+$/, "");
+                            const isChildActive = currentPath === childPath;
+
+                            return (
+                              <li key={child.id}>
+                                <Link
+                                  href={child.url}
+                                  className={`${
+                                    isChildActive
+                                      ? "text-yellow hover:shadow"
+                                      : ""
+                                  }`}
+                                >
+                                  {child.title.replace(/&amp;/g, "&")}
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
                     </li>
-                    <li>
-                      <Link
-                        href="/behandlungen/paar-und-sexualtherapie"
-                        className={
-                          pathname === "/behandlungen/paar-und-sexualtherapie"
-                            ? "text-yellow hover:shadow"
-                            : ""
-                        }
-                      >
-                        Paar und Sexualtherapie
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/behandlungen/online-psychotherapie"
-                        className={
-                          pathname === "/behandlungen/online-psychotherapie"
-                            ? "text-yellow hover:shadow"
-                            : ""
-                        }
-                      >
-                        Online Psychotherapie
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/behandlungen/psy-rena"
-                        className={
-                          pathname === "/behandlungen/psy-rena"
-                            ? "text-yellow hover:shadow"
-                            : ""
-                        }
-                      >
-                        Psy Rena
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link
-                    href="/ueber-uns"
-                    className={
-                      pathname === "/ueber-uns"
-                        ? "text-yellow hover:shadow"
-                        : ""
-                    }
-                  >
-                    Über uns
-                  </Link>
-                </li>
-                <li className="relative group menu-item-has-children">
-                  <div
-                    className={
-                      pathname === "/koeln-rodenkirchen" ||
-                      pathname === "/koeln-suedstadt" ||
-                      pathname === "/huerth"
-                        ? "text-yellow hover:shadow cursor-pointer"
-                        : "cursor-pointer"
-                    }
-                  >
-                    Standorte
-                  </div>
-                  <ul className="z-50 sub-menu absolute left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white shadow-md mt-2 py-2 px-4 ">
-                    <li>
-                      <Link
-                        href="/koeln-rodenkirchen"
-                        className={
-                          pathname === "/koeln-rodenkirchen"
-                            ? "text-yellow hover:shadow"
-                            : ""
-                        }
-                      >
-                        Köln Rodenkirchen
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/koeln-suedstadt"
-                        className={
-                          pathname === "/koeln-suedstadt"
-                            ? "text-yellow hover:shadow"
-                            : ""
-                        }
-                      >
-                        Köln Suedstadt
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/huerth"
-                        className={
-                          pathname === "/huerth"
-                            ? "text-yellow hover:shadow"
-                            : ""
-                        }
-                      >
-                        Hürth
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link
-                    href="/kooperationen"
-                    className={
-                      pathname === "/kooperationen"
-                        ? "text-yellow hover:shadow"
-                        : ""
-                    }
-                  >
-                    Kooperationen
-                  </Link>
-                </li>
+                  );
+                })}
               </ul>
             </nav>
 
             <div className="flex gap-2 text-white items-center">
               {/* Contact Button */}
               <Link
-                href="/kontakt"
+                href={OptionData.header_button.url}
                 aria-label="Contact"
                 className="p-2 sm:p-3 2xl:py-4 2xl:px-8 inline-block bg-yellow rounded sm:rounded-[10px] hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg text-base lg:text-lg"
               >
-                <span className="hidden xl:block">Kontakt aufnehmen</span>
+                <span className="hidden xl:block">
+                  {OptionData.header_button.title}
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
