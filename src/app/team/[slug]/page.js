@@ -6,7 +6,7 @@ const page = async ({ params }) => {
   const {slug} = await params
   let TeamData;
   try {
-    TeamData = await Custom_Post  (`/team/${slug}`);
+    TeamData = await Custom_Post(`/team/${slug}`);
   } catch (error) {
     console.error("Error fetching data:", error);
     return <div>Error loading data.</div>;
