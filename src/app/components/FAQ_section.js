@@ -19,7 +19,7 @@ const FAQ_section = ({title ,faqs}) => {
     setSelected(selected !== index ? index : null);
   };
   return (
-    <section className="py-14 lg:py-20 2xl:py-100">
+    <section className="pb-14 lg:pb-20 2xl:pb-100">
       <div className="container">
         <div className="mb-16 text-center">
           <h2 className="text-h2 mb-4">{title}</h2>

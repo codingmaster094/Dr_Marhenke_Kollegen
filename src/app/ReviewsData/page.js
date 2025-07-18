@@ -14,8 +14,6 @@ const page = async ({ title, des }) => {
   if (!ReviewDataAPI) {
     return <div>No data available.</div>;
   }
-
-  console.log("ReviewDataAPI", ReviewDataAPI);
   return (
     <Google_Review
       main_title={ReviewDataAPI.logo_title}
