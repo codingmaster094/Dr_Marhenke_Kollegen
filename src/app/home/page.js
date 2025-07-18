@@ -76,8 +76,6 @@ const page = async() => {
         title={HomePageData.acf.faq_ttile}
         faqs={HomePageData.acf.faq_content}
       />
-
-      <Contact_form />
     </>
   );
 };
