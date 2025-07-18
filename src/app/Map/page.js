@@ -1,4 +1,3 @@
-// Map/page.js
 "use client";
 import React from "react";
 import LeafletMapWrapper from "@/app/components/LeafletMapWrapper";

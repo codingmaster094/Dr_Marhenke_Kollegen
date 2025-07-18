@@ -1,10 +1,8 @@
-// components/LeafletMap.js
 import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import "leaflet/dist/leaflet.css";
 
-// Dynamic imports for react-leaflet components
 const MapContainer = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
   { ssr: false }
@@ -22,7 +20,6 @@ const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), {
 });
 
 export default function LeafletMap({ locations = [], center }) {
-  // Create the icon inside the component to avoid server-side execution
   const customIcon = React.useMemo(() => {
     const L = typeof window !== "undefined" ? require("leaflet") : null;
     if (!L) return null;

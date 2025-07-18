@@ -1,4 +1,3 @@
-// components/LeafletMapWrapper.js
 "use client";
 import React, { useState, useEffect } from "react";
 import LeafletMap from "./LeafletMap";
