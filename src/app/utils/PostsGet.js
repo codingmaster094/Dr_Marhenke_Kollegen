@@ -1,6 +1,6 @@
 export default async function POST_GET(params) {
   try {
-    const response = await fetch(`${process.env.NEXT_POST_GET_URL}${params}`, {
+    const response = await fetch(`${process.env.NEXT_POST_GET_URL || 'https://marhenke.blog-s.de/wp-json/custom/v1'}${params}`, {
       // ✅ Enable ISR (caches for 1 hour, but rebuilds on request)
       next: { revalidate: 3600 },
     });
