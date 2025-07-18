@@ -4,11 +4,7 @@ export default async function Alldata(params) {
       `${
         process.env.NEXT_PUBLIC_BASE_URL ||
         "https://marhenke.blog-s.de/wp-json/custom/v1/pages"
-      }${params}`,
-      {
-         cache: "no-store"  ,
-      }
-    );
+      }${params}`);
     if (!response) {
       throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
