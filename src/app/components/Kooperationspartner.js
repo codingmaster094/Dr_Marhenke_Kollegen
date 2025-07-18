@@ -109,7 +109,7 @@ const Kooperationspartner = ({ title, logosData, BTN }) => {
 
                   return (
                     <SwiperSlide
-                      className="swiper-slide !flex sm:justify-start justify-center"
+                      className="swiper-slide !flex justify-center"
                       key={i}
                     >
                       <Link href={linkUrl} role="link">
