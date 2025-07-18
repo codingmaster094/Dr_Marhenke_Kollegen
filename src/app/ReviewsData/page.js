@@ -2,7 +2,7 @@ import React from "react";
 import Google_Review from "../components/Google_Review";
 import POST_GET from "../utils/PostsGet";
 
-const page = async ({ title, des }) => {
+const page = async () => {
   let ReviewDataAPI;
   try {
     ReviewDataAPI = await POST_GET("/options");

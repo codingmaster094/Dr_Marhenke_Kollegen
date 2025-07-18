@@ -8,6 +8,7 @@ import BlogComponent from "../components/BlogComponent";
 import Alldata from "../utils/AllDataFetxh";
 import Custom_Post from "../utils/CustomPost";
 import MapPageClient from "../Map/page";
+import ReviewsData from "../ReviewsData/page";
 import POST_GET from "../utils/PostsGet";
 const page = async() => {
   let ueberunsData;
@@ -60,6 +61,7 @@ const page = async() => {
         Doctore_list={Doctor_listData}
       />
       <BlogComponent PostData={PostData} />
+         <ReviewsData />
     </>
   );
 };

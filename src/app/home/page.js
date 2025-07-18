@@ -66,10 +66,7 @@ const page = async() => {
         content={HomePageData.acf.vorteile_content}
         bg_image={HomePageData?.acf.vorteile_image.url}
       />
-      <ReviewsData
-        title={HomePageData.acf.home_bewertungen_title}
-        des={HomePageData.acf.home_bewertungen_description}
-      />
+      <ReviewsData />
       <FAQ_section
         title={HomePageData.acf.faq_ttile}
         faqs={HomePageData.acf.faq_content}

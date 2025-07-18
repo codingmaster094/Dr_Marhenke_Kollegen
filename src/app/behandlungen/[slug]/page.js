@@ -1,8 +1,9 @@
+import React from "react";
 import Hero_Section from "@/app/components/Hero_Section";
 import Kooperationspartner from "@/app/components/Kooperationspartner";
 import ServiceSection from "@/app/components/ServiceSection"
 import FAQ_section from "@/app/components/FAQ_section";
-import React from "react";
+import ReviewsData from "../../ReviewsData/page";
 import POST_GET from "@/app/utils/PostsGet";
 const page = async ({params}) => {
     const {slug} = await params
@@ -40,6 +41,8 @@ const page = async ({params}) => {
           CostumPagePost.acf.single_behandlungen_post_content_detail
         }
       />
+
+      <ReviewsData />
 
       <FAQ_section
         title={CostumPagePost.acf.single_behandlungen_faqs_main_title}

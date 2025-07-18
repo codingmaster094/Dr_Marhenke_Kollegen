@@ -3,7 +3,7 @@ import Hero_Section from "../components/Hero_Section";
 import ServiceSection from "../components/ServiceSection";
 import Pattern_section from "../components/Pattern_section";
 import Kooperationspartner from "../components/Kooperationspartner";
-import Review_section from "../components/Review_section";
+import ReviewsData from "../ReviewsData/page";
 import Alldata from "../utils/AllDataFetxh";
 const page = async() => {
   let behandlungenData;
@@ -49,16 +49,14 @@ const page = async() => {
         logosData={behandlungenData.acf.leistungen_all_partners}
         BTN={behandlungenData.acf.leistungen_partners_button}
       />
-      <Review_section
-        title={behandlungenData.acf.leistungen_bewertungen_main_title}
-        des={behandlungenData.acf.leistungen_bewertungen_content}
-        bg="bg-[#fffbf2]"
-      />
+
       <Pattern_section
         title={behandlungenData.acf.leistungen_anfrage_3_main_title}
         content={behandlungenData.acf.leistungen_anfrage_3_content}
         btn={behandlungenData.acf.anfrage_button_2}
       />
+      <ReviewsData />
+
     </>
   );
 };

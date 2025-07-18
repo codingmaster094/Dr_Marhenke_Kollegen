@@ -2,10 +2,8 @@ import React from "react";
 import Hero_Section from "../components/Hero_Section";
 import ServiceSection from "../components/ServiceSection";
 import Pattern_section from "../components/Pattern_section";
-import Review_section from "../components/Review_section";
 import SliderSection from "../components/SliderSection";
-import TeamsProfile from "../components/TeamsProfile";
-import No_slug_page from "../components/No_slug_page";
+import ReviewsData from "../ReviewsData/page";
 import DoctorList from "../components/DoctorList";
 import Contact_form from "../components/Contact_form";
 import Alldata from "../utils/AllDataFetxh";
@@ -37,21 +35,15 @@ const Page = async({ params }) => {
         BTN={Custom_Page.acf.standort_single_hero_button}
         imageSrc={Custom_Page.acf.standort_single_hero_image.url}
       />
-      <ServiceSection
-        CustomPageServiceSection1={
-          Custom_Page.acf.praxis
-        }
-      />
+      <ServiceSection CustomPageServiceSection1={Custom_Page.acf.praxis} />
 
       <Pattern_section
         title={Custom_Page.acf.standort_single_anfrage_title}
         content={Custom_Page.acf.standort_single_anfrage_description}
         btn={Custom_Page.acf.standort_single_anfrage_button}
       />
-      <Review_section
-        title={Custom_Page.acf.standort_single_bewertungen_title}
-        des={Custom_Page.acf.standort_single_bewertungen_description}
-      />
+
+      <ReviewsData />
 
       <SliderSection
         main_title={Custom_Page.acf.standort_single_galerie_title}

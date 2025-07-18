@@ -1,6 +1,7 @@
 import React from "react";
 import Hero_Section from "../components/Hero_Section";
 import Kooperationen_Service from "../components/Kooperationen_Service";
+import ReviewsData from "../ReviewsData/page";
 import Alldata from "../utils/AllDataFetxh";
 const page = async() => {
   let kooperationenData;
@@ -27,6 +28,8 @@ const page = async() => {
       <Kooperationen_Service
         KooperationenData={kooperationenData.acf.kooperationen__description}
       />
+
+         <ReviewsData />
     </>
   );
 };
