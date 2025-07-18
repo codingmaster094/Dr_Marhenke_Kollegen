@@ -1,17 +1,17 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-const BlogComponent = ({PostData}) => {
-    const blogPosts = [
-      {
-        id: 1,
-        title: "Psychologische/r Psychotherapeut/in",
-        image: "/images/praxis1.jpg",
-        link: "/stellenausschreibung/psychologische-psychotherapeutin",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      },
-    ];
+const BlogComponent = ({ PostData }) => {
+  const blogPosts = [
+    {
+      id: 1,
+      title: "Psychologische/r Psychotherapeut/in",
+      image: "/images/praxis1.jpg",
+      link: "/stellenausschreibung/psychologische-psychotherapeutin",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    },
+  ];
   return (
     <section className="py-14 lg:py-20">
       <div className="container mx-auto">
@@ -25,16 +25,18 @@ const BlogComponent = ({PostData}) => {
             {PostData.map((post, i) => (
               <div
                 key={i}
-                className="hover:shadow-[0px_4px_34px_0_rgba(0,0,0,.08)] rounded-lg transition-shadow"
+                className="hover:shadow-[0px_4px_34px_0_rgba(0,0,0,.08)] rounded-xl lg:rounded-2xl 3xl:rounded-3xl transition-shadow"
               >
                 {/* <Link href={post.link} className="block aspect-[1.53/1]"> */}
-                <Image
-                  src={post.acf.stellenausschreibung__hero_image.url}
-                  alt="Blog Image"
-                  width={400}
-                  height={260}
-                  className="rounded-xl lg:rounded-2xl 3xl:rounded-3xl w-full h-full object-cover"
-                />
+                <div>
+                  <Image
+                    src={post.acf.stellenausschreibung__hero_image.url}
+                    alt="Blog Image"
+                    width={400}
+                    height={260}
+                    className="rounded-xl lg:rounded-2xl 3xl:rounded-3xl w-full h-full object-cover"
+                  />
+                </div>
                 {/* </Link> */}
                 <div className="p-4">
                   <div className="flex justify-between mt-6 mb-4 gap-4">

@@ -40,7 +40,7 @@ const ContactSection = ({location_cards}) => {
               })
             }
             </div>
-            <h3 className="mb-2 lg:mt-6 text-h3 font-bold" dangerouslySetInnerHTML={{ __html: item.location_name }}></h3>
+            <h3 className="mt-4 mb-1 lg:mt-6 text-h3 font-bold" dangerouslySetInnerHTML={{ __html: item.location_name }}></h3>
             <div className="mb-4 lg:mb-8 text-p space-y-4">
               <p >
                {item.address}

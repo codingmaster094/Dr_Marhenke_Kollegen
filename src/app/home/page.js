@@ -5,10 +5,9 @@ import Psychotherapie_Praxis from "../components/Psychotherapie_Praxis";
 import Kooperationspartner from "../components/Kooperationspartner";
 import Pattern_section from "../components/Pattern_section";
 import Team_section from "../components/Team_section";
-import Review_section from "../components/Review_section";
+import ReviewsData from "../ReviewsData/page";
 import FAQ_section from "../components/FAQ_section";
 import Alldata from "../utils/AllDataFetxh";
-import Contact_form from "../components/Contact_form";
 
 const page = async() => {
   let HomePageData;
@@ -67,10 +66,9 @@ const page = async() => {
         content={HomePageData.acf.vorteile_content}
         bg_image={HomePageData?.acf.vorteile_image.url}
       />
-      <Review_section
+      <ReviewsData
         title={HomePageData.acf.home_bewertungen_title}
         des={HomePageData.acf.home_bewertungen_description}
-        bg=""
       />
       <FAQ_section
         title={HomePageData.acf.faq_ttile}

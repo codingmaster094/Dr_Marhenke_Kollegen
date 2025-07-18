@@ -1,5 +1,5 @@
 import Header from "./Header/page";
-import "./globals.css";
+import "../../public/css/globals.css";
 import '../../public/fonts/font.css';
 import Footer from "./Footer/page";
 import TopButton from "./components/Top-Button";

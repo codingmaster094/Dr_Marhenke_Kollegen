@@ -67,7 +67,7 @@ const SliderSection = ({ main_title, gallery_images }) => {
           <button
             onClick={prevSlide}
             aria-label="Previous slide"
-            className="absolute top-1/2 -translate-y-1/2 left-0 bg-black bg-opacity-30 scale-50 sm:scale-100 size-16 rounded-e text-white p-1 sm:p-2 hidden xl:block z-30"
+            className="absolute top-1/2 -translate-y-1/2 left-0 bg-black bg-opacity-30 p-2 sm:p-3 xl:p-4 rounded-e text-white z-30"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ const SliderSection = ({ main_title, gallery_images }) => {
           <button
             onClick={nextSlide}
             aria-label="Next slide"
-            className="absolute top-1/2 -translate-y-1/2 right-0 bg-black bg-opacity-30 scale-50 sm:scale-100 size-16 rounded-s text-white p-1 sm:p-2 hidden xl:block z-30"
+            className="absolute top-1/2 -translate-y-1/2 right-0 bg-black bg-opacity-30 p-2 sm:p-3 xl:p-4 rounded-s text-white z-30"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
