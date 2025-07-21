@@ -105,7 +105,7 @@ const ContentWithTOC = ({ title, data, FAQ }) => {
       {updatedHTML && (
         <section className="container max-w-[1440px] redirect pb-10 md:pb-[70px] lg:pb-[100px]">
           <div
-            className="blogtemplate"
+            className="blogtemplate mb-8 lg:mb-12"
             dangerouslySetInnerHTML={{ __html: updatedHTML }}
           ></div>
           <FAQ_section
