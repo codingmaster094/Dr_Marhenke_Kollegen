@@ -14,16 +14,18 @@ const page = async() => {
   let ueberunsData;
   let Doctor_listData;
   let PostData;
+  let BlogData;
   try {
     ueberunsData = await Alldata("/ueber-uns");
     Doctor_listData = await Custom_Post("/team");
     PostData = await POST_GET("/stellenausschreibung");
+    BlogData = await POST_GET("/ratgeber");
   } catch (error) {
     console.error("Error fetching data:", error);
     return <div>Error loading data.</div>;
   }
 
-  if (!ueberunsData || !Doctor_listData || !PostData) {
+  if (!ueberunsData || !Doctor_listData || !PostData || !BlogData) {
     return <div>No data available.</div>;
   }
   return (
@@ -61,7 +63,7 @@ const page = async() => {
         Doctore_list={Doctor_listData}
       />
       <BlogComponent PostData={PostData} />
-         <ReviewsData />
+       <ReviewsData />
     </>
   );
 };

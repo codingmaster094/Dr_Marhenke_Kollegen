@@ -41,6 +41,10 @@
   .list-style-arrow {
     @apply list-image-[url(/images/bulletpoint.svg)];
   }
+  .content-listing1,
+  .list-style-arrow {
+    @apply list-image-[url(/images/bulletpoint.svg)];
+  }
   .wpcf7-form .f-fild {
     @apply mb-5;
   }
@@ -969,4 +973,42 @@ svg.leaflet-image-layer.leaflet-interactive path {
   text-align: center;
   border-radius: 5px;
   padding: 8px 30px;
+}
+.blogtemplate p {
+  padding-bottom: 16px;
+}
+.blogtemplate h2{
+  padding-top:16px;
+  padding-bottom:25px;
+}
+.blogtemplate h3 {
+  padding-top:16px;
+  padding-bottom:16px;
+}
+.blogtemplate h4,
+.blogtemplate h5 {
+  padding-bottom: 16px;
+}
+.blogtemplate ul {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding-left: 1.25rem !important;
+    font-size: 18px;
+    font-weight: 400;
+}
+.blogtemplate ul li {
+  list-style-type: disc;
+
+}
+.menu li {
+  list-style-type: none;
+}
+
+.menu li:not(:has(a)) {
+  list-style-type: disc;
+}
+.blogpage-menu ul{
+  padding-left:24px;
 }

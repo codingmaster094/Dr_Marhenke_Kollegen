@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import Link from "next/link";
 
-const Hero_Section = ({
+const Hero_Section_blog = ({
   title,
   subtitle,
   points,
@@ -59,8 +59,8 @@ const Hero_Section = ({
   // };
 
   return (
-    <section className="container">
-      <div className="flex flex-col-reverse lg:flex-row gap-6">
+    <section className="px-4 lg:pr-0 2xl:ml-[calc((100%-1440px)/2)]">
+      <div className="flex flex-col lg:flex-row gap-6">
         <div className="lg:w-6/12 py-8 flex flex-col justify-center gap-5 sm:gap-[34px]">
           <h1 className="text-h1">
             <span
@@ -138,4 +138,4 @@ const Hero_Section = ({
   );
 };
 
-export default Hero_Section;
+export default Hero_Section_blog;

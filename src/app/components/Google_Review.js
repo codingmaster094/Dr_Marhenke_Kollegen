@@ -11,6 +11,7 @@ import Link from "next/link";
 import commentEqualcontent from "../utils/commentEqualcontent";
 
 const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
+  console.log('slider', slider)
   const carouselRef = useRef();
   const [swiperInstance, setSwiperInstance] = useState(null);
 
@@ -120,7 +121,8 @@ const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
                 // 1440: { slidesPerView: 4, spaceBetween: 30 },
               }}
             >
-              {slider?.map((item, i) => (
+              {slider !== false &&
+                slider?.map((item, i) => (
                 <SwiperSlide key={item.id || i} className="border border-teal">
                   <div className="p-6 xl:p-10 space-y-4">
                     <div className="flex items-center gap-6">

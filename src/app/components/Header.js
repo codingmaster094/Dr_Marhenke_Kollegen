@@ -42,7 +42,7 @@ const Header = ({Headerdata , menuData , OptionData}) => {
         isSticky ? "fixed top-0 left-0 shadow" : ""
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-[1712px]">
         <div className="flex justify-between items-center gap-3">
           {/* Logo */}
           <div className="logo">
