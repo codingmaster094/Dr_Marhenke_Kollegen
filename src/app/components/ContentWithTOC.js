@@ -108,7 +108,11 @@ const ContentWithTOC = ({ title, data, FAQ }) => {
             className="blogtemplate"
             dangerouslySetInnerHTML={{ __html: updatedHTML }}
           ></div>
-          <FAQ_section title={FAQ.faq_main_title} faqs={FAQ.all_faqs} container={true} />
+          <FAQ_section
+            title={FAQ.faq_main_title}
+            faqs={FAQ.all_faqs}
+            container={true}
+          />
         </section>
       )}
     </div>

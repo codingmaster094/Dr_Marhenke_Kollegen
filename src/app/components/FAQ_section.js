@@ -42,7 +42,7 @@ const FAQ_section = ({ title, faqs, container }) => {
     ${
       !container && isOpen
         ? "bg-[#F4E5C0] border-none rounded sm:rounded-2xl md:rounded-3xl"
-        : "shadow-md rounded sm:rounded-2xl md:rounded-3xl border-none mb-4"
+        : ""
     }
   `}
               >
