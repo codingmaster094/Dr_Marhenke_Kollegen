@@ -226,7 +226,7 @@ const Contact_form = () => {
             <p>
               Informationen zum Datenschutz bzgl. Ihrer Anfrage finden Sie hier:{" "}
               <Link href="/datenschutzerklarung">
-                <span className="text-black">Datenschutzerklärung</span>
+                <span className="text-white underline">Datenschutzerklärung</span>
               </Link>
             </p>
             {/* 🔥 Custom reCAPTCHA Image Selection */}
