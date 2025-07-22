@@ -24,13 +24,25 @@ const FAQ_section = ({ title, faqs, container }) => {
 
   return (
     <section className="pb-14 lg:pb-20 2xl:pb-100" id="faq">
-      <div className="container">
-        <div className="mb-16 text-center">
+      <div className={`${!container && "container"}`}>
+        <div
+          className={`${container ? "mb-16 text-left" : "mb-16 text-center"}`}
+        >
           <h2 className="text-h2 mb-4">{title}</h2>
-          <span className="w-28 h-1 bg-yellow block mx-auto"></span>
+          <span
+            className={`${
+              container
+                ? "w-28 h-1 bg-yellow block"
+                : "w-28 h-1 bg-yellow block mx-auto"
+            }`}
+          ></span>
         </div>
 
-        <ul className="*:p-4 *:lg:p-8 *:3xl:p-16 *:transition-colors *:border-b *:border-[rgba(10,34,41,.11)]">
+        <ul
+          className={` ${
+            container && "*:shadow-md *:mb-4 last:*:mb-0 *:lg:p-4"
+          } *:p-4 *:lg:p-8 *:3xl:p-16 *:transition-colors *:border-b *:border-[rgba(10,34,41,.11)]`}
+        >
           {faqs.map((faq, index) => {
             const isOpen = container || selected === index;
 
@@ -38,13 +50,13 @@ const FAQ_section = ({ title, faqs, container }) => {
               <li
                 key={index}
                 className={`
-    ${isOpen ? "active" : ""}
-    ${
-      !container && isOpen
-        ? "bg-[#F4E5C0] border-none rounded sm:rounded-2xl md:rounded-3xl"
-        : ""
-    }
-  `}
+                ${isOpen ? "active" : ""}
+                ${
+                  !container && isOpen
+                    ? "bg-[#F4E5C0] border-none rounded sm:rounded-2xl md:rounded-3xl"
+                    : ""
+                }
+              `}
               >
                 {container ? (
                   <div

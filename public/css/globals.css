@@ -989,7 +989,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .blogtemplate h5 {
   padding-bottom: 16px;
 }
-.blogtemplate ul {
+.blogtemplate ul, .blogtemplate ol {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -998,17 +998,17 @@ svg.leaflet-image-layer.leaflet-interactive path {
     font-size: 18px;
     font-weight: 400;
 }
-.blogtemplate ul li {
+.blogtemplate ul li, .blogtemplate ol li {
   list-style-type: disc;
 
 }
-.menu li {
+.menu li, ol {
   list-style-type: none;
 }
 
 .menu li:not(:has(a)) {
   list-style-type: disc;
 }
-.blogpage-menu ul{
+.blogpage-menu ul, .blogtemplate ol{
   padding-left:24px;
 }

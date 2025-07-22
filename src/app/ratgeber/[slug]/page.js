@@ -74,7 +74,7 @@ const page = async ({ params }) => {
                       ""
                     ),
                 }}
-                className="menu flex flex-col gap-3 [&_li]:font-secondary-font [&_li]:text-a [&_li]:font-normal"
+                className="pl-5 menu flex flex-col gap-3 [&_li]:font-secondary-font [&_li]:text-a [&_li]:font-normal"
               ></ul>
             </div>
           </div>
