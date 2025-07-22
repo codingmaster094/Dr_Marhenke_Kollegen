@@ -4,7 +4,6 @@ import Lenis from "@studio-freight/lenis";
 import FAQ_section from "./FAQ_section";
 
 const ContentWithTOC = ({ title, data, FAQ }) => {
-  console.log('FAQ', FAQ)
   const [headers, setHeaders] = useState([]);
   const [updatedHTML, setUpdatedHTML] = useState("");
 

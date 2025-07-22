@@ -18,7 +18,6 @@ const page = async ({ params }) => {
     return <div>No data available.</div>;
   }
 
-  console.log('BlogData', BlogData)
   return (
     <>
       <Hero_Section_blog
@@ -35,11 +34,11 @@ const page = async ({ params }) => {
           <div className="flex flex-col gap-5 md:gap-6 lg:gap-8">
             <div className="flex justify-between gap-4 flex-wrap items-center">
               <p className="text-body">
-                {/* <span>{dayjs(blogData?.date).format("DD.MM.YYYY")}</span> | */}
+                <span>{dayjs(BlogData?.date).format("DD.MM.YYYY")}</span> |
                 <span>
                   {" "}
                   ZULETZT AKTUALISIERT{" "}
-                  {/* <span>{dayjs(blogData?.modified).format("DD.MM.YYYY")}</span> */}
+                  <span>{dayjs(BlogData?.modified).format("DD.MM.YYYY")}</span>
                 </span>
               </p>
               <div className="flex border border-Border w-auto lg:w-[35%] justify-between items-center p-1 bg-white shadow-md">

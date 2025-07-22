@@ -55,7 +55,7 @@ const Blog = ({ title, BTN, blogsData }) => {
                   placeholder="Wonach suchen Sie?"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={handleKeyDown} // Trigger search on Enter
+                  onKeyDown={handleKeyDown} 
                   className="border-none outline-none p-2 w-full placeholder-text-black-600"
                 />
                 <button
@@ -93,6 +93,9 @@ const Blog = ({ title, BTN, blogsData }) => {
                       </div>
                       {/* </Link> */}
                       <div className="p-4">
+                        <p>
+                          <span>{dayjs(val?.date).format("DD.MM.YYYY")}</span>
+                        </p>
                         <div className="flex justify-between mt-6 mb-4 gap-4">
                           <h3
                             className="text-h3"
@@ -128,12 +131,12 @@ const Blog = ({ title, BTN, blogsData }) => {
                 })}
               </div>
               {filteredBlogs?.length > displayedBlogsCount && (
-                <Link
-                  href="/"
+                <button
+                  onClick={() => setDisplayedBlogsCount((prev) => prev + 3)}
                   className="inline-block w-fit text-white  bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors font-medium"
                 >
                   Mehr erfahren
-                </Link>
+                </button>
               )}
             </div>
           </div>

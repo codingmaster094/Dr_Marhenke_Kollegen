@@ -19,7 +19,6 @@ const page = async() => {
         return <div>No data available.</div>;
       }
 
-      console.log('BlogData', BlogData)
   return (
     <>
       <Hero_Section
