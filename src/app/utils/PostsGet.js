@@ -4,9 +4,8 @@ export default async function POST_GET(endpoint = "") {
 
   try {
     const response = await fetch(url, {
-      // This ensures fresh data is fetched every time (no caching)
-      cache: "no-store",
-    });
+  next: { revalidate: 60 } // Revalidate every 60 seconds (or any interval)
+});
 
     if (!response.ok) {
       throw new Error(`Fetch error: ${response.status} ${response.statusText}`);

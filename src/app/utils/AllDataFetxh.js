@@ -6,8 +6,7 @@ export default async function Alldata(endpoint = "") {
 
   try {
     const response = await fetch(url, {
-      // This ensures fresh data is fetched every time (no caching)
-      cache: "no-store",
+      next: { revalidate: 60 }, // Revalidate every 60 seconds (or any interval)
     });
 
     if (!response.ok) {
