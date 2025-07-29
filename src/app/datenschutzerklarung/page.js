@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 import POST_GET from '../utils/PostsGet';
 const page = async() => {
@@ -17,9 +16,7 @@ const page = async() => {
     <section className="sec-page-content">
             <div className="container">
                 <h2 className="wp-block-heading" dangerouslySetInnerHTML={{ __html: datenschutzerklarungData.title }}></h2>
-                <div dangerouslySetInnerHTML={{ __html: datenschutzerklarungData.content }}>
-
-                </div>
+                <div dangerouslySetInnerHTML={{ __html: datenschutzerklarungData.content }}></div>
             </div>
         </section>
   )
