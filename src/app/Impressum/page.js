@@ -3,7 +3,14 @@ import POST_GET from '../utils/PostsGet';
 const page = async() => {
     let ImpressumData;
   try {
-    ImpressumData = await POST_GET("/page-data/impressum");
+     const response = await fetch(
+       "https://marhenke.blog-s.de/wp-json/custom/v1/page-data/impressum",
+       {
+         next: { revalidate: 60 }, // Revalidate every 60 seconds (or any interval)
+       }
+     );
+     ImpressumData  = await response.json();
+    // ImpressumData = await POST_GET("/page-data/impressum");
   } catch (error) {
     return <div>Error loading data.</div>;
   }
