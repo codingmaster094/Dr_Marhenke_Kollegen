@@ -150,7 +150,6 @@ const Footer = ({Footerdata , OptionDatas}) => {
               {Footerdata?.menus
                 ?.find((menu) => menu.menu_slug === "footer-menu-2")
                 ?.items?.map((item , i) => {
-                  console.log("item", item);
                     return (
                       <li key={i}>
                         <Link role="link" className="link" href={item.url}>
