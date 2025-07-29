@@ -149,14 +149,15 @@ const Footer = ({Footerdata , OptionDatas}) => {
             <ul className="space-y-5">
               {Footerdata?.menus
                 ?.find((menu) => menu.menu_slug === "footer-menu-2")
-                ?.items?.map((item) => {
-                  return (
-                    <li key={item.id}>
-                      <Link role="link" className="link" href={item.url}>
-                        {item.title}
-                      </Link>
-                    </li>
-                  );
+                ?.items?.map((item , i) => {
+                  console.log("item", item);
+                    return (
+                      <li key={i}>
+                        <Link role="link" className="link" href={item.url}>
+                          {item.title}
+                        </Link>
+                      </li>
+                    );
                 })}
             </ul>
           </div>
