@@ -25,7 +25,7 @@ const Page = async({ params }) => {
     if (!Custom_Page || !Doctor_listData) {
       return <div>No data available.</div>;
     }
-
+console.log('Custom_Page', Custom_Page)
   return (
     <>
       <Hero_Section
@@ -33,7 +33,7 @@ const Page = async({ params }) => {
         subtitle={Custom_Page.acf.subtitle}
         points={Custom_Page.acf.standort_single_hero_content}
         BTN={Custom_Page.acf.standort_single_hero_button}
-        imageSrc={Custom_Page.acf.standort_single_hero_image.url}
+        imageSrc={Custom_Page.acf.standort_single_hero_image?.url}
       />
       <ServiceSection CustomPageServiceSection1={Custom_Page.acf.praxis} />
 
