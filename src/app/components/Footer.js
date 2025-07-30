@@ -149,39 +149,39 @@ const Footer = ({Footerdata , OptionDatas}) => {
             <ul className="space-y-5">
               {Footerdata?.menus
                 ?.find((menu) => menu.menu_slug === "footer-menu-2")
-                ?.items?.map((item , i) => {
-                    return (
-                      <li key={i}>
-                        <Link role="link" className="link" href={item.url}>
-                          {item.title}
-                        </Link>
-                      </li>
-                    );
-                })}
+                ?.items?.map((item, i) => (
+                  <li key={i}>
+                    <Link role="link" className="link" href={item.url}>
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
           <div className="space-y-4 shrink-0">
-          {
-            OptionDatas.footer_certificates_links.map((image , i) => (
-            <Link role="link" href={image.footer_certificates_link} className="block" key={i}>
-              <Image
-                role="img"
-                width={150}
-                height={151}
-                src={image.footer_certificates_image.url}
-                className="rounded-[10px]"
-                alt="Footer logo"
-              />
-            </Link>
-            ))
-          }
+            {OptionDatas.footer_certificates_links.map((image, i) => (
+              <Link
+                role="link"
+                href={image.footer_certificates_link}
+                className="block"
+                key={i}
+              >
+                <Image
+                  role="img"
+                  width={150}
+                  height={151}
+                  src={image.footer_certificates_image.url}
+                  className="rounded-[10px]"
+                  alt="Footer logo"
+                />
+              </Link>
+            ))}
           </div>
         </div>
       </div>
       <div className="container-fluid font-semibold text-white bg-yellow text-center py-4">
         <p>
-          &copy; <span id="currentYear">2025</span>{" "}
-          {OptionDatas.copyright_text}
+          &copy; <span id="currentYear">2025</span> {OptionDatas.copyright_text}
         </p>
       </div>
     </footer>
