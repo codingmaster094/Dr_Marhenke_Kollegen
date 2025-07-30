@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-const Footer = ({Footerdata , OptionDatas}) => {
+const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
   return (
     <footer
       className="bg-cover"
@@ -129,9 +129,8 @@ const Footer = ({Footerdata , OptionDatas}) => {
               <p>{OptionDatas.footer_navigation_title}</p>
             </div>
             <ul className="space-y-5">
-              {Footerdata?.menus
-                ?.find((menu) => menu.menu_slug === "footer-menu-1")
-                ?.items?.map((item) => {
+              {Footer1 &&
+                Footer1?.map((item) => {
                   return (
                     <li key={item.id}>
                       <Link role="link" className="link" href={item.url}>
@@ -147,15 +146,14 @@ const Footer = ({Footerdata , OptionDatas}) => {
               <p>{OptionDatas.footer_rechtliches_title}</p>
             </div>
             <ul className="space-y-5">
-              {Footerdata?.menus
-                ?.find((menu) => menu.menu_slug === "footer-menu-2")
-                ?.items?.map((item, i) => (
-                  <li key={i}>
-                    <Link role="link" className="link" href={item.url}>
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
+              {Footer2 && 
+              Footer2?.map((item, i) => (
+                <li key={i}>
+                  <Link role="link" className="link" href={item.url}>
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="space-y-4 shrink-0">
