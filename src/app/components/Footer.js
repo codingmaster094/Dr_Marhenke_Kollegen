@@ -146,14 +146,19 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
               <p>{OptionDatas.footer_rechtliches_title}</p>
             </div>
             <ul className="space-y-5">
-              {Footer2 && 
+              <li key={i}>
+                <Link role="link" className="link" href={"/Impressum"}>
+                  Impressum
+                </Link>
+              </li>
+              {/* {Footer2 && 
               Footer2?.map((item, i) => (
                 <li key={i}>
                   <Link role="link" className="link" href={item.url}>
                     {item.title}
                   </Link>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
           <div className="space-y-4 shrink-0">
