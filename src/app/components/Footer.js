@@ -146,7 +146,7 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
               <p>{OptionDatas.footer_rechtliches_title}</p>
             </div>
             <ul className="space-y-5">
-              <li key={i}>
+              <li>
                 <Link role="link" className="link" href={"/Impressum"}>
                   Impressum
                 </Link>
