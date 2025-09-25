@@ -29,7 +29,7 @@ export async function GET() {
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 
-Sitemap: https://marhenke.blog-s.de/sitemap.xml`;
+Sitemap: https://dr-marhenke-kollegen.vercel.app/sitemap.xml`;
 
     return new Response(fallback, {
       headers: {
