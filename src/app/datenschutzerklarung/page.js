@@ -1,6 +1,7 @@
 import React from 'react'
 import POST_GET from '../utils/PostsGet';
 import SEO_schema from '../components/SEO_schema';
+import generatePageMetadata from '../utils/generatePageMetadata';
 const page = async() => {
     let datenschutzerklarungData;
   try {
@@ -27,3 +28,11 @@ const page = async() => {
 }
 
 export default page
+
+export async function generateMetadata({params}) {
+  const {slug} = await params
+  return generatePageMetadata(`/datenschutzerklarung`, {
+    title: `datenschutzerklarung`,
+    description: `datenschutzerklarung`,
+  });
+}

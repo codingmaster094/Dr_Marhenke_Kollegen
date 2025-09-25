@@ -2,10 +2,7 @@ export default async function SEODATA(params) {
   try {
     // remove leading slashes and "page-data/"
     let cleanSlug = params.replace(/^\/page-data\//, "").replace(/^\//, "");
-
     const url = `${process.env.NEXT_BASE_URL_SEO}/custom-seo/v1/rank-math?slug=${cleanSlug}`;
-    console.log("SEO API Request:", url);
-
     const response = await fetch(url, {
       next: { revalidate: 60 },
     });

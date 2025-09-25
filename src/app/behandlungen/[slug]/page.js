@@ -6,6 +6,7 @@ import FAQ_section from "@/app/components/FAQ_section";
 import ReviewsData from "../../ReviewsData/page";
 import POST_GET from "@/app/utils/PostsGet";
 import SEO_schema from "@/app/components/SEO_schema";
+import generatePageMetadata from "@/app/utils/generatePageMetadata";
 const page = async ({params}) => {
     const {slug} = await params
 
@@ -55,3 +56,11 @@ const page = async ({params}) => {
 };
 
 export default page;
+
+export async function generateMetadata({params}) {
+  const {slug} = await params
+  return generatePageMetadata(`${slug}`, {
+    title: `${slug}`,
+    description: `${slug}`,
+  });
+}

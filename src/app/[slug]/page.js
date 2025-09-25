@@ -10,6 +10,7 @@ import Alldata from "../utils/AllDataFetxh";
 import Custom_Post from "../utils/CustomPost";
 import { notFound } from "next/navigation";
 import SEO_schema from "../components/SEO_schema";
+import generatePageMetadata from "../utils/generatePageMetadata";
 
 const Page = async ({ params }) => {
   const { slug } = await params;
@@ -73,3 +74,11 @@ const Page = async ({ params }) => {
 };
 
 export default Page;
+
+export async function generateMetadata({params}) {
+  const {slug} = await params
+  return generatePageMetadata(`${slug}`, {
+    title: `${slug}`,
+    description: `${slug}`,
+  });
+}

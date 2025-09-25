@@ -8,7 +8,6 @@ const SchemaInjector = dynamic(() => import("../components/SchemaInjector"), {
 });
 
 const SEO_schema = async ({ slug }) => {
-  console.log('slug', slug)
   try {
     const metadata = await SEODATA(slug);
     const schemaJSON = metadata?.schema ? JSON.stringify(metadata.schema) : null;

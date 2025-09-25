@@ -11,7 +11,6 @@ import Link from "next/link";
 import commentEqualcontent from "../utils/commentEqualcontent";
 
 const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
-  console.log('slider', slider)
   const carouselRef = useRef();
   const [swiperInstance, setSwiperInstance] = useState(null);
 

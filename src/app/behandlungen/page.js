@@ -6,6 +6,7 @@ import Kooperationspartner from "../components/Kooperationspartner";
 import ReviewsData from "../ReviewsData/page";
 import Alldata from "../utils/AllDataFetxh";
 import SEO_schema from "../components/SEO_schema";
+import generatePageMetadata from "../utils/generatePageMetadata";
 const page = async() => {
   let behandlungenData;
     try {
@@ -64,3 +65,10 @@ const page = async() => {
 };
 
 export default page;
+
+export async function generateMetadata() {
+  return generatePageMetadata("/behandlungen", {
+    title: "behandlungen",
+    description: "behandlungen",
+  });
+}
