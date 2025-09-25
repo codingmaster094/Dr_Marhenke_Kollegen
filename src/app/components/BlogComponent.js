@@ -1,15 +1,18 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-const BlogComponent = ({ PostData }) => {
+const BlogComponent = ({ PostData ,title , description}) => {
   return (
     <section className="py-14 lg:py-20">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10 lg:gap-12 4xl:gap-16 items-center">
           <div className="text-center">
-            <h2 className="mb-4">Aktuelle Stellenausschreibungen</h2>
+            <h2 className="mb-4" >{title}</h2>
             <span className="w-28 h-1 bg-yellow block mx-auto"></span>
           </div>
+            <div dangerouslySetInnerHTML={{__html:description}}>
+
+            </div>
 
           <div className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-3 2xl:gap-4 4xl:gap-5">
             {PostData.map((post, i) => (

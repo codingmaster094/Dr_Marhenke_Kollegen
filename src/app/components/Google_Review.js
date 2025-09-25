@@ -11,6 +11,7 @@ import Link from "next/link";
 import commentEqualcontent from "../utils/commentEqualcontent";
 
 const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
+  console.log('slider', slider)
   const carouselRef = useRef();
   const [swiperInstance, setSwiperInstance] = useState(null);
 
@@ -81,6 +82,8 @@ const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
             ))}
           </div>
           <div className="slider-wrapper flex gap-3 lg:gap-10 items-center p-2">
+            {
+              slider !== false &&
             <div
               className="prosSwiper-prev border cursor-pointer rounded-full border-yellow p-1 sm:p-2 hidden xl:block"
               onClick={prevSlide}
@@ -101,6 +104,7 @@ const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
                 <path d="M15 6l-6 6l6 6" />
               </svg>
             </div>
+            }
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               ref={carouselRef}
@@ -171,6 +175,8 @@ const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
               ))}
               <div className="swiper-pagination static mt-3 md:mt-6 block xl:hidden" />
             </Swiper>
+            {
+              slider !== false &&
             <div
               className=" prosSwiper-next border cursor-pointer rounded-full border-yellow p-1 sm:p-2 hidden xl:block"
               onClick={nextSlide}
@@ -191,6 +197,7 @@ const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
                 <path d="M9 6l6 6l-6 6" />
               </svg>
             </div>
+            }
           </div>
         </div>
       </div>

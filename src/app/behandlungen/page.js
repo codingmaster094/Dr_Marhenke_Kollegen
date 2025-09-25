@@ -5,6 +5,7 @@ import Pattern_section from "../components/Pattern_section";
 import Kooperationspartner from "../components/Kooperationspartner";
 import ReviewsData from "../ReviewsData/page";
 import Alldata from "../utils/AllDataFetxh";
+import SEO_schema from "../components/SEO_schema";
 const page = async() => {
   let behandlungenData;
     try {
@@ -19,6 +20,7 @@ const page = async() => {
     }
   return (
     <>
+    {await SEO_schema({ slug: "/behandlungen" })}
       <Hero_Section
         title={behandlungenData.acf.leistungen_hero_main_title}
         subtitle={""}

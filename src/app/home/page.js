@@ -8,6 +8,8 @@ import Team_section from "../components/Team_section";
 import ReviewsData from "../ReviewsData/page";
 import FAQ_section from "../components/FAQ_section";
 import Alldata from "../utils/AllDataFetxh";
+import generatePageMetadata from "../utils/generatePageMetadata";
+import SEO_schema from "../components/SEO_schema";
 
 const page = async() => {
   let HomePageData;
@@ -17,13 +19,14 @@ const page = async() => {
     console.error("Error fetching data:", error);
     return <div>Error loading data.</div>;
   }
-
+  
   if (!HomePageData) {
     return <div>No data available.</div>;
   }
-
+  
   return (
     <>
+     {await SEO_schema({ slug: "/start" })}
       <Hero_Section
         title={HomePageData.acf.hero_title_1}
         subtitle={HomePageData.acf.home_hero_title}
@@ -76,3 +79,10 @@ const page = async() => {
 };
 
 export default page;
+
+export async function generateMetadata() {
+  return generatePageMetadata("/start", {
+    title: "home",
+    description: "home",
+  });
+}

@@ -5,6 +5,7 @@ import ServiceSection from "@/app/components/ServiceSection"
 import FAQ_section from "@/app/components/FAQ_section";
 import ReviewsData from "../../ReviewsData/page";
 import POST_GET from "@/app/utils/PostsGet";
+import SEO_schema from "@/app/components/SEO_schema";
 const page = async ({params}) => {
     const {slug} = await params
 
@@ -22,6 +23,7 @@ const page = async ({params}) => {
 
   return (
     <>
+    {await SEO_schema({ slug: `/${slug}` })}
       <Hero_Section
         title={CostumPagePost.title}
         subtitle={CostumPagePost.acf.single_behandlungen_hero_title}

@@ -3,6 +3,8 @@ import Hero_Section from "../components/Hero_Section";
 import Kooperationen_Service from "../components/Kooperationen_Service";
 import ReviewsData from "../ReviewsData/page";
 import Alldata from "../utils/AllDataFetxh";
+import generatePageMetadata from "../utils/generatePageMetadata";
+import SEO_schema from "../components/SEO_schema";
 const page = async() => {
   let kooperationenData;
   try {
@@ -17,6 +19,7 @@ const page = async() => {
   }
   return (
     <>
+    {await SEO_schema({ slug: "/kooperationen" })}
       <Hero_Section
         title={kooperationenData.acf.hero_title_1}
         subtitle={kooperationenData.acf.kooperationen_hero_title}
@@ -35,3 +38,10 @@ const page = async() => {
 };
 
 export default page;
+
+export async function generateMetadata() {
+  return generatePageMetadata("/kooperationen", {
+    title: "kooperationen",
+    description: "kooperationen",
+  });
+}

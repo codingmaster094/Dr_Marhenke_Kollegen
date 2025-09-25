@@ -10,7 +10,10 @@ import Custom_Post from "../utils/CustomPost";
 import MapPageClient from "../Map/page";
 import ReviewsData from "../ReviewsData/page";
 import POST_GET from "../utils/PostsGet";
-const page = async() => {
+import Praxis_section from "../components/Praxis_section";
+import generatePageMetadata from "../utils/generatePageMetadata";
+import SEO_schema from "../components/SEO_schema";
+const page = async () => {
   let ueberunsData;
   let Doctor_listData;
   let PostData;
@@ -28,8 +31,10 @@ const page = async() => {
   if (!ueberunsData || !Doctor_listData || !PostData || !BlogData) {
     return <div>No data available.</div>;
   }
+
   return (
     <>
+    {await SEO_schema({ slug: "/ueber-uns" })}
       <Hero_Section
         title={ueberunsData.acf.hero_title_1}
         subtitle={ueberunsData.acf.ueber_uns_hero_main_title}
@@ -40,12 +45,18 @@ const page = async() => {
         videoSrc={""}
       />
 
+      <Praxis_section
+        title={ueberunsData.acf.ueber_uns_praxis_title}
+        description={ueberunsData.acf.ueber_uns_praxis_content}
+        imageSrc={ueberunsData?.acf.ueber_uns_praxis_image.url}
+        reverse={false}
+      />
       <Psychotherapie_Praxis
         title={ueberunsData.acf.ueber_uns_standorte_main_title}
         description={ueberunsData.acf.ueber_uns_standorte_content}
         sliderData={ueberunsData.acf.ueber_uns_section_standort_data}
         imageSrc={ueberunsData?.acf.ueber_uns_standorte_image.url}
-        reverse={false}
+        reverse={true}
       />
       <MapPageClient
         title={ueberunsData?.acf.hero_title_1}
@@ -62,10 +73,21 @@ const page = async() => {
         BTN={ueberunsData.acf.ueber_uns_team_mehr_anzeigen_button_label}
         Doctore_list={Doctor_listData}
       />
-      <BlogComponent PostData={PostData} />
-       <ReviewsData />
+      <BlogComponent
+        PostData={PostData}
+        title={ueberunsData.acf.ueber_uns_stellenausschreibungen_main_title}
+        description={ueberunsData.acf.ueber_uns_stellenausschreibungen_content}
+      />
+      <ReviewsData />
     </>
   );
 };
 
 export default page;
+
+export async function generateMetadata() {
+  return generatePageMetadata("/ueber-uns", {
+    title: "ueber-uns",
+    description: "ueber-uns",
+  });
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import POST_GET from '../utils/PostsGet';
+import SEO_schema from '../components/SEO_schema';
 const page = async() => {
     let datenschutzerklarungData;
   try {
@@ -13,12 +14,15 @@ const page = async() => {
     return <div>No data available.</div>;
   }
   return (
+    <>
+    {await SEO_schema({ slug: "/datenschutzerklarung" })}
     <section className="sec-page-content">
             <div className="container">
                 <h2 className="wp-block-heading" dangerouslySetInnerHTML={{ __html: datenschutzerklarungData.title }}></h2>
                 <div dangerouslySetInnerHTML={{ __html: datenschutzerklarungData.content }}></div>
             </div>
         </section>
+    </>
   )
 }
 

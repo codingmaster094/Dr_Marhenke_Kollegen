@@ -9,6 +9,7 @@ import Contact_form from "../components/Contact_form";
 import Alldata from "../utils/AllDataFetxh";
 import Custom_Post from "../utils/CustomPost";
 import { notFound } from "next/navigation";
+import SEO_schema from "../components/SEO_schema";
 
 const Page = async ({ params }) => {
   const { slug } = await params;
@@ -32,6 +33,7 @@ const Page = async ({ params }) => {
 
   return (
     <>
+    {await SEO_schema({ slug: `/${slug}` })}
       <Hero_Section
         title={Custom_Page?.acf?.standort_single_hero_title || ""}
         subtitle={Custom_Page?.acf?.subtitle || ""}

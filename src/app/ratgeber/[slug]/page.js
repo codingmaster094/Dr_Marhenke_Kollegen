@@ -4,9 +4,14 @@ import POST_GET from "../../utils/PostsGet";
 import dayjs from "dayjs";
 import Link from "next/link";
 import ContentWithTOC from "@/app/components/ContentWithTOC";
+import dynamic from "next/dynamic";
+import generatePageMetadata from "../../utils/generatePageMetadata";
+import SEO_schema from "@/app/components/SEO_schema";
+
 const page = async ({ params }) => {
    const { slug } = await params;
   let BlogData;
+  let schemaJSON;
   try {
     BlogData = await POST_GET(`/ratgeber/${slug}`);
   } catch (error) {
@@ -20,6 +25,7 @@ const page = async ({ params }) => {
 
   return (
     <>
+    {await SEO_schema({ slug: `/${slug}` })}
       <Hero_Section_blog
         title={BlogData.acf.hero_slider_main_title}
         subtitle={BlogData.acf.home_hero_title}
@@ -122,3 +128,11 @@ const page = async ({ params }) => {
 };
 
 export default page;
+
+export async function generateMetadata({ params }) {
+   const { slug } = await params;
+  return generatePageMetadata(`/${slug}`, {
+    title: `ratgeber/${slug}`,
+    description: `ratgeber/${slug}`,
+  });
+}

@@ -6,6 +6,7 @@ const page = async () => {
   let ReviewDataAPI;
   try {
     ReviewDataAPI = await POST_GET("/options");
+  
   } catch (error) {
     console.error("Error fetching data:", error);
     return <div>Error loading data.</div>;

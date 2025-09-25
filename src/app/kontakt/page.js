@@ -3,8 +3,15 @@ import ContactSection from '../components/ContactSection'
 import Contact_form from '../components/Contact_form'
 import Hero_Section from '../components/Hero_Section'
 import Alldata from "../utils/AllDataFetxh";
+import generatePageMetadata from '../utils/generatePageMetadata';
+import dynamic from "next/dynamic";
+import SEO_schema from '../components/SEO_schema';
+const SchemaInjector = dynamic(() => import("../components/SchemaInjector"), {
+  ssr: true,
+});
 const page = async() => {
   let kontaktData;
+    let schemaJSON;
   try {
     kontaktData = await Alldata("/kontakt");
   } catch (error) {
@@ -18,6 +25,7 @@ const page = async() => {
 
   return (
     <>
+    {await SEO_schema({ slug: "/kontakt" })}
       <Hero_Section
         title={kontaktData.acf.hero_title_1}
         subtitle={kontaktData.acf.kontak_hero_title}
@@ -33,3 +41,10 @@ const page = async() => {
 }
 
 export default page
+
+export async function generateMetadata() {
+  return generatePageMetadata("/kontakt", {
+    title: "kontakt",
+    description: "kontakt",
+  });
+}
