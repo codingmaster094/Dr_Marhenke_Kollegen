@@ -17,7 +17,7 @@ const page = async ({ params }) => {
     return <div>No data available.</div>;
   }
 
-
+console.log('TeamData', TeamData)
   return (
     <>
       <Hero_Section
@@ -36,6 +36,8 @@ const page = async ({ params }) => {
         bgColor="bg-[#fffbf2]"
         imageSrc={TeamData.acf.team_employee_photo.url}
         reverse={false}
+        further_link={TeamData.acf.further_link}
+        further_title={TeamData.acf.further_title}
       />
     </>
   );

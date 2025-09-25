@@ -1,6 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 const Team_About = ({
+  further_title,
+  further_link,
   title, 
   description, 
   bgColor,
@@ -46,6 +49,18 @@ const Team_About = ({
                   <li key={index}>{item}</li>
                 ))}
               </ul>
+              <div>
+                <h3>{further_title}</h3>
+{
+  further_link.map((val,i)=>{
+    return(
+      <Link href={val.link.url} key={i}>
+      {val.link.title}
+      </Link>
+    )
+  })
+}
+              </div>
             </div>
           </div>
         </div>
