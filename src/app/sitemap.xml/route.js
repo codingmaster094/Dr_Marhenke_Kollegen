@@ -4,7 +4,7 @@ import FetchAllslug from "../utils/FetchAllslug";
 export async function GET() {
   const siteUrl =
     process.env.NEXT_DOMAIN_URL ||
-    "https://dr-marhenke-kollegen.vercel.app/";  
+    "https://dr-marhenke-kollegen.vercel.app";  
   let SiteMapData;
   try {
     SiteMapData = await FetchAllslug("/custom-sitemap/v1/slugs");
