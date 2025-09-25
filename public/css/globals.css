@@ -6,167 +6,216 @@
   body {
     @apply font-poppins text-p;
   }
+
   .link.active {
     @apply font-medium text-yellow;
   }
+
   .teamSwiper .card {
     @apply before:content-[''] before:absolute before:left-0 before:bottom-0 before:right-0 before:top-[100%] before:transition-all before:duration-300 before:ease-custom-ease before:bg-gradient-to-b hover:before:top-0;
   }
+
   footer .links a {
     @apply relative after:content-[''] after:absolute after:left-0 after:right-[100%] after:h-[2px] after:bg-yellow_100 after:bottom-0 after:transition-all after:duration-300 hover:after:right-0;
   }
+
   nav ul li a {
     @apply text-a;
   }
+
   h1 {
     @apply text-h1;
   }
+
   h2 {
     @apply text-h2;
   }
+
   h3 {
     @apply text-h3;
   }
+
   p,
   li {
     @apply text-base sm:text-p;
   }
+
   .swiper-pagination .swiper-pagination-bullet-active {
     @apply bg-yellow;
   }
+
   nav ul li a {
     @apply hover:text-yellow transition-colors;
   }
+
   .content-listing ul,
   .list-style-arrow {
     @apply list-image-[url(/images/bulletpoint.svg)];
   }
+
   .content-listing1,
   .list-style-arrow {
     @apply list-image-[url(/images/bulletpoint.svg)];
   }
+
   .wpcf7-form .f-fild {
     @apply mb-5;
   }
+
   .wpcf7-form .f-fild input,
   .wpcf7-form .f-fild select,
   .wpcf7-form .f-fild textarea {
     @apply bg-white bg-opacity-30 border border-white border-opacity-25 placeholder:text-white py-3 px-8 rounded-lg w-full appearance-none outline-white;
   }
+
   .wpcf7-form .f-fild select option {
     @apply text-black;
   }
+
   .wpcf7-submit {
     @apply text-yellow bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-white hover:shadow hover:shadow-white transition-colors font-medium mt-4;
   }
+
   .wpcf7-form [type="checkbox"] {
     @apply appearance-none;
   }
+
   .wpcf7-form .f-fild:has(select) {
     @apply relative after:block after:absolute after:size-6 after:bg-[url(/images/down.svg)] after:bg-cover after:bg-center after:invert after:right-7 after:top-1/2 after:-translate-y-1/2;
   }
+
   .menu-item-has-children {
     @apply relative;
   }
+
   .menu-item-has-children::after {
     @apply transition-transform duration-300 block size-6 bg-[url(/images/down.svg)] opacity-65 content-[""];
   }
+
   .menu-item-has-children:hover::after {
-    @apply invert-[65%] sepia-[100%] opacity-100;
+    filter: brightness(0) saturate(100%) invert(63%) sepia(12%) saturate(3406%) hue-rotate(354deg) brightness(82%) contrast(71%);
+    opacity: 1;
   }
+
   .menu-item-has-children .sub-menu {
     @apply absolute bg-white w-full lg:min-w-[300px] flex gap-3 flex-col shadow opacity-0 invisible transition-all px-4 py-3 rounded top-full text-black text-opacity-65 break-words;
   }
+
   .menu-item-has-children.open .sub-menu {
     @apply opacity-100 visible;
   }
+
   .menu-item-has-children:hover .sub-menu {
     @apply lg:opacity-100 lg:visible;
   }
+
   .menu-item-has-children {
     @apply flex gap-1.5 items-center justify-between relative hover:text-yellow;
   }
+
   .sec-page-title {
     @apply pt-20 pb-12;
   }
+
   .sec-page-content {
     @apply pb-20;
   }
+
   .sec-page-content p {
     @apply mb-4;
   }
+
   .sec-page-content .wp-block-heading {
     @apply mt-10 mb-5;
   }
+
   .sec-page-content .wp-block-list {
     @apply flex flex-col gap-2.5 ml-[22px];
   }
+
   .sec-page-content ul.wp-block-list {
     @apply list-image-[url(/images/list-img.svg)];
   }
+
   .sec-page-content h4 {
     @apply text-2xl font-semibold mt-10 mb-5;
   }
+
   .sec-page-content h5 {
     @apply text-lg font-semibold mt-8 mb-4;
   }
+
   .sec-page-title h1 {
     @apply text-h3 sm:text-h1;
   }
+
   .sec-page-content a {
     @apply text-yellow break-words;
   }
+
   .menu-item-has-children.open::after {
     @apply rotate-180;
   }
+
   .menu-item-has-children:hover::after {
     @apply lg:rotate-180;
   }
+
   .treatment-content img {
     @apply w-full h-full rounded-3xl;
   }
+
   .treatment-content ul li {
     @apply mb-4;
   }
+
   .treatment-content .is-layout-grid {
     @apply gap-16;
   }
+
   .treatment-content .wp-container-core-group-is-layout-2.is-layout-grid {
     @apply flex-col-reverse;
   }
-  .teamSwiper .swiper-wrapper{
+
+  .teamSwiper .swiper-wrapper {
     @apply divide-x divide-white
   }
-span.avtar {
-  @apply w-12 h-12 justify-center items-center flex text-xl rounded-[100%];
-  background: rgb(185, 179, 160);
-}
 
-.prosSwiper .swiper-pagination {
-  position: static;
-  display: none;
-}
-
-@media (max-width: 1280px) {
-  .prosSwiper .swiper-pagination {
-    display: block;
+  span.avtar {
+    @apply w-12 h-12 justify-center items-center flex text-xl rounded-[100%];
+    background: rgb(185, 179, 160);
   }
-}
+
+  .prosSwiper .swiper-pagination {
+    position: static;
+    display: none;
+  }
+
+  @media (max-width: 1280px) {
+    .prosSwiper .swiper-pagination {
+      display: block;
+    }
+  }
+
   @media (max-width: 1200px) {
     .treatment-content .is-layout-grid {
       @apply flex flex-col gap-[30px];
     }
   }
-  .partnersSwiper > div{
+
+  .partnersSwiper>div {
     @apply flex items-center
   }
 }
-.yellow-color span{
+
+.yellow-color span {
   color: rgb(c);
 }
+
 .dots-container {
   display: flex;
 }
+
 .dot {
   height: 15px;
   width: 15px;
@@ -175,27 +224,34 @@ span.avtar {
   background-color: #000000;
   animation: pulse 2.5s infinite ease-in-out;
 }
+
 .dot:last-child {
   margin-right: 0;
 }
+
 .dot:nth-child(1) {
   animation-delay: -0.3s;
 }
+
 .dot:nth-child(2) {
   animation-delay: -0.1s;
 }
+
 .dot:nth-child(3) {
   animation-delay: 0.1s;
 }
+
 @keyframes pulse {
   0% {
     transform: scale(0.8);
     background-color: #000000;
   }
+
   50% {
     transform: scale(1.2);
     background-color: #000000;
   }
+
   100% {
     transform: scale(0.8);
     background-color: #000000;
@@ -220,10 +276,12 @@ span.avtar {
   left: 0;
   top: 0;
 }
-.leaflet-marker-icon{
-object-fit: contain;
+
+.leaflet-marker-icon {
+  object-fit: contain;
 
 }
+
 .leaflet-container {
   overflow: hidden;
 }
@@ -783,7 +841,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   margin: 13px 19px;
   line-height: 1.4;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .leaflet-popup-content p {
@@ -966,6 +1024,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   margin-left: -12px;
   border-right-color: #fff;
 }
+
 .leaflet-container a.loc-popup-btn {
   background-color: #dba637;
   color: white;
@@ -974,41 +1033,53 @@ svg.leaflet-image-layer.leaflet-interactive path {
   border-radius: 5px;
   padding: 8px 30px;
 }
+
 .blogtemplate p {
   padding-bottom: 16px;
 }
-.blogtemplate h2{
-  padding-top:16px;
-  padding-bottom:25px;
+
+.blogtemplate h2 {
+  padding-top: 16px;
+  padding-bottom: 25px;
 }
+
 .blogtemplate h3 {
-  padding-top:16px;
-  padding-bottom:16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
+
 .blogtemplate h4,
 .blogtemplate h5 {
   padding-bottom: 16px;
 }
-.blogtemplate ul, .blogtemplate ol {
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-    padding-left: 1.25rem !important;
-    font-size: 18px;
-    font-weight: 400;
+
+.blogtemplate ul,
+.blogtemplate ol {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding-left: 1.25rem !important;
+  font-size: 18px;
+  font-weight: 400;
 }
-.blogtemplate ul li, .blogtemplate ol li {
+
+.blogtemplate ul li,
+.blogtemplate ol li {
   list-style-type: disc;
 
 }
-.menu li, ol {
+
+.menu li,
+ol {
   list-style-type: none;
 }
 
 .menu li:not(:has(a)) {
   list-style-type: disc;
 }
-.blogpage-menu ul, .blogtemplate ol{
-  padding-left:24px;
+
+.blogpage-menu ul,
+.blogtemplate ol {
+  padding-left: 24px;
 }

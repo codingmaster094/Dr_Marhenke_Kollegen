@@ -30,7 +30,6 @@ const page = async() => {
 export default page
 
 export async function generateMetadata({params}) {
-  const {slug} = await params
   return generatePageMetadata(`/datenschutzerklarung`, {
     title: `datenschutzerklarung`,
     description: `datenschutzerklarung`,

@@ -58,8 +58,8 @@ const Header = ({Headerdata , menuData , OptionData}) => {
 
           {/* Navigation */}
           <div className="flex gap-12 items-center">
-            <nav className="hidden lg:block">
-              <ul className="flex gap-[34px] text-black text-opacity-65">
+            <nav className="hidden xl:block">
+              <ul className="flex gap-6 3xl:gap-[34px] text-black text-opacity-65">
                 {menuData?.items?.map((item) => {
                   const itemPath =
                     item.url === "home" ? "/" : item.url.replace(/\/+$/, "");
@@ -122,7 +122,7 @@ const Header = ({Headerdata , menuData , OptionData}) => {
                 aria-label="Contact"
                 className="p-2 sm:p-3 2xl:py-4 2xl:px-8 inline-block bg-yellow rounded sm:rounded-[10px] hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg text-base lg:text-lg"
               >
-                <span className="hidden xl:block">
+                <span className="hidden 2xl:block">
                   {OptionData.header_button.title}
                 </span>
                 <svg
@@ -135,7 +135,7 @@ const Header = ({Headerdata , menuData , OptionData}) => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="xl:hidden"
+                  className="2xl:hidden"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />

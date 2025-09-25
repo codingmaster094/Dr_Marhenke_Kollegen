@@ -24,7 +24,7 @@ export default function OffCanvas() {
       <button
         onClick={() => setIsOpen(true)}
         aria-label="Main Menu"
-        className="p-2 sm:p-3 2xl:py-4 2xl:px-8 cursor-pointer inline-block bg-yellow rounded sm:rounded-[10px] hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors lg:hidden"
+        className="p-2 sm:p-3 2xl:py-4 2xl:px-8 cursor-pointer inline-block bg-yellow rounded sm:rounded-[10px] hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:hidden"
       >
         {/* Icon */}
         <svg

@@ -23,29 +23,29 @@ const config = {
         100: "100px",
       },
       boxShadow: {
-        custom_shdow: "0 0 4px 4px rgba(219, 152, 44, 0.1)",
+        custom_shdow: "0 0 4px 4px rgba(185, 124, 42, 0.1)",
         custom_shdow2: "0 4px 34px 0 rgba(0,0,0,.08)"
       },
       colors: {
-        yellow: "#DB982C",
+        yellow: "#B97C2A",
         yellow_100: "#fec401"
       },
       fontFamily: {
-        poppins:['Poppins']
+        poppins: ['Poppins']
       },
       transitionTimingFunction: {
         "custom-ease": "cubic-bezier(0.4, 0, 0.2, 1)",
       },
       backgroundImage: {
         "gradient-to-b":
-          "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(159, 125, 34, 0.64) 35%, rgba(219, 152, 44, 1) 100%)",
+          "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(159, 125, 34, 0.64) 35%, rgba(185, 124, 42, 1) 100%)",
         "bg-down-blc": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='icon icon-tabler icons-tabler-outline icon-tabler-chevron-down'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M6 9l6 6l6 -6' /%3E%3C/svg%3E",
       },
       screens: {
         xs: "100%",
         sm: "576px",
         md: "768px",
-        xmd:"769px",
+        xmd: "769px",
         lg: "992px",
         xl: "1200px",
         "2xl": "1400px",
