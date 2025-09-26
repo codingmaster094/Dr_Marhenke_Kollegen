@@ -21,6 +21,7 @@ const faqSchema =
         "@type": "FAQPage",
         "@context": "https://schema.org",
         "name": "Häufig gestellte Fragen", // 👈 add this line
+        "headline": "Häufig gestellte Fragen zur Psychotherapie", 
         mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.faq_content_title,
