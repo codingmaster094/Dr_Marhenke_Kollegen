@@ -13,25 +13,25 @@ const SEO_schema = async ({ slug, faqs }) => {
     const schemaJSON = metadata?.schema || null;
 
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
-
     // Build FAQ Schema
-const faqSchema =
-  faqs && faqs.length > 0
+    const faqSchema =
+    faqs && faqs.length > 0
     ? {
-        "@type": "FAQPage",
-        "@context": "https://schema.org",
-        "name": "Häufig gestellte Fragen", // 👈 add this line
-        "headline": "Häufig gestellte Fragen zur Psychotherapie", 
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "headline": "Häufig gestellte Fragen zur Psychotherapie", 
         mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.faq_content_title,
           acceptedAnswer: {
             "@type": "Answer",
-           text: faq.faq_content_description.replace(/<\/?p>/g, "")
+            text: faq.faq_content_description.replace(/<\/?p>/g, "")
           },
         })),
       }
-    : null;
+      : null;
+      console.log('schemaJSON', schemaJSON)
+      console.log('faqSchema', faqSchema)
 
 
 
