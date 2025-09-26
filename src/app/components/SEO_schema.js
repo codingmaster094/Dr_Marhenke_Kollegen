@@ -14,18 +14,21 @@ const SEO_schema = async ({ slug, faqs }) => {
 
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
     // Build FAQ Schema
-    const faqSchema =
+   const faqSchema =
   faqs && faqs.length > 0
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://dr-marhenke-kollegen.vercel.app/#faqpage", // 👈 unique ID
+        "url": "https://dr-marhenke-kollegen.vercel.app/",         // 👈 required for some tools
         "mainEntityOfPage": {
           "@id": "https://dr-marhenke-kollegen.vercel.app/"
         },
-        "name": "FAQ – Psychotherapie", // 👈 add this
+        "name": "FAQ – Psychotherapie",
         "headline": "Häufig gestellte Fragen zur Psychotherapie",
         "mainEntity": faqs.map((faq) => ({
           "@type": "Question",
+          "@id": `https://dr-marhenke-kollegen.vercel.app/#faq-${faq.faq_content_title.replace(/\s+/g, "-").toLowerCase()}`,
           "name": faq.faq_content_title,
           "acceptedAnswer": {
             "@type": "Answer",
