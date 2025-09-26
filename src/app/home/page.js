@@ -26,7 +26,7 @@ const Page = async () => {
 
   return (
     <>
-       {await SEO_schema({ slug: "/start" })}
+       <SEO_schema slug="/start" faqs={HomePageData.acf.faq_content} />
 
       <Hero_Section
         title={HomePageData.acf.hero_title_1}
@@ -74,7 +74,6 @@ const Page = async () => {
         title={HomePageData.acf.faq_ttile}
         faqs={HomePageData.acf.faq_content}
         />
-        {await FAQSchema({ faqs: HomePageData.acf.faq_content })}
     </>
   );
 };

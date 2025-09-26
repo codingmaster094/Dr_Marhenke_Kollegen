@@ -7,14 +7,30 @@ const SchemaInjector = dynamic(() => import("../components/SchemaInjector"), {
   ssr: true,
 });
 
-const SEO_schema = async ({ slug }) => {
+const SEO_schema = async ({ slug, faqs }) => {
   try {
     const metadata = await SEODATA(slug);
-    const schemaJSON = metadata?.schema ? JSON.stringify(metadata.schema) : null;
+    const schemaJSON = metadata?.schema || null;
 
-    if (!schemaJSON) return null;
+    if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
 
-    return <SchemaInjector schemaJSON={schemaJSON} />;
+    // Build FAQ Schema
+    const faqSchema =
+      faqs && faqs.length > 0
+        ? {
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.faq_content_title,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.faq_content_description,
+              },
+            })),
+          }
+        : null;
+
+    return <SchemaInjector schemaJSON={schemaJSON} faqSchema={faqSchema} />;
   } catch (error) {
     console.error("Error fetching SEO schema:", error);
     return null;
