@@ -24,7 +24,7 @@ const page = async ({params}) => {
 
   return (
     <>
-    {await SEO_schema({ slug: `/${slug}` })}
+     <SEO_schema slug={`/${slug}`} faqs={CostumPagePost.acf.single_behandlungen_faqs_questions_answers} />
       <Hero_Section
         title={CostumPagePost.title}
         subtitle={CostumPagePost.acf.single_behandlungen_hero_title}
