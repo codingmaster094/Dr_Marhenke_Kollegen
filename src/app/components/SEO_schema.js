@@ -15,21 +15,23 @@ const SEO_schema = async ({ slug, faqs }) => {
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
 
     // Build FAQ Schema
-    const faqSchema =
+const faqSchema =
   faqs && faqs.length > 0
     ? {
         "@type": "FAQPage",
         "@context": "https://schema.org",
+        "name": "Häufig gestellte Fragen", // 👈 add this line
         mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.faq_content_title,
           acceptedAnswer: {
             "@type": "Answer",
-            text: faq.faq_content_description,
+           text: faq.faq_content_description.replace(/<\/?p>/g, "")
           },
         })),
       }
     : null;
+
 
 
     return <SchemaInjector schemaJSON={schemaJSON} faqSchema={faqSchema} />;
