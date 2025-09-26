@@ -16,19 +16,21 @@ const SEO_schema = async ({ slug, faqs }) => {
 
     // Build FAQ Schema
     const faqSchema =
-      faqs && faqs.length > 0
-        ? {
-            "@type": "FAQPage",
-            mainEntity: faqs.map((faq) => ({
-              "@type": "Question",
-              name: faq.faq_content_title,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.faq_content_description,
-              },
-            })),
-          }
-        : null;
+  faqs && faqs.length > 0
+    ? {
+        "@type": "FAQPage",
+        "@context": "https://schema.org",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.faq_content_title,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.faq_content_description,
+          },
+        })),
+      }
+    : null;
+
 
     return <SchemaInjector schemaJSON={schemaJSON} faqSchema={faqSchema} />;
   } catch (error) {

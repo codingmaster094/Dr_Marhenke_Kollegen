@@ -5,22 +5,19 @@ export default function SchemaInjector({ schemaJSON, faqSchema }) {
   useEffect(() => {
     if (!schemaJSON && !faqSchema) return;
 
-    const schemaArray = [];
-    if (schemaJSON) {
-      // Ensure context exists
-      if (!schemaJSON["@context"]) schemaJSON["@context"] = "https://schema.org";
-      schemaArray.push(schemaJSON);
-    }
-    if (faqSchema) {
-      if (!faqSchema["@context"]) faqSchema["@context"] = "https://schema.org";
-      schemaArray.push(faqSchema);
-    }
+    const graphItems = [];
+    if (schemaJSON) graphItems.push(schemaJSON);
+    if (faqSchema) graphItems.push(faqSchema);
 
-    console.log('schemaArray', schemaArray)
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@graph": graphItems,
+    };
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = "rank-math-schema";
-    script.text = JSON.stringify(schemaArray);
+    script.text = JSON.stringify(schemaData);
 
     const oldScript = document.getElementById("rank-math-schema");
     if (oldScript) oldScript.remove();
