@@ -8,8 +8,8 @@ import Team_section from "../components/Team_section";
 import ReviewsData from "../ReviewsData/page";
 import FAQ_section from "../components/FAQ_section";
 import Alldata from "../utils/AllDataFetxh";
-import generatePageMetadata from "../utils/generatePageMetadata";
 import SEO_schema from "../components/SEO_schema";
+import FAQSchema from "../components/Faqschema";
 
 const Page = async () => {
   let HomePageData;
@@ -26,8 +26,7 @@ const Page = async () => {
 
   return (
     <>
-      {/* ✅ Inject schema.org JSON-LD into <head> */}
-      <SEO_schema slug="/start" />
+       {await SEO_schema({ slug: "/start" })}
 
       <Hero_Section
         title={HomePageData.acf.hero_title_1}
@@ -36,18 +35,18 @@ const Page = async () => {
         BTN={HomePageData.acf.home_hero_button}
         imageSrc={HomePageData.acf.home_hero_image.url}
         videoSrc={HomePageData.acf.upload_video}
-      />
+        />
       <Psychotherapeuten
         image={HomePageData.acf.philosophie_image.url}
         title={HomePageData.acf.philosophie_title}
         content={HomePageData.acf.philosophie_content}
         postsData={HomePageData.acf.behandlungen_post}
-      />
+        />
       <Pattern_section
         title={HomePageData.acf.anfrage_ttile}
         content={HomePageData.acf.anfrage_content}
         btn={HomePageData.acf.anfrage_button}
-      />
+        />
       <Psychotherapie_Praxis
         title={HomePageData.acf.praxis_title}
         description={HomePageData.acf.praxis_content}
@@ -59,22 +58,23 @@ const Page = async () => {
         title={HomePageData?.acf.kooperationen_title}
         logosData={HomePageData.acf.kooperationen_company_logo}
         BTN={HomePageData.acf.kooperationen_button}
-      />
+        />
       <Pattern_section
         title={HomePageData.acf.anfrage_ttile_2}
         content={HomePageData.acf.anfrage_content_2}
         btn={HomePageData.acf.anfrage_button_2}
-      />
+        />
       <Team_section
         title={HomePageData.acf.vorteile_title}
         content={HomePageData.acf.vorteile_content}
         bg_image={HomePageData?.acf.vorteile_image.url}
-      />
+        />
       <ReviewsData />
       <FAQ_section
         title={HomePageData.acf.faq_ttile}
         faqs={HomePageData.acf.faq_content}
-      />
+        />
+        {await FAQSchema({ faqs: HomePageData.acf.faq_content })}
     </>
   );
 };
