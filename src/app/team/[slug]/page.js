@@ -1,4 +1,5 @@
 import Hero_Section from "@/app/components/Hero_Section";
+import SEO_schema from "@/app/components/SEO_schema";
 import Team_About from "@/app/components/Team_About";
 import Custom_Post from "@/app/utils/CustomPost";
 import generatePageMetadata from "@/app/utils/generatePageMetadata";
@@ -20,6 +21,7 @@ const page = async ({ params }) => {
 console.log('TeamData', TeamData)
   return (
     <>
+    <SEO_schema slug={`${slug}`}  />
       <Hero_Section
         title={TeamData.title}
         subtitle={""}

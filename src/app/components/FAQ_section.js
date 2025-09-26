@@ -45,9 +45,7 @@ const FAQ_section = ({ title, faqs, container }) => {
                 <div
                   className={`w-full text-left font-semibold text-xl lg:text-2xl 3xl:text-[28px]`}
                 >
-                  {faq.faq_content_title ||
-                    faq.single_behandlungen_faqs_questions ||
-                    faq.all_faqs_question}
+                  {faq.faq_content_title}
                 </div>
 
                 <div
@@ -57,9 +55,7 @@ const FAQ_section = ({ title, faqs, container }) => {
                     className="blogpage-menu pt-4 text-p space-y-4 [&_ul>li]:list-disc [&_ul>li]:pb-4"
                     dangerouslySetInnerHTML={{
                       __html:
-                        faq.faq_content_description ||
-                        faq.single_behandlungen_faqs_answers ||
-                        faq.all_faqs_answers,
+                        faq.faq_content_description 
                     }}
                   />
                 </div>

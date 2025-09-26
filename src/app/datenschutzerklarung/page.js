@@ -16,7 +16,7 @@ const page = async() => {
   }
   return (
     <>
-    {await SEO_schema({ slug: "/datenschutzerklarung" })}
+    <SEO_schema slug="/datenschutzerklarung" />
     <section className="sec-page-content">
             <div className="container">
                 <h2 className="wp-block-heading" dangerouslySetInnerHTML={{ __html: datenschutzerklarungData.title }}></h2>

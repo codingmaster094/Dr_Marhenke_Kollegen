@@ -34,7 +34,8 @@ const page = async () => {
 
   return (
     <>
-    {await SEO_schema({ slug: "/ueber-uns" })}
+
+    <SEO_schema slug="/ueber-uns" />
       <Hero_Section
         title={ueberunsData.acf.hero_title_1}
         subtitle={ueberunsData.acf.ueber_uns_hero_main_title}

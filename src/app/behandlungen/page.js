@@ -21,7 +21,7 @@ const page = async() => {
     }
   return (
     <>
-    {await SEO_schema({ slug: "/behandlungen" })}
+    <SEO_schema slug="/behandlungen" />
       <Hero_Section
         title={behandlungenData.acf.leistungen_hero_main_title}
         subtitle={""}

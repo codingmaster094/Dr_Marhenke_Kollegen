@@ -34,7 +34,7 @@ const Page = async ({ params }) => {
 
   return (
     <>
-    {await SEO_schema({ slug: `/${slug}` })}
+    <SEO_schema slug={`/${slug}`} />
       <Hero_Section
         title={Custom_Page?.acf?.standort_single_hero_title || ""}
         subtitle={Custom_Page?.acf?.subtitle || ""}

@@ -19,7 +19,7 @@ const page = async() => {
   }
   return (
     <>
-    {await SEO_schema({ slug: "/kooperationen" })}
+    <SEO_schema slug="/kooperationen" />
       <Hero_Section
         title={kooperationenData.acf.hero_title_1}
         subtitle={kooperationenData.acf.kooperationen_hero_title}

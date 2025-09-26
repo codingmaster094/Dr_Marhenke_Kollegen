@@ -17,7 +17,7 @@ const page = async() => {
   }
   return (
     <>
-    {await SEO_schema({ slug: "/impressum" })}
+    <SEO_schema slug="/impressum"  />
     <section className="sec-page-content">
             <div className="container">
                 <h2 className="wp-block-heading" dangerouslySetInnerHTML={{ __html: ImpressumData.title }}></h2>

@@ -25,7 +25,8 @@ const page = async ({ params }) => {
 
   return (
     <>
-    {await SEO_schema({ slug: `/${slug}` })}
+    <SEO_schema slug={`/${slug}`} />
+    <SEO_schema slug={`/${slug}`} faqs={BlogData?.acf.all_faqs} />
       <Hero_Section_blog
         title={BlogData.acf.hero_slider_main_title}
         subtitle={BlogData.acf.home_hero_title}
