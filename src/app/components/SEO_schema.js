@@ -15,22 +15,26 @@ const SEO_schema = async ({ slug, faqs }) => {
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
     // Build FAQ Schema
     const faqSchema =
-    faqs && faqs.length > 0
+  faqs && faqs.length > 0
     ? {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntityOfPage":{"@id":"https://dr-marhenke-kollegen.vercel.app/"},
-      "headline": "Häufig gestellte Fragen zur Psychotherapie", 
-        mainEntity: faqs.map((faq) => ({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntityOfPage": {
+          "@id": "https://dr-marhenke-kollegen.vercel.app/"
+        },
+        "name": "FAQ – Psychotherapie", // 👈 add this
+        "headline": "Häufig gestellte Fragen zur Psychotherapie",
+        "mainEntity": faqs.map((faq) => ({
           "@type": "Question",
-          name: faq.faq_content_title,
-          acceptedAnswer: {
+          "name": faq.faq_content_title,
+          "acceptedAnswer": {
             "@type": "Answer",
-            text: faq.faq_content_description.replace(/<\/?p>/g, "")
-          },
-        })),
+            "text": faq.faq_content_description.replace(/<\/?p>/g, "")
+          }
+        }))
       }
-      : null;
+    : null;
+
       console.log('schemaJSON', schemaJSON)
       console.log('faqSchema', faqSchema)
 
