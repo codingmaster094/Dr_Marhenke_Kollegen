@@ -17,8 +17,9 @@ const SEO_schema = async ({ slug, faqs }) => {
     const faqSchema =
     faqs && faqs.length > 0
     ? {
-      "@type": "FAQPage",
       "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntityOfPage":{"@id":"https://dr-marhenke-kollegen.vercel.app/"},
       "headline": "Häufig gestellte Fragen zur Psychotherapie", 
         mainEntity: faqs.map((faq) => ({
           "@type": "Question",
