@@ -1,4 +1,11 @@
-import SchemaInjector from "./SchemaInjector";
+// components/SEO_schema.jsx
+import React from "react";
+import dynamic from "next/dynamic";
+import SEODATA from "../utils/SEO_Data";
+
+const SchemaInjector = dynamic(() => import("../components/SchemaInjector"), {
+  ssr: true,
+});
 
 const SEO_schema = async ({ slug, faqs }) => {
   try {
