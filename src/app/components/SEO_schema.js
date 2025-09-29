@@ -13,22 +13,21 @@ const SEO_schema = async ({ slug, faqs }) => {
     const schemaJSON = metadata?.schema || null;
 
     if (!schemaJSON && (!faqs || faqs.length === 0)) return null;
+    const pageUrl = "https://dr-marhenke-kollegen.vercel.app/";
     // Build FAQ Schema
-   const faqSchema =
+    const faqSchema =
   faqs && faqs.length > 0
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "@id": "https://dr-marhenke-kollegen.vercel.app/#faqpage", // 👈 unique ID
-        "url": "https://dr-marhenke-kollegen.vercel.app/",         // 👈 required for some tools
+        "url": pageUrl,
         "mainEntityOfPage": {
           "@id": "https://dr-marhenke-kollegen.vercel.app/"
         },
-        "name": "FAQ – Psychotherapie",
+        "name": "FAQ – Psychotherapie", // 👈 add this
         "headline": "Häufig gestellte Fragen zur Psychotherapie",
         "mainEntity": faqs.map((faq) => ({
           "@type": "Question",
-          "@id": `https://dr-marhenke-kollegen.vercel.app/#faq-${faq.faq_content_title.replace(/\s+/g, "-").toLowerCase()}`,
           "name": faq.faq_content_title,
           "acceptedAnswer": {
             "@type": "Answer",
@@ -37,10 +36,6 @@ const SEO_schema = async ({ slug, faqs }) => {
         }))
       }
     : null;
-
-      console.log('schemaJSON', schemaJSON)
-      console.log('faqSchema', faqSchema)
-
 
 
     return <SchemaInjector schemaJSON={schemaJSON} faqSchema={faqSchema} />;
