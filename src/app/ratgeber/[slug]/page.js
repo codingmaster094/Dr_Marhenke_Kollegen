@@ -85,7 +85,7 @@ const page = async ({ params }) => {
           </div>
         </div>
       </section>
-      <section className="container max-w-[1440px] rounded-xl bg-yellow text-white text-center bg-[url(/images/bg-pattern.png)] bg-cover">
+      <section className="container max-w-[1440px] rounded-xl bg-yellow text-white text-center bg-[url(/images/bg-pattern.png)] bg-cover py-inner_spc">
         <div className="container">
           <div className="flex flex-col gap-[34px] items-center">
             <div>
