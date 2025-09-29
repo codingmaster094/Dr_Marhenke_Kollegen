@@ -2,7 +2,7 @@ import React from "react";
 import Google_Review from "../components/Google_Review";
 import POST_GET from "../utils/PostsGet";
 
-const page = async () => {
+const page = async ({classes}) => {
   let ReviewDataAPI;
   try {
     ReviewDataAPI = await POST_GET("/options");
@@ -21,6 +21,7 @@ const page = async () => {
       content={ReviewDataAPI.logo_content}
       reviewlogos={ReviewDataAPI.logo_slider}
       slider={ReviewDataAPI.slider}
+      classes={classes}
     />
   );
 };

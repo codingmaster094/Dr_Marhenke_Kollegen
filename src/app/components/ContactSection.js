@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-const ContactSection = ({location_cards}) => {
+const ContactSection = ({location_cards,classes}) => {
   return (
-    <section className="py-14 lg:py-20 2xl:py-100 bg-opacity-25 bg-[#fffbf2]">
+    <section className={`bg-opacity-25 bg-[#fffbf2] ${classes}`}>
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-8 xl:gap-16 text-center xl:flex-nowrap flex-wrap justify-center">
           {location_cards?.map((item , i)=>{

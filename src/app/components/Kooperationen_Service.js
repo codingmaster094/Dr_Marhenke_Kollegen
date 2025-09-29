@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 const Kooperationen_Service = ({ 
-  KooperationenData
+  KooperationenData, classes
 }) => {
   return (
     <>
@@ -10,16 +10,16 @@ const Kooperationen_Service = ({
           const isEven = index % 2 === 0;
           const bgClass = isEven ? "bg-[#fffbf2]" : "";
           return (
-            <section className={` py-14 lg:py-20 2xl:py-100 group ${bgClass}`}>
+            <section className={`group ${bgClass} ${classes}`}>
               <div className="container space-y-16">
                 <div
                   className={`flex flex-col lg:flex-row gap-4 xl:gap-16`}
                 >
-                  <div className="w-4/12 xl:w-3/12">
+                  <div className="lg:w-4/12 xl:w-3/12">
                       <img src={item.kooperationen__description_image.url}
                         alt="Partner's image"/>
                   </div>
-                  <div className="w-8/12 xl:w-9/12 flex flex-col justify-center gap-[34px]">
+                  <div className="lg:w-8/12 xl:w-9/12 flex flex-col justify-center gap-[34px]">
                   {
                     item.kooperationen__description_title && 
                     <div>

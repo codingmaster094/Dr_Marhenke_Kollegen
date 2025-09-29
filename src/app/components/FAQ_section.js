@@ -1,22 +1,10 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
-const FAQ_section = ({ title, faqs, container }) => {
-  const contentRefs = useRef(new Map());
-
-  // Open all FAQs by default
-  useEffect(() => {
-    if (!container) {
-      contentRefs.current.forEach((content) => {
-        if (content) {
-          content.style.maxHeight = `${content.scrollHeight}px`;
-        }
-      });
-    }
-  }, [container]);
+const FAQ_section = ({ title, faqs, container, classes }) => {
 
   return (
-    <section className="pb-14 lg:pb-20 2xl:pb-100" id="faq">
+    <section id="faq" class={classes}>
       <div className={`${!container && "container"}`}>
         <div className={`${container ? "mb-16 text-left" : "mb-16 text-center"}`}>
           <h2 className="text-h2 mb-4">{title}</h2>
@@ -45,17 +33,20 @@ const FAQ_section = ({ title, faqs, container }) => {
                 <div
                   className={`w-full text-left font-semibold text-xl lg:text-2xl 3xl:text-[28px]`}
                 >
-                  {faq.faq_content_title}
+                  {faq.faq_content_title ||
+                    faq.single_behandlungen_faqs_questions ||
+                    faq.all_faqs_question}
                 </div>
 
                 <div
-                  ref={(el) => el && contentRefs.current.set(index, el)}
                 >
                   <div
                     className="blogpage-menu pt-4 text-p space-y-4 [&_ul>li]:list-disc [&_ul>li]:pb-4"
                     dangerouslySetInnerHTML={{
                       __html:
-                        faq.faq_content_description 
+                        faq.faq_content_description ||
+                        faq.single_behandlungen_faqs_answers ||
+                        faq.all_faqs_answers,
                     }}
                   />
                 </div>

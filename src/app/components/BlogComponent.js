@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 const BlogComponent = ({ PostData ,title , description}) => {
   return (
-    <section className="py-14 lg:py-20">
+    <section>
       <div className="container mx-auto">
         <div className="flex flex-col gap-10 lg:gap-12 4xl:gap-16 items-center">
           <div className="text-center">

@@ -6,7 +6,7 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
       className="bg-cover"
       style={{ backgroundImage: `url(${OptionDatas.footer_background.url})` }}
     >
-      <div className="container py-14 lg:py-20 2xl:py-100">
+      <div className="container py-inner_spc">
         <div className="grid gap-10 3xl:gap-14 sm:grid-cols-2 2xl:flex justify-between  ">
           <div className="shrink-0 sm:col-span-2 lg:col-span-3 xl:col-span-5 2xl:col-span-1">
             <Link role="link" href="/">
@@ -245,7 +245,7 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
           </div>
         </div>
       </div>
-      <div className="container-fluid font-semibold text-white bg-yellow text-center py-4">
+      <div className="px-4 font-semibold text-white bg-yellow text-center py-4">
         <p>
           &copy; <span id="currentYear">2025</span> {OptionDatas.copyright_text}
         </p>

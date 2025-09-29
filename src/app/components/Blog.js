@@ -35,7 +35,7 @@ const Blog = ({ title, BTN, blogsData }) => {
 
   return (
     <>
-      <section className="py-14 lg:py-20">
+      <section>
         <div className="container mx-auto"></div>
       </section>
 

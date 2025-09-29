@@ -34,8 +34,7 @@ const page = async () => {
 
   return (
     <>
-
-    <SEO_schema slug="/ueber-uns" />
+        <SEO_schema slug="/ueber-uns" />
       <Hero_Section
         title={ueberunsData.acf.hero_title_1}
         subtitle={ueberunsData.acf.ueber_uns_hero_main_title}
@@ -51,6 +50,7 @@ const page = async () => {
         description={ueberunsData.acf.ueber_uns_praxis_content}
         imageSrc={ueberunsData?.acf.ueber_uns_praxis_image.url}
         reverse={false}
+        classes="py-inner_spc"
       />
       <Psychotherapie_Praxis
         title={ueberunsData.acf.ueber_uns_standorte_main_title}
@@ -62,6 +62,7 @@ const page = async () => {
       <MapPageClient
         title={ueberunsData?.acf.hero_title_1}
         locations={ueberunsData?.acf.locations}
+        classes="py-inner_spc"
       />
       <Kooperationspartner
         title={ueberunsData?.acf.ueber_uns_partners_main_title}
@@ -73,13 +74,14 @@ const page = async () => {
         content={ueberunsData.acf.ueber_uns_team_content}
         BTN={ueberunsData.acf.ueber_uns_team_mehr_anzeigen_button_label}
         Doctore_list={Doctor_listData}
+        classes="py-inner_spc"
       />
       <BlogComponent
         PostData={PostData}
         title={ueberunsData.acf.ueber_uns_stellenausschreibungen_main_title}
         description={ueberunsData.acf.ueber_uns_stellenausschreibungen_content}
       />
-      <ReviewsData />
+      <ReviewsData classes="py-inner_spc" />
     </>
   );
 };

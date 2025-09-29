@@ -9,7 +9,7 @@ import "swiper/css/autoplay";
 import Link from "next/link";
 import Image from "next/image";
 
-const Kooperationspartner = ({ title, logosData, BTN }) => {
+const Kooperationspartner = ({ title, logosData, BTN, classes }) => {
   const swiperRef = useRef(null);
 
   const nextSlide = () => {
@@ -21,7 +21,7 @@ const Kooperationspartner = ({ title, logosData, BTN }) => {
   };
 
   return (
-    <section className="py-12 lg:py-20 text-center">
+    <section className={`text-center ${classes}`}>
       <div className="container">
         <div className="space-y-10">
           {/* Title */}
@@ -38,7 +38,7 @@ const Kooperationspartner = ({ title, logosData, BTN }) => {
             {/* Prev Button */}
             <div
               onClick={prevSlide}
-              className="hidden md:grid serviceSwiper-prev text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 cursor-pointer"
+              className="hidden md:grid serviceSwiper-prev text-yellow border rounded-lg border-yellow w-fit p-2 cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +131,7 @@ const Kooperationspartner = ({ title, logosData, BTN }) => {
             {/* Next Button */}
             <div
               onClick={nextSlide}
-              className="hidden md:grid serviceSwiper-next text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 cursor-pointer"
+              className="hidden md:grid serviceSwiper-next text-yellow border rounded-lg border-yellow w-fit p-2 cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

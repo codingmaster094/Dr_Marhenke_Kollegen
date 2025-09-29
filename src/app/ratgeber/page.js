@@ -24,8 +24,7 @@ const page = async () => {
 
   return (
     <>
-
-    <SEO_schema slug="/ratgeber"  />
+        <SEO_schema slug="/ratgeber"  />
       <Hero_Section
         title={RatgeberData.acf.hero_slider_main_title}
         subtitle={RatgeberData.acf.home_hero_title}

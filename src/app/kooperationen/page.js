@@ -19,7 +19,7 @@ const page = async() => {
   }
   return (
     <>
-    <SEO_schema slug="/kooperationen" />
+     <SEO_schema slug="/kooperationen" />
       <Hero_Section
         title={kooperationenData.acf.hero_title_1}
         subtitle={kooperationenData.acf.kooperationen_hero_title}
@@ -30,9 +30,10 @@ const page = async() => {
 
       <Kooperationen_Service
         KooperationenData={kooperationenData.acf.kooperationen__description}
+        classes="py-inner_spc mt-inner_spc"
       />
 
-         <ReviewsData />
+         <ReviewsData classes="pb-inner_spc" />
     </>
   );
 };

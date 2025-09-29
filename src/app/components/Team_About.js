@@ -14,7 +14,7 @@ const Team_About = ({
 
   return (
     <section
-      className={` py-14 lg:py-20 2xl:py-100 bg-opacity-25 ${
+      className={`bg-opacity-25 ${
         bgColor ? bgColor : ""
       }`}
     >

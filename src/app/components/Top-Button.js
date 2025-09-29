@@ -32,7 +32,7 @@ const TopButton = () => {
     <button
       id="back-to-top"
       onClick={smoothScrollToTop}
-      className={`fixed p-4 bg-yellow text-white bottom-5 right-5 shadow shadow-white rounded-full transition-all duration-300 z-50 ${
+      className={`fixed p-3 sm:p-4 bg-yellow text-white bottom-2 sm:bottom-5 right-2 sm:right-5 shadow shadow-white rounded-full transition-all duration-300 z-50 ${
         visible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
       aria-label="Back to top"

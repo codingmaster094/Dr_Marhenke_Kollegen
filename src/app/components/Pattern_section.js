@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link';
 const Pattern_section = ({title,
-content, btn }) => {
+content, btn, classes }) => {
   return (
-    <section className="py-14 lg:py-20 bg-yellow text-white text-center bg-[url(/images/bg-pattern.png)] bg-cover">
+    <section className={`bg-yellow text-white text-center bg-[url(/images/bg-pattern.png)] bg-cover ${classes}`}>
       <div className="container">
         <div className="flex flex-col gap-[34px] items-center">
           <div>

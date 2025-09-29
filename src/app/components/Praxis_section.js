@@ -1,12 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
-const Praxis_section = ({ title, description, imageSrc, reverse }) => {
+const Praxis_section = ({ title, description, imageSrc, reverse,classes }) => {
   return (
-    <section className="py-14 lg:py-20 2xl:py-100 bg-opacity-25 ">
+    <section className="bg-opacity-25 ">
       <div className="container space-y-16">
         <div
-          className={`flex flex-col ${
+          className={`flex flex-col ${classes} ${
             reverse ? "lg:flex-row-reverse" : "lg:flex-row"
           } gap-4 xl:gap-16`}
         >

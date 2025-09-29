@@ -28,7 +28,7 @@ const TeamsProfile = ({title}) => {
 
   return (
     <section
-      className={title && "py-14 lg:py-20 2xl:py-[100px] bg-opacity-25"}
+      className={title && "bg-opacity-25"}
     >
       <div className={title && "container space-y-16"}>
         {title && (

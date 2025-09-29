@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 
-const SliderSection = ({ main_title, gallery_images }) => {
+const SliderSection = ({ main_title, gallery_images,classes }) => {
   const [swiperInstance, setSwiperInstance] = useState(null);
 
   const nextSlide = () => {
@@ -18,7 +18,7 @@ const SliderSection = ({ main_title, gallery_images }) => {
   };
 
   return (
-    <section className=" bg-[#FFFBF2] pt-[30px] md:pt-[40px] lg:pt-[50px]">
+    <section className={`bg-[#FFFBF2] ${classes}`}>
       <div className="flex flex-col gap-6 md:gap-11 lg:gap-16">
         <div className="container">
           <div className="flex flex-col gap-[34px] items-center text-center">

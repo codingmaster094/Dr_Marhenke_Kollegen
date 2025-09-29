@@ -34,7 +34,7 @@ const Page = async ({ params }) => {
 
   return (
     <>
-    <SEO_schema slug={`/${slug}`} />
+        <SEO_schema slug={`/${slug}`} />
       <Hero_Section
         title={Custom_Page?.acf?.standort_single_hero_title || ""}
         subtitle={Custom_Page?.acf?.subtitle || ""}
@@ -48,27 +48,31 @@ const Page = async ({ params }) => {
 
       <ServiceSection
         CustomPageServiceSection1={Custom_Page?.acf?.praxis || {}}
+        classes="py-inner_spc"
       />
 
       <Pattern_section
         title={Custom_Page?.acf?.standort_single_anfrage_title || ""}
         content={Custom_Page?.acf?.standort_single_anfrage_description || ""}
         btn={Custom_Page?.acf?.standort_single_anfrage_button || {}}
+        classes="py-inner_spc"
       />
 
-      <ReviewsData />
+      <ReviewsData classes="py-inner_spc" />
 
       <SliderSection
         main_title={Custom_Page?.acf?.standort_single_galerie_title || ""}
         gallery_images={Custom_Page?.acf?.standort_single_galerie_partner || []}
+        classes="py-inner_spc"
       />
 
       <DoctorList
         title={Custom_Page?.acf?.standort_single_team_section_title || ""}
         Data={Doctor_listData || []}
+        classes="py-inner_spc"
       />
 
-      <Contact_form />
+      <Contact_form classes="pb-inner_spc"/>
     </>
   );
 };

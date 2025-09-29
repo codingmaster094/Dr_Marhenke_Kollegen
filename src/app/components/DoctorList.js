@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const DoctorList = ({ title , Data}) => {
+const DoctorList = ({ title , Data, classes}) => {
   return (
-    <section className={title && "pt-14 lg:pt-20 2xl:pt-[100px] bg-opacity-25"}>
+    <section className={title && `${classes} bg-opacity-25`}>
       <div className={title && "container space-y-16"}>
         {title && (
           <div className="flex flex-col gap-[34px] items-center text-center">

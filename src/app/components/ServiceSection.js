@@ -6,6 +6,7 @@ const ServiceSection = ({
   behandlungenServiceSection2,
   CustomPageServiceSection1,
   behandlungenCustompageServiceSection1,
+  classes
 }) => {
   const mergedServices =
     behandlungenServiceSection1 ||
@@ -59,7 +60,7 @@ const ServiceSection = ({
     return (
       <section
         key={i}
-        className={`py-14 lg:py-20 2xl:py-100 bg-opacity-25 ${
+        className={`bg-opacity-25 ${classes} ${
           isEven ? "bg-[#fffbf2]" : ""
         }`}
       >

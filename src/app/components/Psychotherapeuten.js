@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import Link from "next/link";
-const Psychotherapeuten = ({ image , title, content, postsData }) => {
+const Psychotherapeuten = ({ image , title, content, postsData, classes }) => {
   const swiperRef = useRef(null);
   const nextSlide = () => {
     swiperRef.current.swiper.slideNext();
@@ -20,10 +20,10 @@ const Psychotherapeuten = ({ image , title, content, postsData }) => {
   };
 
   return (
-    <section className="bg-[#fffbf2] py-14 lg:py-20 2xl:py-100 bg-opacity-25">
+    <section className={`bg-[#fffbf2] bg-opacity-25 ${classes}`}>
       <div className="container space-y-16">
         <div className="flex flex-col lg:flex-row gap-4 xl:gap-16">
-          <div className="lg:w-6/12 self-stretch 3xl:aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden relative">
+          <div className="lg:w-6/12 self-stretch aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden relative">
             <Image
               role="img"
               src={image}
@@ -49,7 +49,7 @@ const Psychotherapeuten = ({ image , title, content, postsData }) => {
         <div className="flex items-center">
           <div
             onClick={prevSlide}
-            className="hidden md:grid serviceSwiper-prev text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none"
+            className="hidden md:grid serviceSwiper-prev text-yellow border rounded-lg border-yellow w-fit p-2 select-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ const Psychotherapeuten = ({ image , title, content, postsData }) => {
                             />
                           </div>
                           <h3
-                            className="mb-2 lg:mt-6 font-bold text-lg sm:text-[21px] min-h-14"
+                            className="mb-2 lg:mt-6 font-bold text-lg sm:text-[21px]"
                             dangerouslySetInnerHTML={{ __html: val.post_title }}
                           ></h3>
                           <p
@@ -128,7 +128,7 @@ const Psychotherapeuten = ({ image , title, content, postsData }) => {
           </div>
           <div
             onClick={nextSlide}
-            className="hidden md:grid serviceSwiper-next text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none"
+            className="hidden md:grid serviceSwiper-next text-yellow border rounded-lg border-yellow w-fit p-2 select-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

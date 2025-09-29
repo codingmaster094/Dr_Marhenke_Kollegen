@@ -25,8 +25,7 @@ const page = async ({ params }) => {
 
   return (
     <>
-    <SEO_schema slug={`/${slug}`} />
-    <SEO_schema slug={`/${slug}`} faqs={BlogData?.acf.all_faqs} />
+     <SEO_schema slug={`/${slug}`} faqs={BlogData?.acf.all_faqs} />
       <Hero_Section_blog
         title={BlogData.acf.hero_slider_main_title}
         subtitle={BlogData.acf.home_hero_title}
@@ -86,7 +85,7 @@ const page = async ({ params }) => {
           </div>
         </div>
       </section>
-      <section className="container max-w-[1440px] rounded-xl py-14 lg:py-20 bg-yellow text-white text-center bg-[url(/images/bg-pattern.png)] bg-cover">
+      <section className="container max-w-[1440px] rounded-xl bg-yellow text-white text-center bg-[url(/images/bg-pattern.png)] bg-cover">
         <div className="container">
           <div className="flex flex-col gap-[34px] items-center">
             <div>

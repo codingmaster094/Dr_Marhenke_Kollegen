@@ -14,6 +14,7 @@ const Psychotherapie_Praxis = ({
   imageSrc,
   reverse = false,
   sliderData = [],
+  classes
 }) => {
   const swiperRef = useRef(null);
 
@@ -33,7 +34,7 @@ const Psychotherapie_Praxis = ({
 
   return (
     <section
-      className={`py-14 lg:py-20 2xl:py-100 bg-opacity-25 ${bgColor || ""}`}
+      className={`bg-opacity-25 ${bgColor || ""} ${classes}`}
     >
       <div className="container space-y-16">
         {/* Content Block */}
@@ -64,11 +65,13 @@ const Psychotherapie_Praxis = ({
               dangerouslySetInnerHTML={{ __html: description }}
             >
             </div>
-            <ul className="space-y-4 ml-6 list-disc">
-              {listItems?.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
+            {
+              listItems && <ul className="space-y-4 ml-6 list-disc">
+                {listItems?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            }
           </div>
         </div>
 
@@ -77,7 +80,7 @@ const Psychotherapie_Praxis = ({
           {/* Prev Button */}
           <div
             onClick={prevSlide}
-            className="hidden md:grid text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none cursor-pointer"
+            className="hidden md:grid text-yellow border rounded-lg border-yellow w-fit p-2 select-none cursor-pointer"
           >
             <svg
               width="36"
@@ -177,7 +180,7 @@ const Psychotherapie_Praxis = ({
           {/* Next Button */}
           <div
             onClick={nextSlide}
-            className="hidden md:grid text-black text-opacity-70 border rounded-lg border-yellow w-fit p-2 select-none cursor-pointer"
+            className="hidden md:grid text-yellow border rounded-lg border-yellow w-fit p-2 select-none cursor-pointer"
           >
             <svg
               width="36"

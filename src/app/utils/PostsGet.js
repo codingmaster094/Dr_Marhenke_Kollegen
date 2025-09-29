@@ -17,7 +17,7 @@ export default async function POST_GET(endpoint = "") {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error fetching data in POST_GET:", error.message);
+    // console.error("Error fetching data in POST_GET:", error.message);
     throw error;
   }
 }

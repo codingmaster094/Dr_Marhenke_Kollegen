@@ -11,7 +11,7 @@ const About_Service_section = ({ Data }) => {
         return (
           <section
             key={index}
-            className={`py-14 lg:py-20 2xl:py-100 ${bgClass}`}
+            className={`${bgClass}`}
           >
             <div className="container space-y-16">
               <div

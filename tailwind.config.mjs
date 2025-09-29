@@ -21,6 +21,7 @@ const config = {
       spacing: {
         "swiper-navigation": "19px",
         100: "100px",
+        "inner_spc": "clamp(3.125rem, 2.5rem + 3.125vw,6.25rem)"
       },
       boxShadow: {
         custom_shdow: "0 0 4px 4px rgba(185, 124, 42, 0.1)",

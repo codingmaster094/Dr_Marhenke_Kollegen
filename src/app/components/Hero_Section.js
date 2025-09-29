@@ -11,6 +11,7 @@ const Hero_Section = ({
   imageSrc,
   videoSrc,
   BTN,
+  classes
 }) => {
   const ref = useRef();
   useEffect(() => {
@@ -59,9 +60,9 @@ const Hero_Section = ({
   // };
 
   return (
-    <section className="container">
+    <section className={`container pt-4 lg:pt-0 ${classes}`}>
       <div className="flex flex-col-reverse lg:flex-row gap-6">
-        <div className="lg:w-6/12 py-8 flex flex-col justify-center gap-5 sm:gap-[34px]">
+        <div className="lg:w-6/12 lg:py-8 flex flex-col justify-center gap-5 sm:gap-[34px]">
           <h1 className="text-h1">
             <span
               className="text-yellow block"

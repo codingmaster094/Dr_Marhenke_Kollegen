@@ -24,7 +24,7 @@ const page = async ({params}) => {
 
   return (
     <>
-     <SEO_schema slug={`/${slug}`} faqs={CostumPagePost.acf.single_behandlungen_faqs_questions_answers} />
+    <SEO_schema slug={`/${slug}`} faqs={CostumPagePost.acf.single_behandlungen_faqs_questions_answers} />
       <Hero_Section
         title={CostumPagePost.title}
         subtitle={CostumPagePost.acf.single_behandlungen_hero_title}
@@ -38,11 +38,13 @@ const page = async ({params}) => {
         title={CostumPagePost?.acf.single_behandlungen_partners_main_title}
         logosData={CostumPagePost.acf.single_behandlungen_all_partners}
         BTN={CostumPagePost.acf.single_behandlungen_partners_button}
+        classes="py-inner_spc"
       />
       <ServiceSection
         behandlungenCustompageServiceSection1={
           CostumPagePost.acf.single_behandlungen_post_content_detail
         }
+        classes="pb-inner_spc"
       />
 
       <ReviewsData />
@@ -50,6 +52,7 @@ const page = async ({params}) => {
       <FAQ_section
         title={CostumPagePost.acf.single_behandlungen_faqs_main_title}
         faqs={CostumPagePost.acf.single_behandlungen_faqs_questions_answers}
+        classes="py-inner_spc"
       />
     </>
   );

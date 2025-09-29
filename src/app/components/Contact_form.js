@@ -39,7 +39,7 @@ const LoadingDots = () => {
   );
 };
 
-const Contact_form = () => {
+const Contact_form = ({classes}) => {
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const [Success, setSuccess] = useState(null);
@@ -140,7 +140,7 @@ const Contact_form = () => {
   };  
 
   return (
-    <section className="pb-14 lg:pb-20 2xl:pb-100 pt-14 lg:pt-24 2xl:pt-[130px]" id="kontaktformular">
+    <section id="kontaktformular" className={classes}>
       <div className="container">
         <div className="grid lg:grid-cols-2 bg-yellow text-white gap-8 sm:gap-16 p-4 sm:py-12 sm:px-9 rounded lg:rounded-2xl 3xl:rounded-3xl">
           <div>

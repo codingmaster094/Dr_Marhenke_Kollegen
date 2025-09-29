@@ -34,8 +34,8 @@ const page = async() => {
         imageSrc={kontaktData.acf.kontak_hero_image.url}
         videoSrc={""}
       />
-      <ContactSection location_cards={kontaktData.acf.location_cards} />
-      <Contact_form />
+      <ContactSection location_cards={kontaktData.acf.location_cards} classes="py-inner_spc" />
+      <Contact_form classes="pb-inner_spc"/>
     </>
   );
 }

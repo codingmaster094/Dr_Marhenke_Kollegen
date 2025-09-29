@@ -96,11 +96,6 @@ const Header = ({Headerdata , menuData , OptionData}) => {
                               <li key={child.id}>
                                 <Link
                                   href={child.url}
-                                  className={`${
-                                    isChildActive
-                                      ? "text-yellow hover:shadow"
-                                      : ""
-                                  }`}
                                 >
                                   {child.title.replace(/&amp;/g, "&")}
                                 </Link>

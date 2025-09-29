@@ -9,7 +9,6 @@ import ReviewsData from "../ReviewsData/page";
 import FAQ_section from "../components/FAQ_section";
 import Alldata from "../utils/AllDataFetxh";
 import SEO_schema from "../components/SEO_schema";
-import FAQSchema from "../components/Faqschema";
 
 const Page = async () => {
   let HomePageData;
@@ -26,7 +25,7 @@ const Page = async () => {
 
   return (
     <>
-       <SEO_schema slug="/start" faqs={HomePageData.acf.faq_content} />
+      <SEO_schema slug="/start" faqs={HomePageData.acf.faq_content} />
 
       <Hero_Section
         title={HomePageData.acf.hero_title_1}
@@ -35,45 +34,52 @@ const Page = async () => {
         BTN={HomePageData.acf.home_hero_button}
         imageSrc={HomePageData.acf.home_hero_image.url}
         videoSrc={HomePageData.acf.upload_video}
-        />
+      />
       <Psychotherapeuten
         image={HomePageData.acf.philosophie_image.url}
         title={HomePageData.acf.philosophie_title}
         content={HomePageData.acf.philosophie_content}
         postsData={HomePageData.acf.behandlungen_post}
-        />
+        classes="py-inner_spc"
+      />
       <Pattern_section
         title={HomePageData.acf.anfrage_ttile}
         content={HomePageData.acf.anfrage_content}
         btn={HomePageData.acf.anfrage_button}
-        />
+        classes="py-inner_spc"
+      />
       <Psychotherapie_Praxis
         title={HomePageData.acf.praxis_title}
         description={HomePageData.acf.praxis_content}
         sliderData={HomePageData.acf.praxis_standort_data}
         imageSrc={HomePageData?.acf.praxis_image.url}
         reverse={true}
+        classes="py-inner_spc"
       />
       <Kooperationspartner
         title={HomePageData?.acf.kooperationen_title}
         logosData={HomePageData.acf.kooperationen_company_logo}
         BTN={HomePageData.acf.kooperationen_button}
-        />
+        classes="pb-inner_spc"
+      />
       <Pattern_section
         title={HomePageData.acf.anfrage_ttile_2}
         content={HomePageData.acf.anfrage_content_2}
         btn={HomePageData.acf.anfrage_button_2}
-        />
+        classes="py-inner_spc"
+      />
       <Team_section
         title={HomePageData.acf.vorteile_title}
         content={HomePageData.acf.vorteile_content}
         bg_image={HomePageData?.acf.vorteile_image.url}
-        />
-      <ReviewsData />
+        classes="pt-inner_spc"
+      />
+      <ReviewsData classes="py-inner_spc" />
       <FAQ_section
         title={HomePageData.acf.faq_ttile}
         faqs={HomePageData.acf.faq_content}
-        />
+        classes="pb-inner_spc"
+      />
     </>
   );
 };

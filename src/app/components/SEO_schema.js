@@ -23,7 +23,7 @@ const SEO_schema = async ({ slug, faqs }) => {
         ? {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "url": pageUrl, // 👈 ADD THIS LINE
+            "url": pageUrl, 
             "mainEntityOfPage": {
               "@id": pageUrl
             },
