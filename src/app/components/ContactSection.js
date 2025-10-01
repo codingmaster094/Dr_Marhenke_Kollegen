@@ -12,13 +12,14 @@ const ContactSection = ({location_cards,classes}) => {
             <div className="text-p space-x-4 flex justify-center items-center">
             {
               item.location_icons.map((image , i) => {
+                console.log('image', image)
                 return (
               <div key={i}>
                 <Link
                   role="link"
                   className="hover:text-yellow transition-colors"
                   aria-label="0221/42 31 39 56"
-                  target="_self"
+                  target={image.icon_link.target}
                   href={image.icon_link.url}
                 >
                   <span className="w-[60px] sm:w-[80px] h-[60px] sm:h-[80px] bg-yellow rounded-[10px] flex justify-center items-center *:sm:w-[42px] *:w-[32px]">

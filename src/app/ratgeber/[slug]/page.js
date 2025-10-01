@@ -9,7 +9,7 @@ import generatePageMetadata from "../../utils/generatePageMetadata";
 import SEO_schema from "@/app/components/SEO_schema";
 
 const page = async ({ params }) => {
-   const { slug } = await params;
+  const { slug } = await params;
   let BlogData;
   let schemaJSON;
   try {
@@ -25,7 +25,7 @@ const page = async ({ params }) => {
 
   return (
     <>
-     <SEO_schema slug={`/${slug}`} faqs={BlogData?.acf.all_faqs} />
+      <SEO_schema slug={`/${slug}`} faqs={BlogData?.acf.all_faqs} />
       <Hero_Section_blog
         title={BlogData.acf.hero_slider_main_title}
         subtitle={BlogData.acf.home_hero_title}
@@ -130,7 +130,7 @@ const page = async ({ params }) => {
 export default page;
 
 export async function generateMetadata({ params }) {
-   const { slug } = await params;
+  const { slug } = await params;
   return generatePageMetadata(`/${slug}`, {
     title: `ratgeber/${slug}`,
     description: `ratgeber/${slug}`,
