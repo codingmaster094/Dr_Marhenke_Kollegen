@@ -32,6 +32,7 @@ const page = async () => {
     return <div>No data available.</div>;
   }
 
+  console.log('ueberunsData', ueberunsData)
   return (
     <>
         <SEO_schema slug="/ueber-uns" />
@@ -62,6 +63,8 @@ const page = async () => {
       <MapPageClient
         title={ueberunsData?.acf.hero_title_1}
         locations={ueberunsData?.acf.locations}
+        Map_image={ueberunsData?.acf?.upload_map_image_}
+        map_url={ueberunsData?.acf?.map_url}
         classes="py-inner_spc"
       />
       <Kooperationspartner
