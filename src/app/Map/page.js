@@ -20,7 +20,7 @@ export default function MapPageClient({ map_url, Map_image, title, locations, cl
         />
         <span className="w-28 h-1 bg-yellow block mx-auto"></span>
         <div className="mt-10 !h-[600px]">
-          {map_url ? (
+          {Map_image ? (
             <Link href={map_url} target="_blank" rel="noopener noreferrer">
               {Map_image?.url ? (
                 <Image
