@@ -1,7 +1,7 @@
 export default async function FetchAllslug(params) {
   try {
     const response = await fetch(`${process.env.NEXT_BASE_URL_SEO}${params}`, {
-      cache: "no-store",
+       next: { revalidate: 60 }
     });
     if (!response) {
       throw new Error(`Failed to fetch data: ${response.statusText}`);

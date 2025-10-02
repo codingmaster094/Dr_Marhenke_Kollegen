@@ -13,7 +13,6 @@ export async function GET() {
     SiteMapData = [];
   }
 
-  console.log('SiteMapData', SiteMapData)
   const uniquePaths = [...new Set(SiteMapData)];
   const totalUrls = uniquePaths.length;
 
