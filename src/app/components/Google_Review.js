@@ -29,7 +29,7 @@ const Google_Review = ({ main_title, content, slider, reviewlogos, classes }) =>
   const prevSlide = () => swiperInstance?.slidePrev();
 
   return (
-    <section className={`bg-white ${classes}`}>
+    <section className={`bg-white py-inner_spc`}>
       <div className="w-full max-w-[1550px] px-[15px] mx-auto">
         <div className="flex flex-col gap-6 md:gap-11">
           <div className="flex justify-center text-center">
