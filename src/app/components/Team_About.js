@@ -4,26 +4,25 @@ import React from "react";
 const Team_About = ({
   further_title,
   further_link,
-  title, 
-  description, 
+  title,
+  description,
   bgColor,
-  listItems, 
-  imageSrc, 
-  reverse = false ,
-  classes
+  listItems,
+  imageSrc,
+  reverse = false,
+  classes,
+  appointment_btn
 }) => {
-
+console.log('appointment_btn', appointment_btn)
   return (
     <section
-      className={`bg-opacity-25 ${
-        bgColor ? bgColor : ""
-      } ${classes}`}
+      className={`bg-opacity-25 ${bgColor ? bgColor : ""
+        } ${classes}`}
     >
       <div className="container space-y-16">
         <div
-          className={`flex flex-col items-start ${
-            reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-          } gap-4 xl:gap-16`}
+          className={`flex flex-col items-start ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+            } gap-4 xl:gap-16`}
         >
           <div className="lg:w-6/12 self-stretch rounded md:rounded-3xl overflow-hidden">
             <Image
@@ -50,18 +49,30 @@ const Team_About = ({
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-              <div>
-                <h3>{further_title}</h3>
-{
-  further_link.map((val,i)=>{
-    return(
-      <Link href={val.link.url} key={i}>
-      {val.link.title}
-      </Link>
-    )
-  })
-}
+              <h3>{further_title}</h3>
+              <div className="Team-Details">
+                {
+                  further_link !=false && further_link &&
+                  further_link.map((val, i) => {
+                    return (
+                      <Link className="text-yellow" role="button" href={val.link.url} key={i}>
+                        {val.link.title}
+                      </Link>
+                    )
+                  })
+                }
               </div>
+              {
+                appointment_btn.url !=undefined && appointment_btn &&
+                <Link
+                  href={appointment_btn.url}
+                  aria-label="Contact"
+                  className="p-2 sm:p-3 2xl:py-4 2xl:px-8 inline-block bg-yellow rounded sm:rounded-[10px] hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg text-base lg:text-lg"
+                >
+                 {appointment_btn.title}
+                </Link>
+              }
+
             </div>
           </div>
         </div>

@@ -1083,3 +1083,15 @@ ol {
 .blogtemplate ol {
   padding-left: 24px;
 }
+.Team-Details {
+    display: block;
+    margin: 16px 0;
+}
+.Team-Details a{
+  display:block;
+
+}
+.Team-Details a:not(:last-child){
+  padding-bottom:10px;
+
+}

@@ -17,6 +17,7 @@ const page = async ({ params }) => {
     return <div>No data available.</div>;
   }
 
+  console.log('TeamData', TeamData)
   return (
     <>
       <Hero_Section
@@ -37,6 +38,7 @@ const page = async ({ params }) => {
         reverse={false}
         further_link={TeamData.acf.further_link}
         further_title={TeamData.acf.further_title}
+        appointment_btn={TeamData.acf.appointment_btn}
         classes="py-inner_spc"
       />
     </>
