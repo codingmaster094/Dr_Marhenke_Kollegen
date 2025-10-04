@@ -9,14 +9,15 @@ const Team_About = ({
   bgColor,
   listItems, 
   imageSrc, 
-  reverse = false 
+  reverse = false ,
+  classes
 }) => {
 
   return (
     <section
       className={`bg-opacity-25 ${
         bgColor ? bgColor : ""
-      }`}
+      } ${classes}`}
     >
       <div className="container space-y-16">
         <div

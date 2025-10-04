@@ -37,6 +37,7 @@ const page = async ({ params }) => {
         reverse={false}
         further_link={TeamData.acf.further_link}
         further_title={TeamData.acf.further_title}
+        classes="py-inner_spc"
       />
     </>
   );
