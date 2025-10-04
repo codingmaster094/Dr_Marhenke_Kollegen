@@ -54,7 +54,7 @@ console.log('appointment_btn', appointment_btn)
                   further_link !=false && further_link &&
                   further_link.map((val, i) => {
                     return (
-                      <Link className="text-yellow" role="button" href={val.link.url} key={i}>
+                      <Link className="text-yellow" role="button" href={val.link.url} key={i} target="_blank">
                         {val.link.title}
                       </Link>
                     )
@@ -71,7 +71,6 @@ console.log('appointment_btn', appointment_btn)
                  {appointment_btn.title}
                 </Link>
               }
-
             </div>
           </div>
         </div>
