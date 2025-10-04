@@ -1089,7 +1089,7 @@ ol {
 }
 .Team-Details a{
   display:block;
-
+word-break: break-word;
 }
 .Team-Details a:not(:last-child){
   padding-bottom:10px;
