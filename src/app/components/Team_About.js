@@ -16,8 +16,7 @@ const Team_About = ({
 console.log('appointment_btn', appointment_btn)
   return (
     <section
-      className={`bg-opacity-25 ${bgColor ? bgColor : ""
-        } ${classes}`}
+      className={`bg-opacity-25 bg-[#fffbf2] ${classes}`}
     >
       <div className="container space-y-16">
         <div
@@ -67,7 +66,7 @@ console.log('appointment_btn', appointment_btn)
                 <Link
                   href={appointment_btn.url}
                   aria-label="Contact"
-                  className="p-2 sm:p-3 2xl:py-4 2xl:px-8 inline-block bg-yellow rounded sm:rounded-[10px] hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg text-base lg:text-lg"
+                  className="p-2 sm:p-3 text-white 2xl:py-4 2xl:px-8 inline-block bg-yellow rounded sm:rounded-[10px] hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg text-base lg:text-lg"
                 >
                  {appointment_btn.title}
                 </Link>

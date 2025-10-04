@@ -33,7 +33,6 @@ const page = async ({ params }) => {
         title={TeamData.acf.team__employee_title}
         description={TeamData.acf.team__employee_description}
         listItems={[]}
-        bgColor="bg-[#fffbf2]"
         imageSrc={TeamData.acf.team_employee_photo.url}
         reverse={false}
         further_link={TeamData.acf.further_link}
