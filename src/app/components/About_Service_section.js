@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const About_Service_section = ({ Data }) => {
+const About_Service_section = ({ Data , classes}) => {
   return (
     <>
       {Data?.map((item, index) => {
@@ -11,7 +11,7 @@ const About_Service_section = ({ Data }) => {
         return (
           <section
             key={index}
-            className={`${bgClass}`}
+            className={`${bgClass} ${classes}`}
           >
             <div className="container space-y-16">
               <div

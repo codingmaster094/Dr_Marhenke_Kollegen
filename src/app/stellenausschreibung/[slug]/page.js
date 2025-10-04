@@ -28,12 +28,14 @@ return (
       imageSrc={
         stellenausschreibungData.acf.stellenausschreibung__hero_image.url
       }
+      classes="pb-inner_spc"
     />
 
     <About_Service_section
       Data={
         stellenausschreibungData.acf.stellenausschreibung__ausschreibungstext
       }
+       classes="py-inner_spc"
     />
   </>
 );
