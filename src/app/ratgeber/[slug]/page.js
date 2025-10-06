@@ -85,7 +85,7 @@ const page = async ({ params }) => {
           </div>
         </div>
       </section>
-      <section className="container max-w-[1440px] rounded-xl bg-yellow text-white text-center bg-[url(/images/bg-pattern.png)] bg-cover py-inner_spc">
+      <section className="container max-w-[1440px] rounded-xl bg-[#F4E5C0] text-black text-center bg-cover py-inner_spc">
         <div className="container">
           <div className="flex flex-col gap-[34px] items-center">
             <div>
@@ -96,7 +96,7 @@ const page = async ({ params }) => {
                     BlogData.acf.ratgeber_single_wichtigste_2_main_title || "",
                 }}
               ></h2>
-              <span className="w-28 h-1 bg-white block mx-auto"></span>
+              <span className="w-28 h-1 bg-black block mx-auto"></span>
             </div>
             <div
               className="text-p space-y-4"
@@ -108,7 +108,7 @@ const page = async ({ params }) => {
             {BlogData.acf.home_anfrage_button && (
               <Link
                 role="link"
-                className="inline-block w-fit text-yellow bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-white hover:shadow hover:shadow-white transition-colors font-medium"
+                className="inline-block w-fit text-yellow bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-yellow hover:text-white hover:shadow hover:shadow-white transition-colors font-medium"
                 href={BlogData.acf.home_anfrage_button.url}
               >
                 {BlogData.acf.home_anfrage_button.title}
