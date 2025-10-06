@@ -186,12 +186,12 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
               <p>{OptionDatas.sprechzeiten_title}</p>
             </div>
             <div className="flex gap-2">
-              <ul className="space-y-5">
+              <ul className="space-y-2">
                 {OptionDatas.footer_offie_hours.map((day, i) => {
                   return <li key={i}>{day.footer_day_name}</li>;
                 })}
               </ul>
-              <ul className="space-y-5">
+              <ul className="space-y-2">
                 {OptionDatas.footer_offie_hours.map((day, i) => {
                   return <li key={i}>{day.footer_day_hours}</li>;
                 })}
