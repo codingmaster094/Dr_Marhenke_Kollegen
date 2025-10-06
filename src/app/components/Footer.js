@@ -22,7 +22,7 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
             <div className="text-p *:font-bold">
               <p>{OptionDatas.footer_standorte_title}</p>
             </div>
-            <ul className="space-y-5">
+            <ul className="space-y-3">
               <li className="flex gap-3 items-start">
                 <svg
                   className="shrink-0 mt-1"
@@ -202,7 +202,7 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
             <div className="text-p *:font-bold">
               <p>{OptionDatas.footer_navigation_title}</p>
             </div>
-            <ul className="space-y-5">
+            <ul className="space-y-3">
               {Footer1 &&
                 Footer1?.map((item) => {
                   return (
@@ -219,7 +219,7 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
             <div className="text-p *:font-bold">
               <p>{OptionDatas.footer_rechtliches_title}</p>
             </div>
-            <ul className="space-y-5">
+            <ul className="space-y-3">
               {Footer2 && 
               Footer2?.map((item, i) => (
                 <li key={i}>
