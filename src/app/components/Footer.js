@@ -126,6 +126,8 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
                 ></span>
               </li>
               <li>
+                {
+                  OptionDatas.footer_telephone !="" && 
                 <Link
                   role="link"
                   className="flex gap-3 items-center"
@@ -148,8 +150,11 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
                   </svg>
                   <span>{OptionDatas.footer_telephone.title}</span>
                 </Link>
+                }
               </li>
               <li>
+                {
+                  OptionDatas.footer_mail && 
                 <Link
                   role="link"
                   className="flex gap-3"
@@ -172,6 +177,7 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
                   </svg>
                   <span>{OptionDatas.footer_mail.title}</span>
                 </Link>
+                }
               </li>
             </ul>
           </div>

@@ -4,7 +4,7 @@ import { useRef } from "react";
 const FAQ_section = ({ title, faqs, container, classes }) => {
 
   return (
-    <section id="faq" class={classes}>
+    <section id="faq" className={classes}>
       <div className={`${!container && "container"}`}>
         <div className={`${container ? "mb-16 text-left" : "mb-16 text-center"}`}>
           <h2 className="text-h2 mb-4">{title}</h2>
