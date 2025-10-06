@@ -22,7 +22,7 @@ const DoctorList = ({ title , Data, classes}) => {
                 <div className="relative aspect-square">
                   <Image
                     src={item.acf.team_employee_photo.url}
-                    alt={item.acf.team_employee_photo.alt}
+                    alt={item.acf.team_employee_photo.alt || "Team-employee-image"}
                     fill
                     className="rounded-xl lg:rounded-2xl 3xl:rounded-3xl size-full object-cover object-top"
                   />

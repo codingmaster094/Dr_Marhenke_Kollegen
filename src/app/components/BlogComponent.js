@@ -24,7 +24,7 @@ const BlogComponent = ({ PostData ,title , description}) => {
                 <div>
                   <Image
                     src={post.acf.stellenausschreibung__hero_image.url}
-                    alt="Blog Image"
+                    alt={post.acf.stellenausschreibung__hero_image?.alt || "Blog Image"}
                     width={400}
                     height={260}
                     className="rounded-xl lg:rounded-2xl 3xl:rounded-3xl w-full h-full object-cover"

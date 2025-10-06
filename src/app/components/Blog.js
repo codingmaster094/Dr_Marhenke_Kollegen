@@ -85,7 +85,7 @@ const Blog = ({ title, BTN, blogsData }) => {
                       <div>
                         <Image
                           src={val?.acf?.hero_slider_image?.url}
-                          alt="Blog Image"
+                          alt={val?.acf?.hero_slider_image?.alt || "Blog Image"}
                           width={400}
                           height={260}
                           className="rounded-xl lg:rounded-2xl 3xl:rounded-3xl w-full h-full object-cover"

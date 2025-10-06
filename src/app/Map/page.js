@@ -25,7 +25,7 @@ export default function MapPageClient({ map_url, Map_image, title, locations, cl
               {Map_image?.url ? (
                 <Image
                   src={Map_image.url}
-                  alt="map-image"
+                  alt={Map_image || "map-image"}
                   width={1905}
                   height={600}
                   className="w-full h-full object-cover"

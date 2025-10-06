@@ -18,7 +18,7 @@ const Hero_Section = ({
     if (ref.current) {
       const uls = ref.current.querySelectorAll("ul");
       uls.forEach((ul) => {
-        ul.classList.add("space-y-4", "ml-6" , "content-listing1");
+        ul.classList.add("space-y-4", "ml-6", "content-listing1");
       });
     }
   }, [points]);
@@ -104,6 +104,7 @@ const Hero_Section = ({
           {BTN && (
             <Link
               href={BTN.url}
+              aria-label={`Learn more about ${BTN.ariaContext || 'this section'}`}
               className="inline-block w-fit text-white text-center bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors font-medium"
             >
               {BTN.title}

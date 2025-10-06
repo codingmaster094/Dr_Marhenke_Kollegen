@@ -61,7 +61,7 @@ const Google_Review = ({ main_title, content, slider, reviewlogos, classes }) =>
                       src={item?.logos?.url}
                       width={150}
                       height={48}
-                      alt="Review Icon "
+                      alt={item?.logos?.alt || "Review Icon "}
                       className=""
                     />
                   </Link>
@@ -70,7 +70,7 @@ const Google_Review = ({ main_title, content, slider, reviewlogos, classes }) =>
                     src={item?.logos?.url}
                     width={150}
                     height={48}
-                    alt="Review Icon "
+                    alt={item?.logos?.alt || "Review Icon "}
                     className=""
                   />
                 )}

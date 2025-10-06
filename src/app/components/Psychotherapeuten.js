@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import Link from "next/link";
-const Psychotherapeuten = ({ image , title, content, postsData, classes }) => {
+const Psychotherapeuten = ({ image, title, content, postsData, classes }) => {
   const swiperRef = useRef(null);
   const nextSlide = () => {
     swiperRef.current.swiper.slideNext();
@@ -23,15 +23,20 @@ const Psychotherapeuten = ({ image , title, content, postsData, classes }) => {
     <section className={`bg-[#fffbf2] bg-opacity-25 ${classes}`}>
       <div className="container space-y-16">
         <div className="flex flex-col lg:flex-row gap-4 xl:gap-16">
-          <div className="lg:w-6/12 self-stretch aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden relative">
+          <div
+            className="lg:w-6/12 self-stretch aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden relative"
+          >
             <Image
-              role="img"
               src={image}
-              alt="service-img"
+              alt="Technician providing service to a client" // <-- meaningful alt text
               fill
-              className="size-full object-cover object-bottom"
+              className="object-cover object-bottom"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
+
+
           <div className="lg:w-6/12 flex flex-col justify-center gap-[34px]">
             <div>
               <h2
@@ -91,33 +96,45 @@ const Psychotherapeuten = ({ image , title, content, postsData, classes }) => {
                   return (
                     <SwiperSlide key={i}>
                       <div className="sm:p-6">
-                        <div className="sm:p-6 rounded-3xl bg-transparent hover:bg-white transition-all sm:hover:shadow-[0_4px_34px_0_rgba(0,0,0,.08)]">
+                        <div className="sm:p-6 rounded-3xl bg-transparent hover:bg-white transition-all sm:hover:shadow-[0_4px_34px_0_rgba(0,0,0,.08)] focus-within:shadow-[0_0_0_3px_rgba(255,215,0,0.6)]">
+
+                          {/* Accessible Image */}
                           <div className="scale-75 lg:scale-100 size-[100px] rounded-[10px] grid place-items-center bg-yellow mx-auto shadow-[0_4px_18px_0_rgba(0,0,0,.14)]">
-                            <img
-                              role="img"
+                            <Image
                               src="/images/Simplification-1.svg"
-                              alt="Icon"
+                              alt="Simplification process icon"
+                              width={52}
+                              height={52}
+                              className="object-contain"
+                              priority={i === 0}
                             />
                           </div>
+
+                          {/* Accessible Title */}
                           <h3
-                            className="mb-2 lg:mt-6 font-bold text-lg sm:text-[21px]"
+                            className="mb-2 lg:mt-6 font-bold text-lg sm:text-[21px] text-center"
                             dangerouslySetInnerHTML={{ __html: val.post_title }}
-                          ></h3>
+                          />
+
+                          {/* Accessible Text */}
                           <p
-                            className="mb-4 3xl::mb-8 *:text-base space-y-4 text-base"
-                            dangerouslySetInnerHTML={{
-                              __html: val.post_content,
-                            }}
-                          ></p>
+                            className="mb-4 3xl:mb-8 space-y-4 text-base text-center"
+                            dangerouslySetInnerHTML={{ __html: val.post_content }}
+                          />
+
+                          {/* Accessible Link/Button */}
                           <Link
-                            role="link"
                             href={
-                              val.post_link.url || val.ueber_uns_section_standort_data_button.url
+                              val.post_link?.url || val.ueber_uns_section_standort_data_button?.url || "#"
                             }
-                            className="block w-fit mx-auto text-yellow lg:text-lg rounded sm:rounded-[10px] border border-yellow py-2 2xl:py-[15px] px-4 2xl:px-8 hover:bg-yellow hover:shadow hover:text-white transition-colors"
+                            className="block w-fit mx-auto text-yellow lg:text-lg rounded sm:rounded-[10px] border border-yellow py-2 2xl:py-[15px] px-4 2xl:px-8 hover:bg-yellow hover:shadow hover:text-white transition-colors focus-visible:ring-2 ring-offset-2 ring-yellow-400"
+                            aria-label={`Learn more about ${val.post_title?.replace(/<[^>]*>/g, '') || 'this topic'}`}
                           >
-                            {val.post_link.title || val.ueber_uns_section_standort_data_button.title}
+                            {val.post_link?.title ||
+                              val.ueber_uns_section_standort_data_button?.title ||
+                              "Learn more"}
                           </Link>
+
                         </div>
                       </div>
                     </SwiperSlide>

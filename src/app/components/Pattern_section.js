@@ -24,7 +24,7 @@ content, btn, classes }) => {
               className="inline-block w-fit text-yellow bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-yellow hover:text-white hover:shadow hover:shadow-white transition-colors font-medium"
               href={btn.url}
             >
-              {btn.title}
+              {btn.title} 
             </Link>
           )}
         </div>

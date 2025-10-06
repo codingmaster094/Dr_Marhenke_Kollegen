@@ -1,13 +1,13 @@
 "use client";
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Offcanvas from "../components/Offcanvas";
 import { usePathname } from "next/navigation";
 import Lenis from "@studio-freight/lenis";
-const Header = ({Headerdata , menuData , OptionData}) => {
+const Header = ({ Headerdata, menuData, OptionData }) => {
   const [isSticky, setIsSticky] = useState(false);
-  const pathname = usePathname(); 
+  const pathname = usePathname();
   const lenisRef = useRef(null);
   useEffect(() => {
     const scroller = new Lenis();
@@ -38,9 +38,8 @@ const Header = ({Headerdata , menuData , OptionData}) => {
   return (
     <header
       id="header"
-      className={`py-2 lg:py-4 xl:py-6 left-0 right-0 bg-white z-[99999] w-full transition-all duration-300 ${
-        isSticky ? "fixed top-0 left-0 shadow" : ""
-      }`}
+      className={`py-2 lg:py-4 xl:py-6 left-0 right-0 bg-white z-[99999] w-full transition-all duration-300 ${isSticky ? "fixed top-0 left-0 shadow" : ""
+        }`}
     >
       <div className="container mx-auto px-4 max-w-[1712px]">
         <div className="flex justify-between items-center gap-3">
@@ -49,12 +48,13 @@ const Header = ({Headerdata , menuData , OptionData}) => {
             <Link href="/">
               <Image
                 src={Headerdata.site_logo}
-                alt="Logo"
+                alt="dr.markhenke – Home"
                 width={286}
                 height={66}
               />
             </Link>
           </div>
+
 
           {/* Navigation */}
           <div className="flex gap-12 items-center">
@@ -73,11 +73,10 @@ const Header = ({Headerdata , menuData , OptionData}) => {
                   return (
                     <li
                       key={item.id}
-                      className={`${
-                        item.children.length > 0
+                      className={`${item.children.length > 0
                           ? "relative group menu-item-has-children"
                           : ""
-                      }`}
+                        }`}
                     >
                       <Link
                         href={item.url}

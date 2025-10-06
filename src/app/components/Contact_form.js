@@ -253,7 +253,7 @@ const Contact_form = ({classes}) => {
                       <div className="p-1 peer-checked:border-2 peer-checked:border-orange-500">
                         <Image
                           src={icon.image}
-                          alt={icon.label}
+                          alt={icon.label || "Contact-image"}
                           width={22}
                           height={22}
                         />

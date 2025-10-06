@@ -244,7 +244,7 @@ const Footer = ({Footerdata , OptionDatas , Footer1 , Footer2}) => {
                   height={151}
                   src={image.footer_certificates_image.url}
                   className="rounded-[10px]"
-                  alt="Footer logo"
+                  alt={image.footer_certificates_image || "Footer logo" }
                 />
               </Link>
             ))}
