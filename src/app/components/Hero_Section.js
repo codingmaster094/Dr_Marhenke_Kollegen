@@ -129,7 +129,16 @@ const Hero_Section = ({
                 loop
                 playsInline
                 src={videoSrc.url}
-              />
+              >
+                <track
+                  src={videoSrc.url} // Replace this with your VTT caption file if needed
+                  kind="captions"
+                  srcLang="en"
+                  label="English"
+                />
+                Your browser does not support the video tag.
+              </video>
+
             )}
           </div>
         ) : (
