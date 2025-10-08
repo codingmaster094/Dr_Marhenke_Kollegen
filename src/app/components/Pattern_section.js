@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link';
 const Pattern_section = ({title,
-content, btn, classes }) => {
+content, btn, classes , show }) => {
   return (
-    <section className={`bg-[#F4E5C0] text-black text-center  bg-cover ${classes}`}>
+    <section className={`bg-[#F4E5C0] text-black text-center  bg-cover ${classes} ${show && "mt-inner_spc"}`}>
       <div className="container">
         <div className="flex flex-col gap-[34px] items-center">
           <div>

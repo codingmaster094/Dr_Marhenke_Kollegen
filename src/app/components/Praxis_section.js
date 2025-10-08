@@ -3,10 +3,10 @@ import React from "react";
 
 const Praxis_section = ({ title, description, imageSrc, reverse, classes }) => {
   return (
-    <section className="bg-opacity-25 ">
+    <section className={`bg-opacity-25 ${classes}`}>
       <div className="container space-y-16">
         <div
-          className={`flex flex-col ${classes} ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+          className={`flex flex-col  ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"
             } gap-4 xl:gap-16`}
         >
           <div className="lg:w-6/12 self-stretch 3xl:aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden">
