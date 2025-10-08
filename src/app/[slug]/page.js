@@ -34,13 +34,12 @@ const Page = async ({ params }) => {
     notFound(); // Return 404 on fetch error
   }
   console.log('Custom_Page', Custom_Page)
-  console.log('ReviewDataAPI', ReviewDataAPI)
   return (
     <>
       <SEO_schema slug={`/${slug}`} />
       <Hero_Section
-        title={Custom_Page?.acf?.standort_single_hero_title || ""}
-        subtitle={Custom_Page?.acf?.subtitle || ""}
+        title={Custom_Page?.acf?.hero_title_1 || ""}
+        subtitle={Custom_Page?.acf?.standort_single_hero_title || ""}
         points={Custom_Page?.acf?.standort_single_hero_content || []}
         BTN={Custom_Page?.acf?.standort_single_hero_button || {}}
         imageSrc={
