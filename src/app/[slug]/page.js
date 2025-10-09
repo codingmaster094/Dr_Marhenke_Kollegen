@@ -51,15 +51,15 @@ const Page = async ({ params }) => {
 
       <ServiceSection
         CustomPageServiceSection1={Custom_Page?.acf?.praxis || {}}
-        classes="mb-inner_spc"
+        classes=""
       />
   
-      <Pattern_section
+      {/* <Pattern_section
         title={Custom_Page?.acf?.standort_single_anfrage_title || ""}
         content={Custom_Page?.acf?.standort_single_anfrage_description || ""}
         btn={Custom_Page?.acf?.standort_single_anfrage_button || {}}
         classes="py-inner_spc"
-      />
+      /> */}
 
       <ReviewsData2
         classes="py-inner_spc"

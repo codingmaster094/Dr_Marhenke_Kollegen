@@ -34,12 +34,12 @@ const page = async ({params}) => {
         imageSrc={CostumPagePost.acf.single_behandlungen_hero_image.url}
         videoSrc={""}
       />
-      <Kooperationspartner
+      {/* <Kooperationspartner
         title={CostumPagePost?.acf.single_behandlungen_partners_main_title}
         logosData={CostumPagePost.acf.single_behandlungen_all_partners}
         BTN={CostumPagePost.acf.single_behandlungen_partners_button}
         classes="py-inner_spc"
-      />
+      /> */}
       <ServiceSection
         behandlungenCustompageServiceSection1={
           CostumPagePost.acf.single_behandlungen_post_content_detail

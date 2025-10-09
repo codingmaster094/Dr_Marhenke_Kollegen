@@ -33,7 +33,7 @@ const page = async() => {
         classes="py-inner_spc mt-inner_spc"
       />
 
-         <ReviewsData />
+         {/* <ReviewsData /> */}
     </>
   );
 };

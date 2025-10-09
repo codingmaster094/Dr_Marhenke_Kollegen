@@ -51,12 +51,12 @@ const page = async () => {
         classes="pt-inner_spc"
       />
 
-      <Kooperationspartner
+      {/* <Kooperationspartner
         title={behandlungenData?.acf.leistungen_partners_main_title}
         logosData={behandlungenData.acf.leistungen_all_partners}
         BTN={behandlungenData.acf.leistungen_partners_button}
         classes="py-inner_spc"
-      />
+      /> */}
 
       <Pattern_section
         title={behandlungenData.acf.leistungen_anfrage_3_main_title}
