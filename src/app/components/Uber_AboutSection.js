@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DoctorList from "./DoctorList";
-const Uber_AboutSection = ({ title , content , BTN , Doctore_list, classes }) => {
+const Uber_AboutSection = ({ title , content , BTN , image, Doctore_list, classes }) => {
 
   return (
     <section className={`bg-[#fffbf2] bg-opacity-25 ${classes}`}>
@@ -8,7 +8,7 @@ const Uber_AboutSection = ({ title , content , BTN , Doctore_list, classes }) =>
         <div className="flex flex-col lg:flex-row gap-4 xl:gap-16 items-start">
           <div className="lg:w-6/12 self-stretch rounded md:rounded-3xl overflow-hidden">
             <Image
-              src="/images/praxis11.jpg"
+              src={image.url}
               alt="Service Image"
               width={600}
               height={400}

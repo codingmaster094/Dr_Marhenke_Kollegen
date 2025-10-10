@@ -31,6 +31,7 @@ const page = async () => {
   if (!ueberunsData || !Doctor_listData || !PostData || !BlogData) {
     return <div>No data available.</div>;
   }
+  console.log('ueberunsData', ueberunsData)
   return (
     <>
         <SEO_schema slug="/ueber-uns" />
@@ -73,6 +74,7 @@ const page = async () => {
       />
       <Uber_AboutSection
         title={ueberunsData.acf.ueber_uns_team_main_title}
+        image={ueberunsData.acf.ueber_uns_team_image}
         content={ueberunsData.acf.ueber_uns_team_content}
         BTN={ueberunsData.acf.ueber_uns_team_mehr_anzeigen_button_label}
         Doctore_list={Doctor_listData}

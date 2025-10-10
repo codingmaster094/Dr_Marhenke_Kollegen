@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
+  console.log('logosData', logosData)
   const swiperRef = useRef(null);
 
   const nextSlide = () => {
@@ -111,6 +112,12 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
                     logo?.ueber_uns_all_partners_site_url?.url ||
                     logo?.single_behandlungen_all_partners_site_url?.url ||
                     "#";
+                  const target =
+                    logo?.kooperationen_company_logo_link?.url ||
+                    logo?.leistungen_all_partners_site_url?.url ||
+                    logo?.ueber_uns_all_partners_site_url?.url ||
+                    logo?.single_behandlungen_all_partners_site_url?.url ||
+                    "#";
 
                   console.log('imageAlt', imageAlt)
                   return (
@@ -120,6 +127,7 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
                     >
                       <Link
                         href={linkUrl}
+                        target={target}
                         role="link"
                         aria-label={`Visit ${companyName} website`}
                       >
