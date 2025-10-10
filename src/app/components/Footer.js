@@ -9,12 +9,13 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
       <div className="container py-inner_spc">
         <div className="grid gap-10 3xl:gap-14 sm:grid-cols-2 2xl:flex justify-between  ">
           <div className="shrink-0 sm:col-span-2 lg:col-span-3 xl:col-span-5 2xl:col-span-1">
-            <Link role="link" href="/">
+            <Link href="/" role="link">
               <Image
                 src={Footerdata.site_logo}
                 alt="Logo"
                 width={286}
                 height={66}
+                loading="lazy"
               />
             </Link>
           </div>
