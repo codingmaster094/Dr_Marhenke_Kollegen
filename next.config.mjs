@@ -6,6 +6,16 @@ const nextConfig = {
     unoptimized: true,
   },
 
+  // ✅ Serve only modern JavaScript to modern browsers
+  experimental: {
+    esmExternals: "loose", // allows modern ES modules
+    legacyBrowsers: false, // disables old browser transpilation/polyfills
+  },
+
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production", // optional: removes console logs
+  },
+
   async headers() {
     return [
       {
@@ -13,7 +23,7 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable", // cache for 1 year
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

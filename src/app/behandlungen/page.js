@@ -49,7 +49,7 @@ const page = async () => {
         behandlungenServiceSection2={
           behandlungenData.acf.leistungen_all_sub_services_2
         }
-        classes="pt-inner_spc"
+        classes="py-inner_spc"
       />
 
       <Kooperationspartner
