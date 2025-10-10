@@ -17,7 +17,6 @@ const page = async ({ params }) => {
     return <div>No data available.</div>;
   }
 
-  console.log('TeamData', TeamData)
   return (
     <>
       <Hero_Section

@@ -12,7 +12,6 @@ const ContactSection = ({location_cards,classes}) => {
             <div className="text-p space-x-4 flex justify-center items-center">
             {
               item.location_icons.map((image , i) => {
-                console.log('image', image)
                 return (
               <div key={i}>
                 <Link

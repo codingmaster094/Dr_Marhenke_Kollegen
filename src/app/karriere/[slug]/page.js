@@ -21,7 +21,7 @@ const page = async ({ params }) => {
   if (!BlogData) {
     return <div>No data available.</div>;
   }
-console.log('BlogData', BlogData)
+
   return (
     <>
       {/* <SEO_schema slug={`/${slug}`} faqs={BlogData?.acf.all_faqs} />*/}

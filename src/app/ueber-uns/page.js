@@ -31,7 +31,6 @@ const page = async () => {
   if (!ueberunsData || !Doctor_listData || !PostData || !BlogData) {
     return <div>No data available.</div>;
   }
-  console.log('ueberunsData', ueberunsData)
   return (
     <>
         <SEO_schema slug="/ueber-uns" />

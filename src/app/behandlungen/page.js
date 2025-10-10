@@ -19,7 +19,7 @@ const page = async () => {
   if (!behandlungenData) {
     return <div>No data available.</div>;
   }
-  console.log('behandlungenData', behandlungenData)
+ 
   return (
     <>
       <SEO_schema slug="/behandlungen" />

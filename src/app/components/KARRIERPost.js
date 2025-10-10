@@ -33,7 +33,7 @@ const KARRIERPost = ({ title, BTN, blogsData }) => {
     }
   };
 
-  console.log('filteredBlogs', filteredBlogs)
+
   return (
     <>
       <section>

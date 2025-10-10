@@ -21,7 +21,7 @@ const page = async ({params}) => {
   if (!CostumPagePost) {
     return <div>No data available.</div>;
   }
-  console.log('CostumPagePost', CostumPagePost)
+
 
   return (
     <>

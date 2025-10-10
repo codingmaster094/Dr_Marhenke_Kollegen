@@ -13,7 +13,7 @@ const Team_About = ({
   classes,
   appointment_btn
 }) => {
-console.log('appointment_btn', appointment_btn)
+
   return (
     <section
       className={`bg-opacity-25 bg-[#fffbf2] ${classes}`}

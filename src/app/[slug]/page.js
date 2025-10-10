@@ -33,7 +33,7 @@ const Page = async ({ params }) => {
     console.error("Error fetching data:", error);
     notFound(); // Return 404 on fetch error
   }
-  console.log('Custom_Page', Custom_Page)
+
   return (
     <>
       <SEO_schema slug={`/${slug}`} />
