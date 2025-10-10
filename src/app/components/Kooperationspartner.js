@@ -9,7 +9,7 @@ import "swiper/css/autoplay";
 import Link from "next/link";
 import Image from "next/image";
 
-const Kooperationspartner = ({ hideshow ,title, logosData, BTN, classes }) => {
+const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
   const swiperRef = useRef(null);
 
   const nextSlide = () => {
@@ -94,31 +94,39 @@ const Kooperationspartner = ({ hideshow ,title, logosData, BTN, classes }) => {
                     logo?.ueber_uns_all_partners_logo?.url ||
                     logo?.single_behandlungen_all_partners_logo?.url;
 
-                  const imageAlt =
+                  // Extract company name or use generic fallback
+                  const companyName =
                     logo?.kooperationen_company_logo_image?.alt ||
                     logo?.leistungen_all_partners_logo?.alt ||
                     logo?.ueber_uns_all_partners_logo?.alt ||
-                    logo?.single_behandlungen_all_partners_site_url?.alt;  
-                    "Partner Logo";
+                    logo?.single_behandlungen_all_partners_site_url?.alt ||
+                    "Partner";
+
+                  // Descriptive alt text for linked logos
+                  const imageAlt = `Visit ${companyName} website`;
 
                   const linkUrl =
                     logo?.kooperationen_company_logo_link?.url ||
                     logo?.leistungen_all_partners_site_url?.url ||
                     logo?.ueber_uns_all_partners_site_url?.url ||
-                    logo?.single_behandlungen_all_partners_site_url ?.url || 
-                     "Partner Logo";
+                    logo?.single_behandlungen_all_partners_site_url?.url ||
+                    "#";
 
-                    console.log('imageAlt', imageAlt)
+                  console.log('imageAlt', imageAlt)
                   return (
                     <SwiperSlide
                       className="swiper-slide !flex justify-center"
                       key={i}
                     >
-                      <Link href={linkUrl} role="link">
+                      <Link
+                        href={linkUrl}
+                        role="link"
+                        aria-label={`Visit ${companyName} website`}
+                      >
                         {imageUrl && (
                           <Image
                             src={imageUrl}
-                            alt={imageAlt || ""}
+                            alt={imageAlt}
                             width={229}
                             height={102}
                             role="img"
