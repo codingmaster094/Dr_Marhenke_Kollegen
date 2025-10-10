@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import Lenis from "@studio-freight/lenis";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 
 const Hero_Section = ({
@@ -14,6 +13,9 @@ const Hero_Section = ({
   classes
 }) => {
   const ref = useRef();
+  const videoRef = useRef(null);
+
+  // Add classes to ULs if points are HTML
   useEffect(() => {
     if (ref.current) {
       const uls = ref.current.querySelectorAll("ul");
@@ -22,46 +24,36 @@ const Hero_Section = ({
       });
     }
   }, [points]);
-  // const lenisRef = useRef(null);
-  // Initialize Lenis once on mount
-  // useEffect(() => {
-  //   const lenis = new Lenis({
-  //     duration: 1.5,
-  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
-  //     smooth: true,
-  //   });
 
-  //   function raf(time) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
+  // Play video when visible (desktop only)
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el || !videoSrc) return;
 
-  //   requestAnimationFrame(raf);
+    const isDesktop = window.innerWidth >= 768; // Only autoplay on desktop
 
-  //   lenisRef.current = lenis;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && isDesktop && !el.src) {
+            el.src = videoSrc.url; // Load video
+            el.play().catch(() => {}); // Play silently
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
 
-  //   return () => {
-  //     lenis.destroy();
-  //   };
-  // }, []);
+    observer.observe(el);
 
-  // const scrollToSection = (targetId) => {
-  //   console.log('targetId', targetId)
-  //   const targetElement = document.querySelector(targetId);
-  //   if (targetElement && lenisRef.current) {
-  //     lenisRef.current.scrollTo(targetElement, {
-  //       offset: -110,
-  //       duration: 1.5,
-  //       easing: (t) => t,
-  //     });
-  //   } else {
-  //     console.warn(`Target section ${targetId} not found or Lenis not ready`);
-  //   }
-  // };
+    return () => observer.disconnect();
+  }, [videoSrc]);
 
   return (
     <section className={`container pt-4 lg:pt-0 ${classes}`}>
       <div className="flex flex-col-reverse lg:flex-row gap-6">
+        {/* Left Text */}
         <div className="lg:w-6/12 lg:py-8 flex flex-col justify-center gap-5 sm:gap-[34px]">
           <h1 className="text-h1">
             <span
@@ -71,7 +63,7 @@ const Hero_Section = ({
             <span dangerouslySetInnerHTML={{ __html: subtitle }}></span>
           </h1>
 
-          {points !== false ? (
+          {points && (
             <>
               {Array.isArray(points) ? (
                 <div className="content-listing">
@@ -99,9 +91,9 @@ const Hero_Section = ({
                 />
               )}
             </>
-          ): null}
+          )}
 
-          {BTN ? (
+          {BTN && (
             <Link
               href={BTN.url}
               aria-label={`Learn more about ${BTN.ariaContext || 'this section'}`}
@@ -109,40 +101,40 @@ const Hero_Section = ({
             >
               {BTN.title}
             </Link>
-          ):null}
+          )}
         </div>
 
-        {imageSrc !== undefined || videoSrc !== undefined ? (
+        {/* Right Media */}
+        {(imageSrc || videoSrc) && (
           <div className="lg:w-6/12 flex items-end relative aspect-video">
-            {imageSrc != undefined ? (
+            {imageSrc ? (
               <Image
                 className="!static object-cover"
                 fill
                 src={imageSrc}
                 alt="Hero-image"
+                loading="lazy"
               />
             ) : (
               <video
-                className="w-full h-full object-cover rounded"
-                autoPlay
+                ref={videoRef}
+                className="w-full h-full object-cover rounded cursor-pointer"
                 muted
                 loop
                 playsInline
-                src={videoSrc.url}
+                preload="none"
+                poster="/images/hero-poster.png"
+                onClick={(e) => {
+                  const vid = e.currentTarget;
+                  if (!vid.src) vid.src = videoSrc.url; // Load video on click
+                  vid.play();
+                }}
               >
-                <track
-                  src={videoSrc.url} // Replace this with your VTT caption file if needed
-                  kind="captions"
-                  srcLang="en"
-                  label="English"
-                />
+                <track kind="captions" srcLang="en" label="English" />
                 Your browser does not support the video tag.
               </video>
-
             )}
           </div>
-        ) : (
-          <></>
         )}
       </div>
     </section>
