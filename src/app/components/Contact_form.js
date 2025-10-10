@@ -162,7 +162,7 @@ const Contact_form = ({classes}) => {
                 value={formData.name}
                 onChange={handleInputChange}
               />
-              {errors.name && <p className="text-red-500">{errors.name}</p>}
+              {errors.name ? <p className="text-red-500">{errors.name}</p> : null}
             </div>
             <div className="grid gap-x-5 sm:grid-cols-2">
               <div className="f-fild">
@@ -173,7 +173,7 @@ const Contact_form = ({classes}) => {
                   value={formData.email}
                   onChange={handleInputChange}
                 />
-                {errors.email && <p className="text-red-500">{errors.email}</p>}
+                {errors.email ? <p className="text-red-500">{errors.email}</p> : null}
               </div>
               <div className="f-fild">
                 <input
@@ -183,7 +183,7 @@ const Contact_form = ({classes}) => {
                   value={formData.phone}
                   onChange={handleInputChange}
                 />
-                {errors.phone && <p className="text-red-500">{errors.phone}</p>}
+                {errors.phone ? <p className="text-red-500">{errors.phone}</p> :null}
               </div>
             </div>
             <div className="f-fild">
@@ -194,9 +194,9 @@ const Contact_form = ({classes}) => {
                 value={formData.Therapie}
                 onChange={handleInputChange}
               />
-              {errors.Therapie && (
+              {errors.Therapie ? (
                 <p className="text-red-500">{errors.Therapie}</p>
-              )}
+              ): null}
             </div>
             <div className="f-fild">
               <input
@@ -206,9 +206,9 @@ const Contact_form = ({classes}) => {
                 value={formData.subject}
                 onChange={handleInputChange}
               />
-              {errors.subject && (
+              {errors.subject ? (
                 <p className="text-red-500">{errors.subject}</p>
-              )}
+              ):null}
             </div>
             <div className="f-fild">
               <textarea
@@ -218,9 +218,9 @@ const Contact_form = ({classes}) => {
                 value={formData.message}
                 onChange={handleInputChange}
               ></textarea>
-              {errors.message && (
+              {errors.message ? (
                 <p className="text-red-500">{errors.message}</p>
-              )}
+              ):null}
             </div>
 
             <p>
@@ -262,30 +262,30 @@ const Contact_form = ({classes}) => {
                   ))
                 )}
               </div>
-              {errors.selectedIcon && (
+              {errors.selectedIcon ? (
                 <p className="text-red-500 text-sm mt-2 ">
                   {errors.selectedIcon}
                 </p>
-              )}
+              ):null}
             </div>
 
             {/* Submit Button */}
             <button type="submit" className="wpcf7-submit mt-4">
               Nachricht senden
             </button>
-            {Success && (
+            {Success ? (
               <div className="success-message border-green-500">
                 <p className="text-green-700 py-4">
                   Ihre Nachricht wurde erfolgreich gesendet!
                 </p>
               </div>
-            )}
+            ):null}
 
-            {errorMessage && (
+            {errorMessage ? (
               <div className="border-red-500">
                 <p className="text-red-700 py-4">{errorMessage}</p>
               </div>
-            )}
+            ):null}
           </form>
         </div>
       </div>

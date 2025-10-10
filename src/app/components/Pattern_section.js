@@ -18,7 +18,7 @@ content, btn, classes , show }) => {
             className="text-p space-y-4"
             dangerouslySetInnerHTML={{ __html: content || "" }}
           ></div>
-          {btn && (
+          {btn ? (
             <Link
               role="link"
               className="inline-block w-fit text-yellow bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-yellow hover:text-white hover:shadow hover:shadow-white transition-colors font-medium"
@@ -26,7 +26,7 @@ content, btn, classes , show }) => {
             >
               {btn.title} 
             </Link>
-          )}
+          ):null}
         </div>
       </div>
     </section>

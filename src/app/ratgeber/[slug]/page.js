@@ -63,14 +63,14 @@ const page = async ({ params }) => {
               </div>
             </div>
             <div className="flex flex-col gap-5 md:gap-6 lg:gap-8">
-              {BlogData.acf?.ratgeber_single_wichtigste_main_title && (
+              {BlogData.acf?.ratgeber_single_wichtigste_main_title ? (
                 <h2
                   className="text-h4 sm:text-h3 md:text-h2"
                   dangerouslySetInnerHTML={{
                     __html: BlogData.acf?.ratgeber_single_wichtigste_main_title,
                   }}
                 ></h2>
-              )}
+              ):null}
               <ul
                 dangerouslySetInnerHTML={{
                   __html:
@@ -105,7 +105,7 @@ const page = async ({ params }) => {
                   BlogData.acf.ratgeber_single_wichtigste_content_two || "",
               }}
             ></div>
-            {BlogData.acf.home_anfrage_button && (
+            {BlogData.acf.home_anfrage_button ? (
               <Link
                 role="link"
                 className="inline-block w-fit text-yellow bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-yellow hover:text-white hover:shadow hover:shadow-white transition-colors font-medium"
@@ -113,7 +113,7 @@ const page = async ({ params }) => {
               >
                 {BlogData.acf.home_anfrage_button.title}
               </Link>
-            )}
+            ):null}
           </div>
         </div>
       </section>

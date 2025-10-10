@@ -21,7 +21,7 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
   };
 
   return (
-    hideshow &&
+    hideshow ?
     <section className={`text-center ${classes}`}>
       <div className="container">
         <div className="space-y-10">
@@ -86,7 +86,7 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
                 },
               }}
             >
-              {Array.isArray(logosData) &&
+              {Array.isArray(logosData) ?
                 logosData.map((logo, i) => {
                   const imageUrl =
                     logo?.kooperationen_company_logo_image?.url ||
@@ -123,7 +123,7 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
                         role="link"
                         aria-label={`Visit ${companyName} website`}
                       >
-                        {imageUrl && (
+                        {imageUrl ? (
                           <Image
                             src={imageUrl}
                             alt={imageAlt}
@@ -131,11 +131,13 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
                             height={102}
                             role="img"
                           />
-                        )}
+                        ):null}
                       </Link>
                     </SwiperSlide>
                   );
-                })}
+                })
+                :null
+                }
             </Swiper>
 
             {/* Next Button */}
@@ -162,7 +164,7 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
           </div>
 
           {/* Optional CTA Button */}
-          {BTN?.url && (
+          {BTN?.url ? (
             <Link
               role="link"
               href={BTN.url}
@@ -171,10 +173,11 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
             >
               {BTN.title}
             </Link>
-          )}
+          ):null}
         </div>
       </div>
-    </section>
+    </section>:
+    <></>
   );
 };
 

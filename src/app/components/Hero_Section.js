@@ -71,7 +71,7 @@ const Hero_Section = ({
             <span dangerouslySetInnerHTML={{ __html: subtitle }}></span>
           </h1>
 
-          {points !== false && (
+          {points !== false ? (
             <>
               {Array.isArray(points) ? (
                 <div className="content-listing">
@@ -99,9 +99,9 @@ const Hero_Section = ({
                 />
               )}
             </>
-          )}
+          ): null}
 
-          {BTN && (
+          {BTN ? (
             <Link
               href={BTN.url}
               aria-label={`Learn more about ${BTN.ariaContext || 'this section'}`}
@@ -109,7 +109,7 @@ const Hero_Section = ({
             >
               {BTN.title}
             </Link>
-          )}
+          ):null}
         </div>
 
         {imageSrc !== undefined || videoSrc !== undefined ? (

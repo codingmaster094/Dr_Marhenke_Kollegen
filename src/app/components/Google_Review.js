@@ -78,7 +78,7 @@ const Google_Review = ({ main_title, content, slider, reviewlogos, classes }) =>
             ))}
           </div>
           {
-            slider !== false &&
+            slider !== false ?
             <div className="slider-wrapper flex gap-3 lg:gap-10 items-center p-2">
 
               <div
@@ -161,12 +161,12 @@ const Google_Review = ({ main_title, content, slider, reviewlogos, classes }) =>
                             }}
                           />
                         </div>
-                        {item.slider_button && (
+                        {item.slider_button ? (
                           <div className="mt-2">
                             <span>Quelle: </span>
                             {item.slider_button.title}
                           </div>
-                        )}
+                        ): null}
                       </div>
                     </SwiperSlide>
                   ))}
@@ -193,7 +193,7 @@ const Google_Review = ({ main_title, content, slider, reviewlogos, classes }) =>
                   <path d="M9 6l6 6l-6 6" />
                 </svg>
               </div>
-            </div>
+            </div> : null
           }
         </div>
       </div>

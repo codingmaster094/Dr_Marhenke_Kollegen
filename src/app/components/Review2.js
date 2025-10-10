@@ -78,7 +78,7 @@ const Review2 = ({ main_title, content, slider, reviewlogos, classes }) => {
             ))}
           </div>
           {
-            slider !== false &&
+            slider !== false ?
             <div className="slider-wrapper flex gap-3 lg:gap-10 items-center p-2">
 
               <div
@@ -194,6 +194,7 @@ const Review2 = ({ main_title, content, slider, reviewlogos, classes }) => {
                 </svg>
               </div>
             </div>
+            :null
           }
         </div>
       </div>

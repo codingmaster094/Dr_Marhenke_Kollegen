@@ -51,25 +51,25 @@ const Team_About = ({
               <h3>{further_title}</h3>
               <div className="Team-Details">
                 {
-                  further_link !=false && further_link &&
+                  further_link !=false && further_link ?
                   further_link.map((val, i) => {
                     return (
                       <Link className="text-yellow" role="button" href={val.link.url} key={i} target="_blank">
                         {val.link.title}
                       </Link>
                     )
-                  })
+                  }):null
                 }
               </div>
               {
-                appointment_btn.url !=undefined && appointment_btn &&
+                appointment_btn.url !=undefined && appointment_btn ?
                 <Link
                   href={appointment_btn.url}
                   aria-label="Contact"
                   className="p-2 sm:p-3 text-white 2xl:py-4 2xl:px-8 inline-block bg-yellow rounded sm:rounded-[10px] hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors xl:text-lg text-base lg:text-lg"
                 >
                  {appointment_btn.title}
-                </Link>
+                </Link> :null
               }
             </div>
           </div>

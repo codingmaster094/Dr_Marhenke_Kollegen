@@ -66,11 +66,11 @@ const Psychotherapie_Praxis = ({
             >
             </div>
             {
-              listItems && <ul className="space-y-4 ml-6 list-disc">
+              listItems ? <ul className="space-y-4 ml-6 list-disc">
                 {listItems?.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
-              </ul>
+              </ul> : null
             }
           </div>
         </div>
@@ -159,7 +159,7 @@ const Psychotherapie_Praxis = ({
                             </div>
                           ))}
                         </div>
-                        {button?.url && (
+                        {button?.url ? (
                           <Link
                             href={button.url}
                             className="block w-fit mx-auto text-yellow lg:text-lg rounded sm:rounded-[10px] border border-yellow py-2 2xl:py-[15px] px-4 2xl:px-8 hover:bg-yellow hover:shadow hover:text-white transition-colors"
@@ -167,7 +167,7 @@ const Psychotherapie_Praxis = ({
                           >
                             {button.title}
                           </Link>
-                        )}
+                        ):null}
                       </div>
                     </div>
                   </SwiperSlide>

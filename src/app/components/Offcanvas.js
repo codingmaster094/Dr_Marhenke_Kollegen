@@ -34,7 +34,7 @@ export default function OffCanvas({ menuData }) {
             {item.title.replace(/&amp;/g, "&")}
           </Link>
 
-          {item.children.length > 0 && (
+          {item.children.length > 0 ? (
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -56,10 +56,10 @@ export default function OffCanvas({ menuData }) {
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
-          )}
+          ):null}
         </div>
 
-        {item.children.length > 0 && (
+        {item.children.length > 0 ?(
           <ul
             className={`transition-all duration-500 overflow-hidden bg-white shadow-md ${
               openSubmenus[item.id] ? "max-h-[500px] opacity-100 visible" : "max-h-0 opacity-0 invisible"
@@ -67,7 +67,7 @@ export default function OffCanvas({ menuData }) {
           >
             {renderMenuItems(item.children)}
           </ul>
-        )}
+        ):null}
       </li>
     ));
 

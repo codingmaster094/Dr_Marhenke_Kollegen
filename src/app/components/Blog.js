@@ -130,14 +130,14 @@ const Blog = ({ title, BTN, blogsData }) => {
                   );
                 })}
               </div>
-              {filteredBlogs?.length > displayedBlogsCount && (
+              {filteredBlogs?.length > displayedBlogsCount ? (
                 <button
                   onClick={() => setDisplayedBlogsCount((prev) => prev + 3)}
                   className="inline-block w-fit text-white  bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors font-medium"
                 >
                   Mehr erfahren
                 </button>
-              )}
+              ): null}
             </div>
           </div>
         </div>

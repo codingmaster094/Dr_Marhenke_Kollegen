@@ -10,13 +10,15 @@ const Kooperationen_Service = ({
           const isEven = index % 2 === 0;
           const bgClass = isEven ? "bg-[#fffbf2]" : "";
           return (
-            <section className={`group ${bgClass} ${classes}`}>
+            <section className={`group ${bgClass} ${classes}`} key={index}>
               <div className="container space-y-16">
                 <div
                   className={`flex flex-col lg:flex-row gap-4 xl:gap-16`}
                 >
                   <div className="lg:w-4/12 xl:w-3/12">
-                      <img src={item.kooperationen__description_image.url}
+                      <Image src={item.kooperationen__description_image.url}
+                      width={229}
+                      height={117}
                         alt="Partner's image"/>
                   </div>
                   <div className="lg:w-8/12 xl:w-9/12 flex flex-col justify-center gap-[34px]">
@@ -40,7 +42,7 @@ const Kooperationen_Service = ({
                     >
                     </div>
                     {
-                      item.kooperationen__description_partner_link.title !="" && 
+                      item.kooperationen__description_partner_link.title !="" ? 
                     <div className="content-listing">
                         <Link
                           role="link"
@@ -51,6 +53,7 @@ const Kooperationen_Service = ({
                           {item.kooperationen__description_partner_link.title}
                         </Link>
                     </div>
+                    : null
                     }
                   </div>
                 </div>

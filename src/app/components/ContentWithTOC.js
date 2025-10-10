@@ -73,35 +73,35 @@ const ContentWithTOC = ({ title, data, FAQ }) => {
   return (
     <div>
       <section className="container max-w-[1440px] py-[30px] md:py-[50px] lg:py-[50px]">
-        {title && (
+        {title ? (
           <h2
             className="mb-2 text-h4 sm:text-h3 md:text-h2"
             dangerouslySetInnerHTML={{ __html: title }}
           ></h2>
-        )}
+        ):null}
 
         <ul className="menu flex flex-col gap-3 [&_li]:font-secondary-font [&_li]:text-a [&_li]:font-normal">
           {headers.map(
             (header) =>
-              header.id && (
+              header.id ? (
                 <li key={header.id}>
                   <a href={`#${header.id}`} className="text-teal-700">
                     {header.text}
                   </a>
                 </li>
-              )
+              ): null
           )}
-          {FAQ.faq_main_faq_show && (
+          {FAQ.faq_main_faq_show ? (
             <li>
               <a href={`#faq`} className="text-teal-700">
                 {FAQ?.faq_main_title}
               </a>
             </li>
-          )}
+          ):null}
         </ul>
       </section>
 
-      {updatedHTML && (
+      {updatedHTML ? (
         <section className="container max-w-[1440px] redirect pb-10 md:pb-[70px] lg:pb-[100px]">
           <div
             className="blogtemplate mb-8 lg:mb-12"
@@ -113,7 +113,7 @@ const ContentWithTOC = ({ title, data, FAQ }) => {
             container={true}
           />
         </section>
-      )}
+      ):null}
     </div>
   );
 };

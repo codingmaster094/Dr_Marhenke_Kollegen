@@ -70,7 +70,7 @@ const Hero_Section_blog = ({
             <span dangerouslySetInnerHTML={{ __html: subtitle }}></span>
           </h1>
 
-          {points !== false && (
+          {points !== false ? (
             <>
               {Array.isArray(points) ? (
                 <div className="content-listing">
@@ -98,16 +98,16 @@ const Hero_Section_blog = ({
                 />
               )}
             </>
-          )}
+          ): null}
 
-          {BTN && (
+          {BTN ? (
             <Link
               href={BTN.url}
               className="inline-block w-fit text-white text-center bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors font-medium"
             >
               {BTN.title}
             </Link>
-          )}
+          ):null}
         </div>
 
         {imageSrc !== undefined || videoSrc !== undefined ? (

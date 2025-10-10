@@ -72,7 +72,7 @@ const ServiceSection = ({
           >
             {/* Image Section */}
             <div className="lg:w-6/12 self-stretch 3xl:aspect-[1.95/1] rounded md:rounded-3xl overflow-hidden">
-              {image && (
+              {image ? (
                 <Image
                   src={image}
                   alt={imageAlt}
@@ -80,12 +80,12 @@ const ServiceSection = ({
                   height={600}
                   className="size-full object-cover"
                 />
-              )}
+              ):null}
             </div>
 
             {/* Content Section */}
             <div className="lg:w-6/12 flex flex-col justify-center gap-[34px]">
-              {title && (
+              {title ? (
                 <div>
                   <h2
                     className="mb-4"
@@ -93,21 +93,21 @@ const ServiceSection = ({
                   ></h2>
                   <span className="w-28 h-1 bg-yellow block"></span>
                 </div>
-              )}
+              ):null}
 
-              {content && (
+              {content ? (
                 <div
                   className="text"
                   dangerouslySetInnerHTML={{ __html: content }}
                 ></div>
-              )}
+              ):null}
 
               {/* Bullet Points */}
               <div className="content-listing">
                 {Array.isArray(
                   val.leistungen_all_sub_services_1_all_contents ||
                     val.leistungen_all_sub_services_2_all_contents 
-                ) && (
+                ) ? (
                   <ul className="space-y-4 ml-6 list-disc">
                     {points.map((item, index) => (
                       <li key={index}>
@@ -117,10 +117,10 @@ const ServiceSection = ({
                       </li>
                     ))}
                   </ul>
-                )}
+                ):null}
               </div>
               {/* Button */}
-              {postLink?.url && (
+              {postLink?.url ? (
                 <Link
                   href={postLink.url}
                   className="block w-fit text-white bg-yellow rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 
@@ -128,7 +128,7 @@ const ServiceSection = ({
                 >
                   {postLink.title}
                 </Link>
-              )}
+              ):null}
             </div>
           </div>
         </div>
