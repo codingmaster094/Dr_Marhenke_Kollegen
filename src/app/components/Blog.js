@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import dayjs from "dayjs";
+import BlogArrow from "../SvgComponent/BlogArrow";
 
 const Blog = ({ title, BTN, blogsData }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -105,20 +106,7 @@ const Blog = ({ title, BTN, blogsData }) => {
                             href={`/ratgeber/${val.slug}`}
                             className="shrink-0 size-[44px] rounded-[10px] bg-yellow grid place-items-center text-white hover:bg-transparent hover:text-yellow hover:shadow hover:shadow-yellow transition-colors"
                           >
-                            <svg
-                              width="10"
-                              height="17"
-                              viewBox="0 0 10 17"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M9.6024 9.4443L1.92021 17L0 15.1114L6.72209 8.5L0 1.88859L1.92021 0L9.6024 7.5557C9.85698 7.80617 10 8.14584 10 8.5C10 8.85416 9.85698 9.19383 9.6024 9.4443Z"
-                                fill="currentColor"
-                              />
-                            </svg>
+                            <BlogArrow />
                           </Link>
                         </div>
                         {/* <div
