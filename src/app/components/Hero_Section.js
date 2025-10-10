@@ -123,7 +123,7 @@ const Hero_Section = ({
                 loop
                 playsInline
                 preload="none"
-                poster="/images/hero-poster.png"
+                poster="/images/hero-poster.webp"
                 onClick={(e) => {
                   const vid = e.currentTarget;
                   if (!vid.src) vid.src = videoSrc.url; // Load video on click
