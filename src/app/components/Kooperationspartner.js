@@ -105,9 +105,10 @@ const Kooperationspartner = ({ hideshow ,title, logosData, BTN, classes }) => {
                     logo?.kooperationen_company_logo_link?.url ||
                     logo?.leistungen_all_partners_site_url?.url ||
                     logo?.ueber_uns_all_partners_site_url?.url ||
-                    logo?.single_behandlungen_all_partners_site_url ?.url; 
-                    "#";
+                    logo?.single_behandlungen_all_partners_site_url ?.url || 
+                     "Partner Logo";
 
+                    console.log('imageAlt', imageAlt)
                   return (
                     <SwiperSlide
                       className="swiper-slide !flex justify-center"
@@ -117,7 +118,7 @@ const Kooperationspartner = ({ hideshow ,title, logosData, BTN, classes }) => {
                         {imageUrl && (
                           <Image
                             src={imageUrl}
-                            alt={imageAlt}
+                            alt={imageAlt || ""}
                             width={229}
                             height={102}
                             role="img"
