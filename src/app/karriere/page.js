@@ -32,6 +32,7 @@ const page = async () => {
         BTN={karriereData.acf.home_hero_button}
         imageSrc={karriereData.acf.home_hero_image.url}
         videoSrc={""}
+        classes="pb-inner_spc"
       />
       <KARRIERPost
         title={"Artikel-Übersicht"}

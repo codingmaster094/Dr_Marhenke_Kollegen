@@ -57,6 +57,7 @@ const Page = async () => {
         classes="py-inner_spc"
       />
       <Kooperationspartner
+        hideshow={HomePageData.acf.hideshow}
         title={HomePageData?.acf.kooperationen_title}
         logosData={HomePageData.acf.kooperationen_company_logo}
         BTN={HomePageData.acf.kooperationen_button}
@@ -74,7 +75,7 @@ const Page = async () => {
         bg_image={HomePageData?.acf.vorteile_image.url}
         classes="pt-inner_spc"
       />
-      <ReviewsData classes="py-inner_spc" />
+      <ReviewsData hideshow={true} classes="py-inner_spc" />
       <FAQ_section
         title={HomePageData.acf.faq_ttile}
         faqs={HomePageData.acf.faq_content}

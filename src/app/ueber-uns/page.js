@@ -31,7 +31,7 @@ const page = async () => {
   if (!ueberunsData || !Doctor_listData || !PostData || !BlogData) {
     return <div>No data available.</div>;
   }
-
+  console.log('ueberunsData', ueberunsData)
   return (
     <>
         <SEO_schema slug="/ueber-uns" />
@@ -67,6 +67,7 @@ const page = async () => {
         classes="py-inner_spc"
       />
       <Kooperationspartner
+      hideshow={ueberunsData?.acf.hideshow}
         title={ueberunsData?.acf.ueber_uns_partners_main_title}
         logosData={ueberunsData.acf.ueber_uns_all_partners}
         BTN={ueberunsData.acf.ueber_uns_partners_button}
@@ -83,7 +84,7 @@ const page = async () => {
         title={ueberunsData.acf.ueber_uns_stellenausschreibungen_main_title}
         description={ueberunsData.acf.ueber_uns_stellenausschreibungen_content}
       />
-      <ReviewsData classes="py-inner_spc" />
+      <ReviewsData hideshow={true} classes="py-inner_spc" />
     </>
   );
 };

@@ -67,6 +67,7 @@ const Page = async ({ params }) => {
         content={ReviewDataAPI.logo_content}
         reviewlogos={Custom_Page?.acf?.logo_slider}
         slider={ReviewDataAPI.slider}
+        hideshow={true}
       />
 
       <SliderSection

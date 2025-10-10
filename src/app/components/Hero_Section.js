@@ -13,8 +13,6 @@ const Hero_Section = ({
   BTN,
   classes
 }) => {
-  console.log('title', title)
-  console.log('subtitle', subtitle)
   const ref = useRef();
   useEffect(() => {
     if (ref.current) {

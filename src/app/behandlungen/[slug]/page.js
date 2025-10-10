@@ -21,6 +21,7 @@ const page = async ({params}) => {
   if (!CostumPagePost) {
     return <div>No data available.</div>;
   }
+  console.log('CostumPagePost', CostumPagePost)
 
   return (
     <>
@@ -34,12 +35,13 @@ const page = async ({params}) => {
         imageSrc={CostumPagePost.acf.single_behandlungen_hero_image.url}
         videoSrc={""}
       />
-      {/* <Kooperationspartner
+      <Kooperationspartner
+      hideshow={CostumPagePost.acf.hideshow}
         title={CostumPagePost?.acf.single_behandlungen_partners_main_title}
         logosData={CostumPagePost.acf.single_behandlungen_all_partners}
         BTN={CostumPagePost.acf.single_behandlungen_partners_button}
         classes="py-inner_spc"
-      /> */}
+      />
       <ServiceSection
         behandlungenCustompageServiceSection1={
           CostumPagePost.acf.single_behandlungen_post_content_detail
@@ -47,7 +49,7 @@ const page = async ({params}) => {
         classes="pb-inner_spc"
       />
 
-      <ReviewsData />
+      <ReviewsData  hideshow={true}/>
 
       <FAQ_section
         title={CostumPagePost.acf.single_behandlungen_faqs_main_title}

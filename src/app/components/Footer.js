@@ -29,7 +29,7 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
                   return (
                     <>
                       <li>
-                        <li key={i} className="flex gap-3 items-start">
+                        <div key={i} className="flex gap-3 items-start">
                           <svg
                             className="shrink-0 mt-1"
                             width="18"
@@ -62,7 +62,7 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
                               __html: data.address,
                             }}
                           ></span>
-                        </li>
+                        </div>
                         <li>
 
                           <Link

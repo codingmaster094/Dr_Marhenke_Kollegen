@@ -19,12 +19,13 @@ const page = async () => {
   if (!behandlungenData) {
     return <div>No data available.</div>;
   }
+  console.log('behandlungenData', behandlungenData)
   return (
     <>
       <SEO_schema slug="/behandlungen" />
       <Hero_Section
-        title={behandlungenData.acf.leistungen_hero_main_title}
-        subtitle={""}
+        title={behandlungenData.acf.hero_title_1}
+        subtitle={behandlungenData.acf.leistungen_hero_main_title}
         points={behandlungenData.acf.leistungen_hero_content_listing}
         BTN={behandlungenData.acf.leistungen_hero_button}
         // buttonLink="/kontakt"
@@ -51,12 +52,13 @@ const page = async () => {
         classes="pt-inner_spc"
       />
 
-      {/* <Kooperationspartner
+      <Kooperationspartner
+      hideshow={behandlungenData.acf.hideshow}
         title={behandlungenData?.acf.leistungen_partners_main_title}
         logosData={behandlungenData.acf.leistungen_all_partners}
         BTN={behandlungenData.acf.leistungen_partners_button}
         classes="py-inner_spc"
-      /> */}
+      />
 
       <Pattern_section
         title={behandlungenData.acf.leistungen_anfrage_3_main_title}
@@ -64,7 +66,7 @@ const page = async () => {
         btn={behandlungenData.acf.anfrage_button_2}
         classes="py-inner_spc"
       />
-      <ReviewsData classes="py-inner_spc" />
+      <ReviewsData hideshow={true} classes="py-inner_spc" />
 
     </>
   );

@@ -9,7 +9,7 @@ import "swiper/css/autoplay";
 import Link from "next/link";
 import Image from "next/image";
 
-const Kooperationspartner = ({ title, logosData, BTN, classes }) => {
+const Kooperationspartner = ({ hideshow ,title, logosData, BTN, classes }) => {
   const swiperRef = useRef(null);
 
   const nextSlide = () => {
@@ -21,6 +21,7 @@ const Kooperationspartner = ({ title, logosData, BTN, classes }) => {
   };
 
   return (
+    hideshow &&
     <section className={`text-center ${classes}`}>
       <div className="container">
         <div className="space-y-10">

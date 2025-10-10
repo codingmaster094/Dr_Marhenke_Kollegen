@@ -17,6 +17,7 @@ const page = async() => {
   if (!kooperationenData) {
     return <div>No data available.</div>;
   }
+
   return (
     <>
      <SEO_schema slug="/kooperationen" />
@@ -33,7 +34,7 @@ const page = async() => {
         classes="py-inner_spc mt-inner_spc"
       />
 
-         {/* <ReviewsData /> */}
+         <ReviewsData hideshow={false}/>
     </>
   );
 };
