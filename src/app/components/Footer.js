@@ -69,7 +69,7 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
                     </div>
 
                     {/* Email */}
-                    <Link role="link" className="flex gap-3" href={data.email.url}>
+                    {/* <Link role="link" className="flex gap-3" href={data.email.url}>
                       <svg
                         className="shrink-0 sm:mt-1 mt-[2px]"
                         width="20"
@@ -86,10 +86,10 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
                         />
                       </svg>
                       <span>{data.email.title}</span>
-                    </Link>
+                    </Link> */}
 
                     {/* Phone */}
-                    <Link
+                    {/* <Link
                       role="link"
                       className="flex gap-3 items-center"
                       href={data.telephone.url}
@@ -110,7 +110,7 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
                         />
                       </svg>
                       <span>{data.telephone.title}</span>
-                    </Link>
+                    </Link> */}
                   </li>
                 )) : null}
             </ul>
