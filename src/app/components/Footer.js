@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
+  console.log('OptionDatas', OptionDatas)
   return (
     <footer
       className="bg-cover"
@@ -56,11 +57,15 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
                           </clipPath>
                         </defs>
                       </svg>
+                      <div className="flex flex-col gap-2">
+                      <span>{data.location_title}</span>
                       <span
                         dangerouslySetInnerHTML={{
                           __html: data.address,
                         }}
                       ></span>
+
+                      </div>
                     </div>
 
                     {/* Email */}

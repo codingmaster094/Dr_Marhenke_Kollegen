@@ -88,7 +88,7 @@ const KARRIERPost = ({ title, BTN, blogsData }) => {
                       className="hover:shadow-[0px_4px_34px_0_rgba(0,0,0,.08)] rounded-xl lg:rounded-2xl 3xl:rounded-3xl transition-shadow"
                     >
                       {/* <Link href={post.link} className="block aspect-[1.53/1]"> */}
-                      <div>
+                      <div className="h-[385px]">
                         <Image
                           src={val?.acf?.home_hero_image?.url}
                           alt={val?.acf?.home_hero_image?.alt || "Blog Image"}
