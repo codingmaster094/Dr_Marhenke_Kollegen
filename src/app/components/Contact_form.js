@@ -142,7 +142,7 @@ const Contact_form = ({classes}) => {
   return (
     <section id="kontaktformular" className={classes}>
       <div className="container">
-        <div className="grid lg:grid-cols-2 bg-yellow text-white gap-8 sm:gap-16 p-4 sm:py-12 sm:px-9 rounded lg:rounded-2xl 3xl:rounded-3xl">
+        <div className="grid lg:grid-cols-2 bg-white text-black gap-8 sm:gap-16 p-4 sm:py-12 sm:px-9 rounded lg:rounded-2xl 3xl:rounded-3xl border-[4px] border-solid border-yellow">
           <div>
             <h2 className="mb-4">
               Sie wollen einen Termin vereinbaren oder haben Fragen?
@@ -222,11 +222,24 @@ const Contact_form = ({classes}) => {
                 <p className="text-red-500">{errors.message}</p>
               ):null}
             </div>
-
+              <div className="flex flex-wrap gap-6 mb-4">
+                <div className="flex justify-start items-center gap-4">
+                    <Image className src="/images/upload.svg" alt="upload icon" width={32} height={32} />
+                    <span className="block">Datei anfügen</span>
+                </div>
+                <div className="flex justify-start items-center gap-4">
+                    <Image src="/images/upload.svg" alt="upload icon" width={32} height={32} />
+                    <span className="block">Datei anfügen</span>
+                </div>
+                <div className="flex justify-start items-center gap-4">
+                    <Image className src="/images/upload.svg" alt="upload icon" width={32} height={32} />
+                    <span className="block">Datei anfügen</span>
+                </div>
+              </div>
             <p>
               Informationen zum Datenschutz bzgl. Ihrer Anfrage finden Sie hier:{" "}
               <Link href="/datenschutzerklarung">
-                <span className="text-white underline">Datenschutzerklärung</span>
+                <span className="text-yellow underline">Datenschutzerklärung</span>
               </Link>
             </p>
             {/* 🔥 Custom reCAPTCHA Image Selection */}
@@ -251,12 +264,13 @@ const Contact_form = ({classes}) => {
                         className="hidden peer"
                       />
                       <div className="p-1 peer-checked:border-2 peer-checked:border-orange-500">
-                        <Image
+                        <Image className="invert"
                           src={icon.image}
                           alt={icon.label || "Contact-image"}
                           width={22}
                           height={22}
                         />
+                        
                       </div>
                     </label>
                   ))

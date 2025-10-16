@@ -65,7 +65,7 @@
   .wpcf7-form .f-fild input,
   .wpcf7-form .f-fild select,
   .wpcf7-form .f-fild textarea {
-    @apply bg-white bg-opacity-30 border border-white border-opacity-25 placeholder:text-white py-3 px-8 rounded-lg w-full appearance-none outline-white;
+    @apply bg-white bg-opacity-30 border border-yellow border-opacity-25 placeholder:text-black py-3 px-8 rounded-lg w-full appearance-none outline-yellow;
   }
 
   .wpcf7-form .f-fild select option {
@@ -73,7 +73,7 @@
   }
 
   .wpcf7-submit {
-    @apply text-yellow bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-transparent hover:text-white hover:shadow hover:shadow-white transition-colors font-medium mt-4;
+    @apply text-black bg-white rounded sm:rounded-[10px] p-3 sm:py-3 sm:px-8 hover:bg-yellow hover:text-white hover:shadow hover:shadow-white transition-colors font-medium mt-4 border border-solid border-yellow;
   }
 
   .wpcf7-form [type="checkbox"] {
