@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
-  console.log('OptionDatas', OptionDatas)
   return (
     <footer
       className="bg-cover"
@@ -155,13 +154,16 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
             </div>
             <ul className="space-y-3">
               {Footer2 ?
-                Footer2?.map((item, i) => (
+                Footer2?.map((item, i) => {
+                  console.log('item', item)
+                  return (
                   <li key={i}>
                     <Link role="link" className="link" href={item.url}>
                       {item.title}
                     </Link>
                   </li>
-                )):null}
+                )
+                }):null}
             </ul>
           </div>
           <div className="space-y-4 shrink-0">

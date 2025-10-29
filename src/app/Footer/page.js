@@ -16,6 +16,8 @@ const Page = async () => {
     console.error("Error fetching menu data:", error);
   }
 
+  console.log('Footer2', Footer2)
+
   return (
     <>
       <Footer
