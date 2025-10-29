@@ -238,7 +238,7 @@ const Contact_form = ({classes}) => {
               </div>
             <p>
               Informationen zum Datenschutz bzgl. Ihrer Anfrage finden Sie hier:{" "}
-              <Link href="/datenschutzerklarung">
+              <Link href="/datenschutzerklaerung">
                 <span className="text-yellow underline">Datenschutzerklärung</span>
               </Link>
             </p>

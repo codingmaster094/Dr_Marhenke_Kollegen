@@ -10,7 +10,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
-  console.log('logosData', logosData)
   const swiperRef = useRef(null);
 
   const nextSlide = () => {
