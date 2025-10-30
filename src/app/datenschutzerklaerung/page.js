@@ -5,7 +5,7 @@ import generatePageMetadata from '../utils/generatePageMetadata';
 const page = async() => {
     let datenschutzerklarungData;
   try {
-    datenschutzerklarungData = await POST_GET("/page-data/datenschutzerklarung");
+    datenschutzerklarungData = await POST_GET("/page-data/datenschutzerklaerung");
   } catch (error) {
     console.error("Error fetching data:", error);
     return <div>Error loading data.</div>;
@@ -16,7 +16,7 @@ const page = async() => {
   }
   return (
     <>
-    <SEO_schema slug="/datenschutzerklarung" />
+    <SEO_schema slug="/datenschutzerklaerung" />
     <section className="sec-page-content">
             <div className="container">
                 <h2 className="wp-block-heading" dangerouslySetInnerHTML={{ __html: datenschutzerklarungData.title }}></h2>
@@ -30,7 +30,7 @@ const page = async() => {
 export default page
 
 export async function generateMetadata({params}) {
-  return generatePageMetadata(`/datenschutzerklarung`, {
+  return generatePageMetadata(`/datenschutzerklaerung`, {
     title: `datenschutzerklarung`,
     description: `datenschutzerklarung`,
   });
