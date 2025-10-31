@@ -7,7 +7,7 @@ import Uber_AboutSection from "../components/Uber_AboutSection";
 import BlogComponent from "../components/BlogComponent";
 import Alldata from "../utils/AllDataFetxh";
 import Custom_Post from "../utils/CustomPost";
-import MapPageClient from "../Map/page";
+import MapPageClient from "../components/Map/page";
 import ReviewsData from "../ReviewsData/page";
 import POST_GET from "../utils/PostsGet";
 import Praxis_section from "../components/Praxis_section";

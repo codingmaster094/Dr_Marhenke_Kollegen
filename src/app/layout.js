@@ -4,7 +4,10 @@ import '../../public/fonts/font.css';
 import Footer from "./Footer/page";
 import TopButton from "./components/Top-Button";
 import CanonicalTag from "./components/CanonicalTag";
-
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
