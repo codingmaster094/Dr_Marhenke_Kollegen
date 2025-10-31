@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body>
       <CanonicalTag />
       <Header />
