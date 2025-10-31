@@ -5,15 +5,12 @@ const nextConfig = {
     formats: ["image/webp"],
     unoptimized: true,
   },
-
-  // ✅ Serve only modern JavaScript to modern browsers
   experimental: {
-    esmExternals: "loose", // allows modern ES modules
-    legacyBrowsers: false, // disables old browser transpilation/polyfills
+   
   },
 
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production", // optional: removes console logs
+    removeConsole: process.env.NODE_ENV === "production", 
   },
 
   async headers() {
