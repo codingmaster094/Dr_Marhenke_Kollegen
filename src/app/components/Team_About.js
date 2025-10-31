@@ -6,7 +6,6 @@ const Team_About = ({
   further_link,
   title,
   description,
-  bgColor,
   listItems,
   imageSrc,
   reverse = false,

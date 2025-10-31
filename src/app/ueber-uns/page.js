@@ -2,7 +2,6 @@ import React from "react";
 import Hero_Section from "../components/Hero_Section";
 import Psychotherapie_Praxis from "../components/Psychotherapie_Praxis";
 import Kooperationspartner from "../components/Kooperationspartner";
-import About_Service_section from "../components/About_Service_section";
 import Uber_AboutSection from "../components/Uber_AboutSection";
 import BlogComponent from "../components/BlogComponent";
 import Alldata from "../utils/AllDataFetxh";

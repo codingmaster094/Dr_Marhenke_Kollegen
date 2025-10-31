@@ -1,6 +1,3 @@
-"use client";
-import { useRef } from "react";
-
 const FAQ_section = ({ title, faqs, container, classes }) => {
 
   return (

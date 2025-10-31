@@ -10,7 +10,7 @@ import "swiper/css/autoplay";
 import Link from "next/link";
 import commentEqualcontent from "../utils/commentEqualcontent";
 
-const Google_Review = ({ main_title, content, slider, reviewlogos, classes }) => {
+const Google_Review = ({ main_title, content, slider, reviewlogos }) => {
   const carouselRef = useRef();
   const [swiperInstance, setSwiperInstance] = useState(null);
 

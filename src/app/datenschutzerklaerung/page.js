@@ -29,7 +29,7 @@ const page = async() => {
 
 export default page
 
-export async function generateMetadata({params}) {
+export async function generateMetadata() {
   return generatePageMetadata(`/datenschutzerklaerung`, {
     title: `datenschutzerklarung`,
     description: `datenschutzerklarung`,

@@ -3,7 +3,7 @@ import Hero_Section from "../components/Hero_Section";
 import Alldata from "../utils/AllDataFetxh";
 import generatePageMetadata from "../utils/generatePageMetadata";
 import SEO_schema from "../components/SEO_schema";
-import KARRIEREPOST_GET from "../utils/karrierePostList";
+// import KARRIEREPOST_GET from "../utils/karrierePostList";
 import KARRIERPost from "../components/KARRIERPost";
 import POST_GET from "../utils/PostsGet";
 

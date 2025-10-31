@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
-import LeafletMapWrapper from "@/app/components/LeafletMapWrapper";
+// import LeafletMapWrapper from "@/app/components/LeafletMapWrapper";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function MapPageClient({ map_url, Map_image, title, locations, classes } = {}) {
-  const defaultCenter = [50.1109, 8.6821];
-  const center =
-    locations?.length > 0
-      ? [parseFloat(locations[0]?.latitude), parseFloat(locations[0]?.longitude)]
-      : defaultCenter;
+  // const defaultCenter = [50.1109, 8.6821];
+  // const center =
+  //   locations?.length > 0
+  //     ? [parseFloat(locations[0]?.latitude), parseFloat(locations[0]?.longitude)]
+  //     : defaultCenter;
 
   return (
     <section className={`text-center bg-[#fffbf2] bg-opacity-25 ${classes ?? ""}`}>

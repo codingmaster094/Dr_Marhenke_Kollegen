@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import "leaflet/dist/leaflet.css";
@@ -20,21 +20,28 @@ const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), {
 });
 
 export default function LeafletMap({ locations = [], center }) {
-  const customIcon = React.useMemo(() => {
-    const L = typeof window !== "undefined" ? require("leaflet") : null;
+  const [L, setL] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (typeof window !== "undefined") {
+        const leaflet = await import("leaflet");
+        setL(leaflet);
+      }
+    })();
+  }, []);
+
+  const customIcon = useMemo(() => {
     if (!L) return null;
     return new L.Icon({
       iconUrl: "/images/marker-icon.png",
       iconSize: [30, 40],
       iconAnchor: [15, 40],
       popupAnchor: [0, -40],
-      shadowUrl: null,
-      shadowSize: null,
-      shadowAnchor: null,
     });
-  }, []);
+  }, [L]);
 
-  if (!customIcon) return null; // Prevent rendering until icon is created
+  if (!L || !customIcon) return null;
 
   return (
     <MapContainer

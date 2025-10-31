@@ -4,14 +4,9 @@ import Contact_form from '../components/Contact_form'
 import Hero_Section from '../components/Hero_Section'
 import Alldata from "../utils/AllDataFetxh";
 import generatePageMetadata from '../utils/generatePageMetadata';
-import dynamic from "next/dynamic";
 import SEO_schema from '../components/SEO_schema';
-const SchemaInjector = dynamic(() => import("../components/SchemaInjector"), {
-  ssr: true,
-});
 const page = async() => {
   let kontaktData;
-    let schemaJSON;
   try {
     kontaktData = await Alldata("/kontakt");
   } catch (error) {

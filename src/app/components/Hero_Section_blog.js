@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import Lenis from "@studio-freight/lenis";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 
 const Hero_Section_blog = ({

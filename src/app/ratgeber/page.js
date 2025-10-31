@@ -3,7 +3,6 @@ import Hero_Section from "../components/Hero_Section";
 import Alldata from "../utils/AllDataFetxh";
 import POST_GET from "../utils/PostsGet";
 import Blog from "../components/Blog";
-import SEODATA from "../utils/SEO_Data";
 import generatePageMetadata from "../utils/generatePageMetadata";
 import SEO_schema from "../components/SEO_schema";
 

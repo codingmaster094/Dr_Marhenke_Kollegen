@@ -5,7 +5,7 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import BlogArrow from "../SvgComponent/BlogArrow";
 
-const Blog = ({ title, BTN, blogsData }) => {
+const Blog = ({ title, blogsData }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState(blogsData || []);
   const [displayedBlogsCount, setDisplayedBlogsCount] = useState(3);

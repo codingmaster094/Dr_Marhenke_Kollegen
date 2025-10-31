@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dayjs from "dayjs";
 
-const KARRIERPost = ({ title, BTN, blogsData }) => {
+const KARRIERPost = ({ title, blogsData }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState(blogsData || []);
   const [displayedBlogsCount, setDisplayedBlogsCount] = useState(3);

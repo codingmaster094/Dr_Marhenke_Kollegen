@@ -1,7 +1,6 @@
 import React from "react";
 import Hero_Section from "../components/Hero_Section";
 import ServiceSection from "../components/ServiceSection";
-import Pattern_section from "../components/Pattern_section";
 import SliderSection from "../components/SliderSection";
 import ReviewsData2 from "../components/Review2";
 import DoctorList from "../components/DoctorList";

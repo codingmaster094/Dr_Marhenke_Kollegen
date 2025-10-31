@@ -3,14 +3,9 @@ import React, { useEffect, useState } from "react";
 
 const TopButton = () => {
   const [visible, setVisible] = useState(false);
-  const [borderProgress, setBorderProgress] = useState(0);
   const toggleVisibility = () => {
     const scrollY = window.scrollY;
-    const maxScroll =
-      document.documentElement.scrollHeight - window.innerHeight;
-
     setVisible(scrollY > 100);
-    setBorderProgress((scrollY / maxScroll) * 100);
   };
   const smoothScrollToTop = () => {
     const scrollStep = -window.scrollY / 50;

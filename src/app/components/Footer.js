@@ -155,7 +155,6 @@ const Footer = ({ Footerdata, OptionDatas, Footer1, Footer2 }) => {
             <ul className="space-y-3">
               {Footer2 ?
                 Footer2?.map((item, i) => {
-                  console.log('item', item)
                   return (
                   <li key={i}>
                     <Link role="link" className="link" href={item.url}>

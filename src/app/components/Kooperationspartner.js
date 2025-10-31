@@ -118,7 +118,7 @@ const Kooperationspartner = ({ hideshow, title, logosData, BTN, classes }) => {
                     logo?.single_behandlungen_all_partners_site_url?.url ||
                     "#";
 
-                  console.log('imageAlt', imageAlt)
+
                   return (
                     <SwiperSlide
                       className="swiper-slide !flex justify-center"

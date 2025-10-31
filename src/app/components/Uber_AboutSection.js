@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DoctorList from "./DoctorList";
-const Uber_AboutSection = ({ title , content , BTN , image, Doctore_list, classes }) => {
+const Uber_AboutSection = ({ title , content , image, Doctore_list, classes }) => {
 
   return (
     <section className={`bg-[#fffbf2] bg-opacity-25 ${classes}`}>
