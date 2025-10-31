@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function MapPageClient({ map_url, Map_image, title, locations, classes } = {}) {
+export default function MapPageClient({ map_url, Map_image, title, classes } = {}) {
   // const defaultCenter = [50.1109, 8.6821];
   // const center =
   //   locations?.length > 0
